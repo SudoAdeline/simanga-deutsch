@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simanga's Deutsch Trainer - Goethe A2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- SIDEBAR NAV -->
+<nav id="sidebar">
+  <div class="sidebar-header">
+    <h1>🇩🇪 Deutsch<span>Trainer</span></h1>
+    <p class="exam-date">Prüfung: 30. April 2026</p>
+    <div id="countdown" class="countdown"></div>
+  </div>
+
+  <ul class="nav-sections">
+    <li class="nav-section active" data-section="dashboard">
+      <span class="nav-icon">📊</span> Dashboard
+    </li>
+    <li class="nav-section" data-section="exam-prep">
+      <span class="nav-icon">📝</span> Prüfungsvorbereitung
+    </li>
+    <li class="nav-section" data-section="vocab">
+      <span class="nav-icon">📚</span> Wortschatz
+    </li>
+    <li class="nav-section" data-section="verbs">
+      <span class="nav-icon">🔄</span> Verben Trainer
+    </li>
+    <li class="nav-section" data-section="phrases">
+      <span class="nav-icon">💬</span> Phrasen & Alltag
+    </li>
+    <li class="nav-section" data-section="writing">
+      <span class="nav-icon">✍️</span> Schreiben Üben
+    </li>
+    <li class="nav-section" data-section="speaking">
+      <span class="nav-icon">🗣️</span> Sprechen Üben
+    </li>
+    <li class="nav-section" data-section="funzone">
+      <span class="nav-icon">🎵</span> Fun Zone
+    </li>
+  </ul>
+
+  <div class="sidebar-footer">
+    <div class="motivation-quote" id="motivationQuote"></div>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main id="main-content">
+
+  <!-- DASHBOARD -->
+  <section id="dashboard" class="section active">
+    <div class="section-header">
+      <h2>Willkommen, Simanga! 🎯</h2>
+      <p>Dein Weg zum Goethe-Zertifikat A2</p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number" id="daysLeft">--</div>
+        <div class="stat-label">Tage bis zur Prüfung</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="vocabLearned">0</div>
+        <div class="stat-label">Wörter gelernt</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="verbsLearned">0</div>
+        <div class="stat-label">Verben gemeistert</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="streakDays">0</div>
+        <div class="stat-label">Tage Streak</div>
+      </div>
+    </div>
+
+    <div class="exam-overview">
+      <h3>Prüfungsstruktur - Goethe-Zertifikat A2</h3>
+      <div class="exam-parts">
+        <div class="exam-part">
+          <div class="exam-part-header">
+            <span class="exam-part-icon">📖</span>
+            <h4>Lesen</h4>
+            <span class="exam-time">30 Min</span>
+          </div>
+          <ul>
+            <li><strong>Teil 1:</strong> Zeitungstext verstehen (5 Fragen, Mehrfachauswahl)</li>
+            <li><strong>Teil 2:</strong> Informationstafeln verstehen (5 Fragen, Mehrfachauswahl)</li>
+            <li><strong>Teil 3:</strong> E-Mail/Brief verstehen (5 Fragen, Mehrfachauswahl)</li>
+            <li><strong>Teil 4:</strong> Anzeigen zuordnen (5 Fragen, Zuordnung)</li>
+          </ul>
+          <div class="exam-points">Max. 25 Punkte</div>
+        </div>
+        <div class="exam-part">
+          <div class="exam-part-header">
+            <span class="exam-part-icon">🎧</span>
+            <h4>Hören</h4>
+            <span class="exam-time">30 Min</span>
+          </div>
+          <ul>
+            <li><strong>Teil 1:</strong> Kurze Texte/Durchsagen (5 Fragen, 2x hören)</li>
+            <li><strong>Teil 2:</strong> Gespräch - Bilder zuordnen (5 Fragen, 1x hören)</li>
+            <li><strong>Teil 3:</strong> Einzelgespräche (5 Fragen, 1x hören)</li>
+            <li><strong>Teil 4:</strong> Interview - Ja/Nein (5 Fragen, 2x hören)</li>
+          </ul>
+          <div class="exam-points">Max. 25 Punkte</div>
+        </div>
+        <div class="exam-part">
+          <div class="exam-part-header">
+            <span class="exam-part-icon">✍️</span>
+            <h4>Schreiben</h4>
+            <span class="exam-time">30 Min</span>
+          </div>
+          <ul>
+            <li><strong>Teil 1:</strong> SMS/kurze Nachricht schreiben (20-30 Wörter, 3 Punkte)</li>
+            <li><strong>Teil 2:</strong> E-Mail schreiben (30-40 Wörter, 3 Punkte)</li>
+          </ul>
+          <div class="exam-points">Max. 25 Punkte</div>
+        </div>
+        <div class="exam-part">
+          <div class="exam-part-header">
+            <span class="exam-part-icon">🗣️</span>
+            <h4>Sprechen</h4>
+            <span class="exam-time">15 Min (zu zweit)</span>
+          </div>
+          <ul>
+            <li><strong>Teil 1:</strong> Fragen zur Person stellen & beantworten</li>
+            <li><strong>Teil 2:</strong> Über sich erzählen (Thema-Karte)</li>
+            <li><strong>Teil 3:</strong> Etwas gemeinsam planen (Terminkalender)</li>
+          </ul>
+          <div class="exam-points">Max. 25 Punkte (min. 15 zum Bestehen!)</div>
+        </div>
+      </div>
+      <div class="pass-info">
+        <strong>Zum Bestehen:</strong> 60/100 Punkte gesamt, mindestens 45/75 in Lesen+Hören+Schreiben, mindestens 15/25 im Sprechen
+      </div>
+    </div>
+
+    <div class="study-plan">
+      <h3>6-Wochen Lernplan</h3>
+      <div class="weeks-grid">
+        <div class="week-card">
+          <h4>Woche 1-2</h4>
+          <p>Wortschatz-Grundlage aufbauen. Täglich 20 neue Wörter aus der Wortliste. Erste Verben im Präsens üben.</p>
+        </div>
+        <div class="week-card">
+          <h4>Woche 3-4</h4>
+          <p>Perfekt & Präteritum üben. Lese- und Hörverständnis mit Übungsmaterial. Schreibübungen starten.</p>
+        </div>
+        <div class="week-card">
+          <h4>Woche 5-6</h4>
+          <p>Prüfungssimulation! Alle Teile unter Zeitdruck üben. Sprechen mit Partner trainieren. Schwächen gezielt angehen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXAM PREP -->
+  <section id="exam-prep" class="section">
+    <div class="section-header">
+      <h2>Prüfungsvorbereitung 📝</h2>
+      <p>Übe mit echten Prüfungsaufgaben vom Goethe-Institut</p>
+    </div>
+
+    <div class="exam-tabs">
+      <button class="exam-tab active" data-examtab="lesen">📖 Lesen</button>
+      <button class="exam-tab" data-examtab="hoeren">🎧 Hören</button>
+      <button class="exam-tab" data-examtab="schreiben">✍️ Schreiben</button>
+      <button class="exam-tab" data-examtab="sprechen-prep">🗣️ Sprechen</button>
+    </div>
+
+    <!-- LESEN -->
+    <div id="lesen" class="exam-content active">
+      <div class="exam-exercise">
+        <div class="exercise-header">
+          <h3>Lesen Teil 1 - Zeitungstext</h3>
+          <span class="difficulty">Modellsatz</span>
+        </div>
+        <div class="reading-text">
+          <h4>Der TV-Koch Stefan Berger</h4>
+          <p><em>»Ich versuche immer wieder etwas Neues.«</em></p>
+          <p>Bei Stefan Berger gibt es Gerichte, von denen man vorher noch nie gehört hat. Er hat dauernd neue Ideen. Den Gästen gefällt das. Man muss unbedingt vorher anrufen und einen der wenigen Tische bestellen, wenn man in seinem Restaurant „Bremer Lokal" essen möchte. Er hat viele Gäste, will aber kein zweites Lokal aufmachen. „Klar, ich könnte vielleicht reich damit werden, aber ich habe mich bewusst dagegen entschieden. Ich mag es einfach, wie wir hier arbeiten."</p>
+          <p>Stefan Berger wurde 1968 im Rheinland geboren, war auf der Realschule und lernte dann in einem großen Hotel kochen. Nach der Berufsausbildung brauchte er erstmal eine zweijährige Pause. Er fuhr durch die Welt, hatte verschiedene Jobs und lernte viel Neues kennen. Wegen einer Frau kam er dann nach Bremen. Das „Bremer Lokal" in seiner Nachbarschaft suchte einen Koch, Berger nahm die Stelle an, und drei Jahre später kaufte er das Restaurant.</p>
+          <p>Die meisten kennen ihn aber erst durch seine Fernsehshow „Berger kocht". In der beliebten Sendung besuchen ihn Sänger und Schauspieler und kochen mit ihm ihre Lieblingsrezepte.</p>
+        </div>
+        <div class="questions" id="lesen-t1-questions">
+          <div class="question" data-correct="c">
+            <p><strong>1.</strong> Die Gäste im „Bremer Lokal"...</p>
+            <label><input type="radio" name="lt1q1" value="a"> a) finden immer einen Tisch.</label>
+            <label><input type="radio" name="lt1q1" value="b"> b) müssen anrufen und Essen bestellen.</label>
+            <label><input type="radio" name="lt1q1" value="c"> c) sollen Plätze reservieren.</label>
+          </div>
+          <div class="question" data-correct="c">
+            <p><strong>2.</strong> Stefan Berger möchte...</p>
+            <label><input type="radio" name="lt1q2" value="a"> a) ein neues Restaurant eröffnen.</label>
+            <label><input type="radio" name="lt1q2" value="b"> b) mit seinem Restaurant mehr Geld verdienen.</label>
+            <label><input type="radio" name="lt1q2" value="c"> c) nur ein Restaurant haben.</label>
+          </div>
+          <div class="question" data-correct="c">
+            <p><strong>3.</strong> Sofort nach der Ausbildung...</p>
+            <label><input type="radio" name="lt1q3" value="a"> a) arbeitete er in einem großen Hotel.</label>
+            <label><input type="radio" name="lt1q3" value="b"> b) kaufte er ein Restaurant.</label>
+            <label><input type="radio" name="lt1q3" value="c"> c) machte er eine lange Reise.</label>
+          </div>
+          <div class="question" data-correct="a">
+            <p><strong>4.</strong> Stefan Berger ist bekannt durch...</p>
+            <label><input type="radio" name="lt1q4" value="a"> a) eine Fernsehsendung.</label>
+            <label><input type="radio" name="lt1q4" value="b"> b) Lieder und Filme.</label>
+            <label><input type="radio" name="lt1q4" value="c"> c) sein Restaurant.</label>
+          </div>
+          <div class="question" data-correct="a">
+            <p><strong>5.</strong> Dieser Text informiert über...</p>
+            <label><input type="radio" name="lt1q5" value="a"> a) den Berufsweg eines Kochs.</label>
+            <label><input type="radio" name="lt1q5" value="b"> b) einen Koch in einem Hotel.</label>
+            <label><input type="radio" name="lt1q5" value="c"> c) eine neue Berufsausbildung.</label>
+          </div>
+        </div>
+        <button class="check-btn" onclick="checkExamAnswers('lesen-t1-questions')">Antworten prüfen</button>
+        <div class="result-display" id="lesen-t1-result"></div>
+
+        <div class="tip-box">
+          <h4>💡 Tipp für Lesen Teil 1</h4>
+          <p>Lies zuerst die Fragen, dann den Text. Suche nach Schlüsselwörtern. Die richtige Antwort ist oft eine Umformulierung des Textes - nicht genau dieselben Wörter!</p>
+        </div>
+      </div>
+
+      <div class="exam-exercise">
+        <div class="exercise-header">
+          <h3>Lesen Teil 3 - E-Mail verstehen</h3>
+          <span class="difficulty">Modellsatz</span>
+        </div>
+        <div class="reading-text">
+          <p><strong>Liebe Sonja,</strong></p>
+          <p>ich bin jetzt schon vier Wochen in Hamburg und bin noch dabei, mich hier einzuleben. An der Universität ist vieles ganz anders organisiert als zu Hause. Und auch im täglichen Leben musste ich erst einmal lernen, wie einige Dinge hier gemacht werden. Zum Beispiel, wie ich ein Zimmer finde und wo ich was einkaufen kann.</p>
+          <p>In der ersten Woche haben ein paar Studenten eine Willkommensführung für uns ausländische Studierende gemacht. Sie haben uns die Uni gezeigt: die Bibliothek, die Cafeteria und die Multimedia-Räume. Hamburg habe ich dann alleine mit dem Stadtplan kennengelernt.</p>
+          <p>Ich wohne mit drei anderen Studenten aus Italien, Japan und Mexiko zusammen. Immer freitags kocht einer von uns etwas aus seinem Land und wir essen zusammen, obwohl wir nur eine winzig kleine Küche haben!</p>
+          <p>Wir sprechen in der Wohnung nicht nur Deutsch, sondern oft auch Englisch miteinander. Manchmal ist das einfacher, aber mich stört das ein bisschen. Ich möchte dieses Jahr möglichst viel Deutsch lernen.</p>
+          <p>Ich freue mich auf deinen Besuch im März. Dann zeige ich dir die Stadt und an einem Nachmittag fahren wir an die Ostsee. Du kannst dann bei Mario schlafen. Das ist der Italiener, der neben mir wohnt. Er fährt in den Ferien nach Hause.</p>
+          <p>Schreib mir bald! Bis dann, <strong>Gülcan</strong></p>
+        </div>
+        <div class="questions" id="lesen-t3-questions">
+          <div class="question" data-correct="c">
+            <p><strong>11.</strong> Gülcan sagt über ihr Leben in Hamburg, dass...</p>
+            <label><input type="radio" name="lt3q1" value="a"> a) das Studium wie in ihrem Heimatland ist.</label>
+            <label><input type="radio" name="lt3q1" value="b"> b) im Alltag einiges wie zu Hause ist.</label>
+            <label><input type="radio" name="lt3q1" value="c"> c) im Moment vieles neu für sie ist.</label>
+          </div>
+          <div class="question" data-correct="a">
+            <p><strong>12.</strong> Die Studentengruppe hat...</p>
+            <label><input type="radio" name="lt3q2" value="a"> a) den Neuen die Hochschule gezeigt.</label>
+            <label><input type="radio" name="lt3q2" value="b"> b) für neue Studenten eine Stadtführung gemacht.</label>
+            <label><input type="radio" name="lt3q2" value="c"> c) Gülcan anderen ausländischen Studenten vorgestellt.</label>
+          </div>
+          <div class="question" data-correct="c">
+            <p><strong>13.</strong> In der Wohnung...</p>
+            <label><input type="radio" name="lt3q3" value="a"> a) kochen alle zusammen.</label>
+            <label><input type="radio" name="lt3q3" value="b"> b) kocht Gülcan immer für alle.</label>
+            <label><input type="radio" name="lt3q3" value="c"> c) kocht jeder einmal für die anderen.</label>
+          </div>
+          <div class="question" data-correct="b">
+            <p><strong>14.</strong> Gülcan ist es wichtig...</p>
+            <label><input type="radio" name="lt3q4" value="a"> a) auch Englisch zu üben.</label>
+            <label><input type="radio" name="lt3q4" value="b"> b) Deutsch zu sprechen.</label>
+            <label><input type="radio" name="lt3q4" value="c"> c) Herrn Hahn kennenzulernen.</label>
+          </div>
+          <div class="question" data-correct="c">
+            <p><strong>15.</strong> Im März...</p>
+            <label><input type="radio" name="lt3q5" value="a"> a) besuchen sie Mario zu Hause.</label>
+            <label><input type="radio" name="lt3q5" value="b"> b) machen Sonja und Gülcan Urlaub am Meer.</label>
+            <label><input type="radio" name="lt3q5" value="c"> c) übernachtet Sonja in Marios Zimmer.</label>
+          </div>
+        </div>
+        <button class="check-btn" onclick="checkExamAnswers('lesen-t3-questions')">Antworten prüfen</button>
+        <div class="result-display" id="lesen-t3-result"></div>
+      </div>
+    </div>
+
+    <!-- HÖREN -->
+    <div id="hoeren" class="exam-content">
+      <div class="exam-exercise">
+        <div class="exercise-header">
+          <h3>Hören - Übungsmaterial</h3>
+        </div>
+        <div class="audio-section">
+          <h4>Training 1 - Modellsatz (Video)</h4>
+          <p>Nutze die Audiodateien aus deinem Trainingsordner:</p>
+          <div class="audio-file-ref">
+            <span>📁</span> A2/Training1/pruefungstraining_1_hoeren_a2_erwachsene.mp4
+          </div>
+          <h4 style="margin-top:1rem">Training 2 - Übungssatz (Audio)</h4>
+          <div class="audio-file-ref">
+            <span>📁</span> A2/Training2/pruefungstraining_2_hoeren_a2_erwachsene.mp3
+          </div>
+        </div>
+
+        <div class="hoeren-practice">
+          <h4>Hören Teil 1 - Was musst du können?</h4>
+          <p>Du hörst 5 kurze Texte (Radiodurchsagen, Anrufbeantworter, Ansagen). Zu jedem Text gibt es eine Frage mit 3 Antwortmöglichkeiten. Du hörst jeden Text <strong>zweimal</strong>.</p>
+
+          <div class="strategy-box">
+            <h4>🎯 Strategie für Hören</h4>
+            <ul>
+              <li><strong>Vor dem Hören:</strong> Lies die Fragen und Antwortmöglichkeiten - so weißt du, worauf du achten musst</li>
+              <li><strong>Beim 1. Hören:</strong> Versuche die Hauptinformation zu verstehen</li>
+              <li><strong>Beim 2. Hören:</strong> Überprüfe deine Antwort und achte auf Details</li>
+              <li><strong>Schlüsselwörter:</strong> Achte auf Zahlen, Uhrzeiten, Orte und Negationen (nicht, kein)</li>
+              <li><strong>Achtung:</strong> Manchmal wird eine falsche Antwort zuerst genannt und dann korrigiert!</li>
+            </ul>
+          </div>
+
+          <h4>Hören Teil 4 - Interview (Ja/Nein)</h4>
+          <p>Hier ist der Transkript vom Modellsatz zum Mitlesen und Üben:</p>
+          <div class="reading-text transcript">
+            <p><strong>Interviewer:</strong> Sarah, Sie kommen aus Ghana, in Afrika. Wann sind Sie nach Deutschland gekommen?</p>
+            <p><strong>Sarah:</strong> Das war kurz nach meinem fünften Geburtstag. Da sind wir dann mit der ganzen Familie umgezogen.</p>
+            <p><strong>Interviewer:</strong> Und wie fanden Sie das neue Leben in Deutschland?</p>
+            <p><strong>Sarah:</strong> Ja, es hat mir sofort gefallen, ich habe ganz schnell Freunde gefunden – beim Fußballspielen auf der Straße. Meine beiden großen Brüder haben mich immer mitgenommen. Zuerst haben sie mir Tipps gegeben, aber nach ein paar Monaten war ich besser als sie!</p>
+            <p><strong>Interviewer:</strong> Und dann? Wie ging es dann weiter?</p>
+            <p><strong>Sarah:</strong> Als ich in der Schule war, hat mein Sportlehrer mir gesagt, bei welchem Fußballverein ich mich anmelden soll. Und dort spiele ich immer noch.</p>
+            <p><strong>Interviewer:</strong> Jetzt schon seit 14 Jahren! Und seit zwei Wochen sind Sie sogar in der deutschen Frauennationalmannschaft.</p>
+            <p><strong>Sarah:</strong> Danke. Ja, und ich hoffe, dass ich bald auch einmal in einem internationalen Spiel mitspielen darf.</p>
+            <p><strong>Interviewer:</strong> Was machen Sie denn, wenn Sie nicht Fußball spielen?</p>
+            <p><strong>Sarah:</strong> Im Moment habe ich keine Zeit für anderes. Aber später, wenn ich nicht mehr so gut bin, möchte ich studieren. Natürlich Sport!</p>
+          </div>
+
+          <div class="questions" id="hoeren-t4-questions">
+            <div class="question" data-correct="ja">
+              <p><strong>16.</strong> Sarah hatte am Anfang in Deutschland Probleme.</p>
+              <label><input type="radio" name="ht4q1" value="ja"> Ja</label>
+              <label><input type="radio" name="ht4q1" value="nein"> Nein</label>
+            </div>
+            <div class="question" data-correct="nein">
+              <p><strong>17.</strong> Ihre Geschwister haben ihr das Fußballspielen gezeigt.</p>
+              <label><input type="radio" name="ht4q2" value="ja"> Ja</label>
+              <label><input type="radio" name="ht4q2" value="nein"> Nein</label>
+            </div>
+            <div class="question" data-correct="ja">
+              <p><strong>18.</strong> Ihr Lehrer hat ihr einen Verein empfohlen.</p>
+              <label><input type="radio" name="ht4q3" value="ja"> Ja</label>
+              <label><input type="radio" name="ht4q3" value="nein"> Nein</label>
+            </div>
+            <div class="question" data-correct="nein">
+              <p><strong>19.</strong> Sarah hat schon bei vielen internationalen Spielen mitgespielt.</p>
+              <label><input type="radio" name="ht4q4" value="ja"> Ja</label>
+              <label><input type="radio" name="ht4q4" value="nein"> Nein</label>
+            </div>
+            <div class="question" data-correct="nein">
+              <p><strong>20.</strong> Sie studiert jetzt Sport an der Universität.</p>
+              <label><input type="radio" name="ht4q5" value="ja"> Ja</label>
+              <label><input type="radio" name="ht4q5" value="nein"> Nein</label>
+            </div>
+          </div>
+          <button class="check-btn" onclick="checkExamAnswers('hoeren-t4-questions')">Antworten prüfen</button>
+          <div class="result-display" id="hoeren-t4-result"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCHREIBEN -->
+    <div id="schreiben" class="exam-content">
+      <div class="exam-exercise">
+        <div class="exercise-header">
+          <h3>Schreiben Teil 1 - SMS/Kurze Nachricht</h3>
+          <span class="difficulty">20-30 Wörter</span>
+        </div>
+        <div class="writing-prompt">
+          <p><strong>Aufgabe:</strong> Sie sind unterwegs in der Stadt und schreiben eine SMS an Ihre Freundin Ekaterini.</p>
+          <ul>
+            <li>Entschuldigen Sie sich, dass Sie zu spät kommen.</li>
+            <li>Schreiben Sie, warum.</li>
+            <li>Nennen Sie einen neuen Ort und eine neue Uhrzeit für das Treffen.</li>
+          </ul>
+          <p class="writing-rule">Schreiben Sie zu <strong>allen drei Punkten</strong>!</p>
+        </div>
+        <textarea class="writing-area" id="schreiben-t1" placeholder="Schreibe deine SMS hier..." rows="6"></textarea>
+        <div class="word-counter">Wörter: <span id="wc-t1">0</span> / 20-30</div>
+
+        <div class="example-answer">
+          <h4>📋 Beispielantwort (zum Vergleichen)</h4>
+          <div class="example-text hidden" id="example-t1">
+            <p><em>Hallo Ekaterini! Tut mir leid, ich bin im Stau und komme später. Können wir uns um 19 Uhr am Hauptbahnhof treffen? Bis gleich!</em></p>
+            <p class="example-note">Diese Antwort hat alle 3 Punkte: Entschuldigung ✓ Grund ✓ Neuer Ort & Zeit ✓</p>
+          </div>
+          <button class="show-example-btn" onclick="toggleExample('example-t1', this)">Beispiel zeigen</button>
+        </div>
+
+        <div class="exercise-header" style="margin-top: 2rem">
+          <h3>Schreiben Teil 2 - E-Mail</h3>
+          <span class="difficulty">30-40 Wörter</span>
+        </div>
+        <div class="writing-prompt">
+          <p><strong>Aufgabe:</strong> Ihr Chef, Herr Lehmann, hat bald Geburtstag. Er hat Ihnen eine Einladung zu seiner Feier geschickt.</p>
+          <ul>
+            <li>Bedanken Sie sich und sagen Sie, dass Sie kommen.</li>
+            <li>Informieren Sie, dass Sie jemanden mitbringen.</li>
+            <li>Fragen Sie nach dem Weg.</li>
+          </ul>
+          <p class="writing-rule">Schreiben Sie zu <strong>allen drei Punkten</strong>! Benutzen Sie die höfliche Form (Sie).</p>
+        </div>
+        <textarea class="writing-area" id="schreiben-t2" placeholder="Schreibe deine E-Mail hier..." rows="8"></textarea>
+        <div class="word-counter">Wörter: <span id="wc-t2">0</span> / 30-40</div>
+
+        <div class="example-answer">
+          <h4>📋 Beispielantwort</h4>
+          <div class="example-text hidden" id="example-t2">
+            <p><em>Sehr geehrter Herr Lehmann,<br>
+            vielen Dank für Ihre Einladung! Ich komme gerne zu Ihrer Feier. Darf ich meine Frau mitbringen? Können Sie mir bitte den Weg beschreiben? Ich war noch nie bei Ihnen zu Hause.<br>
+            Mit freundlichen Grüßen</em></p>
+            <p class="example-note"><strong>Wichtig:</strong> Bei E-Mail an den Chef → „Sehr geehrter Herr..." + „Sie/Ihnen/Ihre" + „Mit freundlichen Grüßen"</p>
+          </div>
+          <button class="show-example-btn" onclick="toggleExample('example-t2', this)">Beispiel zeigen</button>
+        </div>
+
+        <div class="tip-box">
+          <h4>💡 Bewertungskriterien Schreiben</h4>
+          <p><strong>Aufgabenerfüllung:</strong> Alle 3 Punkte behandelt? Richtige Länge?</p>
+          <p><strong>Register:</strong> SMS = informell (du/Hallo), E-Mail an Chef = formell (Sie/Sehr geehrter)</p>
+          <p><strong>Sprache:</strong> Wortschatz, Grammatik, Kohärenz. Fehler sind okay, solange der Text verständlich bleibt!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPRECHEN PREP -->
+    <div id="sprechen-prep" class="exam-content">
+      <div class="exam-exercise">
+        <div class="exercise-header">
+          <h3>Sprechen Teil 1 - Fragen zur Person</h3>
+        </div>
+        <p>Du bekommst 4 Karten mit Themen und musst Fragen stellen und beantworten.</p>
+        <div class="speaking-cards" id="speaking-cards-1">
+          <!-- Generated by JS -->
+        </div>
+        <button class="check-btn" onclick="generateSpeakingCards()">Neue Karten</button>
+
+        <div class="exercise-header" style="margin-top: 2rem">
+          <h3>Sprechen Teil 2 - Über sich erzählen</h3>
+        </div>
+        <div class="speaking-topic">
+          <h4 id="speaking-topic-title">Was machen Sie mit Ihrem Geld?</h4>
+          <div class="topic-prompts">
+            <span class="topic-prompt">Lebensmittel, Miete?</span>
+            <span class="topic-prompt">Kleidung?</span>
+            <span class="topic-prompt">Sparen?</span>
+            <span class="topic-prompt">Reisen?</span>
+          </div>
+        </div>
+        <button class="check-btn" onclick="newSpeakingTopic()">Neues Thema</button>
+
+        <div class="exercise-header" style="margin-top: 2rem">
+          <h3>Sprechen Teil 3 - Gemeinsam planen</h3>
+        </div>
+        <div class="planning-scenario" id="planning-scenario">
+          <p><strong>Situation:</strong> Ihr Freund Patrick hat Geburtstag. Sie möchten ein Geschenk für ihn kaufen. Finden Sie einen Termin.</p>
+          <div class="tip-box">
+            <h4>Nützliche Phrasen:</h4>
+            <ul>
+              <li>"Hast du am ... Zeit?" / "Können wir am ... ?"</li>
+              <li>"Das geht leider nicht, da muss ich ..."</li>
+              <li>"Wie wäre es mit ...?"</li>
+              <li>"Ja, das passt gut!" / "Einverstanden!"</li>
+              <li>"Wollen wir uns um ... Uhr treffen?"</li>
+              <li>"Wo treffen wir uns?"</li>
+            </ul>
+          </div>
+        </div>
+        <button class="check-btn" onclick="newPlanningScenario()">Neues Szenario</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOCAB / WORTSCHATZ -->
+  <section id="vocab" class="section">
+    <div class="section-header">
+      <h2>Wortschatz Trainer 📚</h2>
+      <p>~1300 Wörter aus der offiziellen Goethe A2 Wortliste</p>
+    </div>
+
+    <div class="vocab-tabs">
+      <button class="vocab-tab active" data-vocabtab="flashcards">🎴 Karteikarten</button>
+      <button class="vocab-tab" data-vocabtab="quiz">🎯 Quiz</button>
+      <button class="vocab-tab" data-vocabtab="match">🔗 Zuordnen</button>
+      <button class="vocab-tab" data-vocabtab="wordlist">📋 Wortliste</button>
+    </div>
+
+    <div class="vocab-controls">
+      <label>Kategorie:
+        <select id="vocab-category">
+          <option value="all">Alle Wörter</option>
+          <option value="familie">Familie & Personen</option>
+          <option value="essen">Essen & Trinken</option>
+          <option value="wohnen">Wohnen & Haus</option>
+          <option value="reisen">Reisen & Verkehr</option>
+          <option value="arbeit">Arbeit & Beruf</option>
+          <option value="freizeit">Freizeit & Hobby</option>
+          <option value="koerper">Körper & Gesundheit</option>
+          <option value="alltag">Alltag & Einkaufen</option>
+          <option value="zeit">Zeit & Wetter</option>
+          <option value="schule">Schule & Lernen</option>
+        </select>
+      </label>
+      <label>Nur ungeübte: <input type="checkbox" id="vocab-unlearned"></label>
+    </div>
+
+    <!-- FLASHCARDS -->
+    <div id="flashcards" class="vocab-content active">
+      <div class="flashcard-container">
+        <div class="flashcard" id="flashcard" onclick="flipCard()">
+          <div class="flashcard-front">
+            <div class="flashcard-word" id="fc-word">anfangen</div>
+            <div class="flashcard-article" id="fc-article"></div>
+            <div class="flashcard-hint">Klick zum Umdrehen</div>
+          </div>
+          <div class="flashcard-back">
+            <div class="flashcard-translation" id="fc-translation">to begin, to start</div>
+            <div class="flashcard-example" id="fc-example">Der Unterricht fängt gleich an.</div>
+            <div class="flashcard-plural" id="fc-plural"></div>
+          </div>
+        </div>
+      </div>
+      <div class="flashcard-controls">
+        <button class="fc-btn wrong" onclick="rateCard(1)">Nochmal 🔄</button>
+        <button class="fc-btn ok" onclick="rateCard(3)">Okay 🤔</button>
+        <button class="fc-btn good" onclick="rateCard(5)">Gewusst! ✅</button>
+      </div>
+      <div class="flashcard-progress">
+        Karte <span id="fc-current">1</span> von <span id="fc-total">0</span>
+      </div>
+    </div>
+
+    <!-- QUIZ -->
+    <div id="quiz" class="vocab-content">
+      <div class="quiz-container" id="quiz-container">
+        <div class="quiz-question">
+          <h3 id="quiz-prompt">Was bedeutet "der Bahnhof"?</h3>
+        </div>
+        <div class="quiz-options" id="quiz-options">
+          <!-- Generated by JS -->
+        </div>
+        <div class="quiz-feedback" id="quiz-feedback"></div>
+        <button class="check-btn" id="quiz-next" onclick="nextQuizQuestion()" style="display:none">Nächste Frage</button>
+      </div>
+      <div class="quiz-score">
+        Richtig: <span id="quiz-correct">0</span> / <span id="quiz-total">0</span>
+      </div>
+    </div>
+
+    <!-- MATCH GAME -->
+    <div id="match" class="vocab-content">
+      <p>Verbinde die deutschen Wörter mit der englischen Bedeutung!</p>
+      <div class="match-game" id="match-game">
+        <!-- Generated by JS -->
+      </div>
+      <div class="match-score">Paare gefunden: <span id="match-found">0</span> / <span id="match-total">6</span></div>
+      <button class="check-btn" onclick="startMatchGame()">Neues Spiel</button>
+    </div>
+
+    <!-- WORDLIST BROWSE -->
+    <div id="wordlist" class="vocab-content">
+      <div class="wordlist-search">
+        <input type="text" id="wordlist-search-input" placeholder="Wort suchen..." oninput="filterWordlist()">
+      </div>
+      <div class="wordlist-table" id="wordlist-table">
+        <!-- Generated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- VERBS -->
+  <section id="verbs" class="section">
+    <div class="section-header">
+      <h2>Verben Trainer 🔄</h2>
+      <p>Die wichtigsten Verben für A2 - konjugieren, verstehen, anwenden</p>
+    </div>
+
+    <div class="verb-tabs">
+      <button class="verb-tab active" data-verbtab="conjugate">Konjugieren</button>
+      <button class="verb-tab" data-verbtab="tenses">Zeitformen</button>
+      <button class="verb-tab" data-verbtab="sentences">Satzbau</button>
+      <button class="verb-tab" data-verbtab="verb-overview">Übersicht</button>
+    </div>
+
+    <!-- CONJUGATION TRAINER -->
+    <div id="conjugate" class="verb-content active">
+      <div class="verb-controls">
+        <label>Zeitform:
+          <select id="verb-tense" onchange="loadVerbExercise()">
+            <option value="praesens">Präsens</option>
+            <option value="perfekt">Perfekt</option>
+            <option value="praeteritum">Präteritum</option>
+          </select>
+        </label>
+        <label>Verbtyp:
+          <select id="verb-type" onchange="loadVerbExercise()">
+            <option value="all">Alle</option>
+            <option value="regular">Regelmäßig</option>
+            <option value="irregular">Unregelmäßig</option>
+            <option value="separable">Trennbar</option>
+            <option value="modal">Modalverben</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="conjugation-exercise" id="conj-exercise">
+        <div class="verb-display">
+          <h3 id="conj-infinitive">machen</h3>
+          <p id="conj-meaning" class="verb-meaning">to do/make</p>
+          <p id="conj-type-badge" class="verb-type-badge">regelmäßig</p>
+        </div>
+        <div class="conjugation-table" id="conj-table">
+          <!-- Generated by JS -->
+        </div>
+        <button class="check-btn" onclick="checkConjugation()">Prüfen</button>
+        <button class="check-btn secondary" onclick="showConjugation()">Lösung zeigen</button>
+        <button class="check-btn" onclick="loadVerbExercise()">Nächstes Verb</button>
+      </div>
+    </div>
+
+    <!-- TENSES EXPLANATION -->
+    <div id="tenses" class="verb-content">
+      <div class="tense-card">
+        <h3>Präsens (Gegenwart)</h3>
+        <p>Was passiert <strong>jetzt</strong> oder <strong>regelmäßig</strong>.</p>
+        <div class="tense-formation">
+          <h4>Bildung: Stamm + Endung</h4>
+          <table class="tense-table">
+            <tr><td>ich</td><td>mach<strong>e</strong></td><td>fahr<strong>e</strong></td></tr>
+            <tr><td>du</td><td>mach<strong>st</strong></td><td>fähr<strong>st</strong></td></tr>
+            <tr><td>er/sie/es</td><td>mach<strong>t</strong></td><td>fähr<strong>t</strong></td></tr>
+            <tr><td>wir</td><td>mach<strong>en</strong></td><td>fahr<strong>en</strong></td></tr>
+            <tr><td>ihr</td><td>mach<strong>t</strong></td><td>fahr<strong>t</strong></td></tr>
+            <tr><td>sie/Sie</td><td>mach<strong>en</strong></td><td>fahr<strong>en</strong></td></tr>
+          </table>
+          <p class="tense-note">💡 Bei starken Verben ändert sich der Vokal bei du/er: a→ä, e→i(e)</p>
+        </div>
+      </div>
+
+      <div class="tense-card">
+        <h3>Perfekt (Vergangenheit - gesprochen)</h3>
+        <p>Was <strong>passiert ist</strong>. Die häufigste Vergangenheitsform im Sprechen!</p>
+        <div class="tense-formation">
+          <h4>Bildung: haben/sein + Partizip II (ge...t / ge...en)</h4>
+          <table class="tense-table">
+            <tr><td>ich</td><td><strong>habe</strong> gemacht</td><td><strong>bin</strong> gefahren</td></tr>
+            <tr><td>du</td><td><strong>hast</strong> gemacht</td><td><strong>bist</strong> gefahren</td></tr>
+            <tr><td>er/sie/es</td><td><strong>hat</strong> gemacht</td><td><strong>ist</strong> gefahren</td></tr>
+            <tr><td>wir</td><td><strong>haben</strong> gemacht</td><td><strong>sind</strong> gefahren</td></tr>
+            <tr><td>ihr</td><td><strong>habt</strong> gemacht</td><td><strong>seid</strong> gefahren</td></tr>
+            <tr><td>sie/Sie</td><td><strong>haben</strong> gemacht</td><td><strong>sind</strong> gefahren</td></tr>
+          </table>
+          <p class="tense-note">💡 <strong>sein</strong> benutzt man bei: Bewegung (gehen, fahren, kommen) + Zustandsänderung (werden, sterben) + sein/bleiben</p>
+          <p class="tense-note">💡 Regelmäßig: <strong>ge-___-t</strong> (gemacht, gekauft). Unregelmäßig: <strong>ge-___-en</strong> (gefahren, geschrieben)</p>
+          <p class="tense-note">💡 Trennbare Verben: <strong>an-ge-rufen</strong>, <strong>ein-ge-kauft</strong></p>
+          <p class="tense-note">💡 Verben auf -ieren: <strong>kein ge-!</strong> (telefoniert, studiert)</p>
+        </div>
+      </div>
+
+      <div class="tense-card">
+        <h3>Präteritum (Vergangenheit - geschrieben)</h3>
+        <p>Für A2 brauchst du vor allem: <strong>war, hatte, konnte, musste, wollte, durfte, sollte</strong></p>
+        <div class="tense-formation">
+          <h4>sein & haben im Präteritum</h4>
+          <table class="tense-table">
+            <tr><td></td><td><strong>sein</strong></td><td><strong>haben</strong></td></tr>
+            <tr><td>ich</td><td>war</td><td>hatte</td></tr>
+            <tr><td>du</td><td>warst</td><td>hattest</td></tr>
+            <tr><td>er/sie/es</td><td>war</td><td>hatte</td></tr>
+            <tr><td>wir</td><td>waren</td><td>hatten</td></tr>
+            <tr><td>ihr</td><td>wart</td><td>hattet</td></tr>
+            <tr><td>sie/Sie</td><td>waren</td><td>hatten</td></tr>
+          </table>
+          <h4 style="margin-top:1rem">Modalverben im Präteritum</h4>
+          <table class="tense-table">
+            <tr><td></td><td>können</td><td>müssen</td><td>wollen</td><td>dürfen</td><td>sollen</td></tr>
+            <tr><td>ich</td><td>konnte</td><td>musste</td><td>wollte</td><td>durfte</td><td>sollte</td></tr>
+            <tr><td>du</td><td>konntest</td><td>musstest</td><td>wolltest</td><td>durftest</td><td>solltest</td></tr>
+            <tr><td>er/sie</td><td>konnte</td><td>musste</td><td>wollte</td><td>durfte</td><td>sollte</td></tr>
+            <tr><td>wir</td><td>konnten</td><td>mussten</td><td>wollten</td><td>durften</td><td>sollten</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- SENTENCE BUILDING -->
+    <div id="sentences" class="verb-content">
+      <div class="sentence-intro">
+        <h3>Satzbau verstehen</h3>
+        <p>Im Deutschen steht das Verb an einer festen Position. Lerne die verschiedenen Satzstrukturen!</p>
+      </div>
+
+      <div class="sentence-rule">
+        <h4>Regel 1: Hauptsatz → Verb auf Position 2</h4>
+        <div class="sentence-example">
+          <span class="pos pos1">Ich</span>
+          <span class="pos pos2">kaufe</span>
+          <span class="pos pos3">morgen ein neues Buch.</span>
+        </div>
+        <div class="sentence-example">
+          <span class="pos pos1">Morgen</span>
+          <span class="pos pos2">kaufe</span>
+          <span class="pos pos3">ich ein neues Buch.</span>
+        </div>
+        <p class="tense-note">💡 Das Verb bleibt IMMER auf Position 2, aber das Subjekt kann sich bewegen!</p>
+      </div>
+
+      <div class="sentence-rule">
+        <h4>Regel 2: Ja/Nein-Frage → Verb auf Position 1</h4>
+        <div class="sentence-example">
+          <span class="pos pos2">Kaufst</span>
+          <span class="pos pos1">du</span>
+          <span class="pos pos3">ein neues Buch?</span>
+        </div>
+      </div>
+
+      <div class="sentence-rule">
+        <h4>Regel 3: Nebensatz (weil, dass, wenn, obwohl) → Verb am ENDE</h4>
+        <div class="sentence-example">
+          <span class="pos pos1">Ich bleibe zu Hause,</span>
+          <span class="pos pos4">weil</span>
+          <span class="pos pos3">ich krank</span>
+          <span class="pos pos2">bin.</span>
+        </div>
+        <div class="sentence-example">
+          <span class="pos pos1">Er sagt,</span>
+          <span class="pos pos4">dass</span>
+          <span class="pos pos3">er morgen</span>
+          <span class="pos pos2">kommt.</span>
+        </div>
+      </div>
+
+      <div class="sentence-rule">
+        <h4>Regel 4: Perfekt → Partizip am Ende, haben/sein auf Position 2</h4>
+        <div class="sentence-example">
+          <span class="pos pos1">Ich</span>
+          <span class="pos pos2">habe</span>
+          <span class="pos pos3">gestern ein Buch</span>
+          <span class="pos pos2">gekauft.</span>
+        </div>
+      </div>
+
+      <div class="sentence-builder">
+        <h3>Satz bauen - Übung</h3>
+        <p>Bringe die Wörter in die richtige Reihenfolge:</p>
+        <div class="sentence-puzzle" id="sentence-puzzle">
+          <!-- Generated by JS -->
+        </div>
+        <div class="sentence-answer" id="sentence-answer"></div>
+        <button class="check-btn" onclick="checkSentence()">Prüfen</button>
+        <button class="check-btn" onclick="newSentencePuzzle()">Neuer Satz</button>
+      </div>
+    </div>
+
+    <!-- VERB OVERVIEW -->
+    <div id="verb-overview" class="verb-content">
+      <h3>Wichtige A2 Verben - Übersicht</h3>
+      <div class="verb-overview-table" id="verb-overview-table">
+        <!-- Generated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- PHRASES -->
+  <section id="phrases" class="section">
+    <div class="section-header">
+      <h2>Phrasen & Alltag 💬</h2>
+      <p>Häufige Ausdrücke und Alltagssituationen</p>
+    </div>
+
+    <div class="phrase-categories">
+      <button class="phrase-cat active" data-phrasecat="greetings">Begrüßung</button>
+      <button class="phrase-cat" data-phrasecat="shopping">Einkaufen</button>
+      <button class="phrase-cat" data-phrasecat="restaurant">Restaurant</button>
+      <button class="phrase-cat" data-phrasecat="directions">Wegbeschreibung</button>
+      <button class="phrase-cat" data-phrasecat="doctor">Beim Arzt</button>
+      <button class="phrase-cat" data-phrasecat="phone">Am Telefon</button>
+      <button class="phrase-cat" data-phrasecat="opinion">Meinung sagen</button>
+      <button class="phrase-cat" data-phrasecat="smalltalk">Smalltalk</button>
+    </div>
+
+    <div class="phrases-display" id="phrases-display">
+      <!-- Generated by JS -->
+    </div>
+  </section>
+
+  <!-- WRITING PRACTICE -->
+  <section id="writing" class="section">
+    <div class="section-header">
+      <h2>Schreiben Üben ✍️</h2>
+      <p>Übe verschiedene Schreibaufgaben im A2-Format</p>
+    </div>
+
+    <div class="writing-exercises" id="writing-exercises">
+      <div class="writing-task-selector">
+        <button class="writing-task-btn active" onclick="loadWritingTask('informal')">Informell (SMS/WhatsApp)</button>
+        <button class="writing-task-btn" onclick="loadWritingTask('formal')">Formell (E-Mail)</button>
+      </div>
+
+      <div id="writing-task-display">
+        <!-- Generated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEAKING PRACTICE -->
+  <section id="speaking" class="section">
+    <div class="section-header">
+      <h2>Sprechen Üben 🗣️</h2>
+      <p>Bereite dich auf den mündlichen Teil vor</p>
+    </div>
+
+    <div class="speaking-practice">
+      <div class="speaking-tip">
+        <h3>Allgemeine Tipps fürs Sprechen</h3>
+        <ul>
+          <li>Sprich in <strong>ganzen Sätzen</strong>, nicht nur Stichwörter</li>
+          <li>Wenn du ein Wort nicht weißt: <em>"Wie sagt man... auf Deutsch?"</em></li>
+          <li>Nimm dir Zeit! Du darfst kurz nachdenken</li>
+          <li>Übe laut zu sprechen - vor dem Spiegel oder mit einer anderen Person</li>
+          <li>Benutze Verbindungswörter: <em>und, aber, weil, deshalb, dann, zuerst, danach</em></li>
+        </ul>
+      </div>
+
+      <div class="speaking-exercise">
+        <h3>Selbstvorstellung üben</h3>
+        <p>Beantworte diese Fragen über dich selbst:</p>
+        <div class="speaking-prompts" id="speaking-prompts">
+          <div class="speaking-prompt-card">
+            <h4>Wie heißen Sie?</h4>
+            <p class="prompt-help">Ich heiße... / Mein Name ist...</p>
+          </div>
+          <div class="speaking-prompt-card">
+            <h4>Woher kommen Sie?</h4>
+            <p class="prompt-help">Ich komme aus... / Ich bin aus...</p>
+          </div>
+          <div class="speaking-prompt-card">
+            <h4>Wo wohnen Sie?</h4>
+            <p class="prompt-help">Ich wohne in... / Ich lebe in...</p>
+          </div>
+          <div class="speaking-prompt-card">
+            <h4>Was machen Sie beruflich?</h4>
+            <p class="prompt-help">Ich bin... von Beruf / Ich arbeite als...</p>
+          </div>
+          <div class="speaking-prompt-card">
+            <h4>Was sind Ihre Hobbys?</h4>
+            <p class="prompt-help">In meiner Freizeit... / Ich ... gern...</p>
+          </div>
+          <div class="speaking-prompt-card">
+            <h4>Haben Sie Geschwister?</h4>
+            <p class="prompt-help">Ja, ich habe... / Nein, ich bin Einzelkind.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUN ZONE -->
+  <section id="funzone" class="section">
+    <div class="section-header">
+      <h2>Fun Zone 🎵</h2>
+      <p>Deutsch lernen mit Spaß!</p>
+    </div>
+
+    <div class="fun-content">
+      <div class="fun-card">
+        <h3>🎵 Deutsche Lieder zum Lernen</h3>
+        <ul class="song-list">
+          <li>
+            <strong>Nena - 99 Luftballons</strong>
+            <p>Klassiker! Gut für Zahlen und Storytelling.</p>
+          </li>
+          <li>
+            <strong>Mark Forster - Chöre</strong>
+            <p>Moderner Pop. Einfache, wiederholende Texte.</p>
+          </li>
+          <li>
+            <strong>Namika - Je ne parle pas français</strong>
+            <p>Catchy! Mix aus Deutsch und Französisch.</p>
+          </li>
+          <li>
+            <strong>Die Ärzte - Junge</strong>
+            <p>Lustig! Perfekt für Alltagsvokabular.</p>
+          </li>
+          <li>
+            <strong>Peter Fox - Haus am See</strong>
+            <p>Toller Text über Träume und Zukunft. Gut für Konjunktiv.</p>
+          </li>
+          <li>
+            <strong>Cro - Einmal um die Welt</strong>
+            <p>Einfacher Rap. Gute Ausspracheübung.</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="fun-card">
+        <h3>🤓 Wusstest du das?</h3>
+        <div class="fun-facts" id="fun-facts">
+          <!-- Generated by JS -->
+        </div>
+        <button class="check-btn" onclick="newFunFact()">Noch ein Fakt!</button>
+      </div>
+
+      <div class="fun-card">
+        <h3>🎮 Wort-Schlange</h3>
+        <p>Bilde zusammengesetzte Wörter! Deutsch ist berühmt für seine langen Wörter.</p>
+        <div class="compound-game">
+          <div class="compound-prompt">
+            <span id="compound-word-1" class="compound-word">Haus</span> +
+            <span id="compound-word-2" class="compound-word">?</span> =
+            <input type="text" id="compound-answer" placeholder="zusammengesetztes Wort">
+          </div>
+          <button class="check-btn" onclick="checkCompound()">Prüfen</button>
+          <div id="compound-result" class="compound-result"></div>
+          <button class="check-btn" onclick="newCompound()">Nächstes Wort</button>
+        </div>
+      </div>
+
+      <div class="fun-card">
+        <h3>💪 Motivation</h3>
+        <div class="motivation-display">
+          <p class="big-quote" id="big-quote">"Jeder Experte war einmal ein Anfänger."</p>
+          <button class="check-btn" onclick="newMotivation()">Neue Motivation</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
