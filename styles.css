@@ -1474,6 +1474,71 @@ body {
   margin-bottom: 1rem;
 }
 
+/* GRAMMAR TABS */
+.grammar-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.grammar-tab {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--gray-200);
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.82rem;
+  transition: all 0.2s;
+}
+
+.grammar-tab:hover {
+  border-color: var(--primary-light);
+}
+
+.grammar-tab.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.grammar-content {
+  display: none;
+}
+
+.grammar-content.active {
+  display: block;
+}
+
+/* SPEAKING CARD EXPANSION */
+.speaking-card {
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.speaking-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.speaking-card.expanded {
+  grid-column: span 1;
+}
+
+.card-all-hints {
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  text-align: left;
+}
+
+.hint-item {
+  padding: 0.3rem 0;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
 /* RESPONSIVE */
 @media (max-width: 900px) {
   #sidebar {

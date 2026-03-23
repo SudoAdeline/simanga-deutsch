@@ -500,6 +500,39 @@ const sentencePuzzles = [
   {words:["Kannst","du","mir","bitte","helfen","?"],correct:"Kannst du mir bitte helfen?"},
   {words:["Am","Wochenende","fahren","wir","an","die","Ostsee"],correct:"Am Wochenende fahren wir an die Ostsee."},
   {words:["Gestern","bin","ich","ins","Theater","gegangen"],correct:"Gestern bin ich ins Theater gegangen."},
+  // W-Fragen
+  {words:["Wo","wohnst","du","?"],correct:"Wo wohnst du?"},
+  {words:["Wann","hast","du","Geburtstag","?"],correct:"Wann hast du Geburtstag?"},
+  {words:["Warum","lernst","du","Deutsch","?"],correct:"Warum lernst du Deutsch?"},
+  {words:["Wie","lange","wohnst","du","schon","hier","?"],correct:"Wie lange wohnst du schon hier?"},
+  {words:["Wohin","fährst","du","im","Urlaub","?"],correct:"Wohin fährst du im Urlaub?"},
+  // TeKaMoLo
+  {words:["Ich","fahre","morgen","mit","dem","Zug","nach","Berlin"],correct:"Ich fahre morgen mit dem Zug nach Berlin."},
+  {words:["Er","geht","jeden","Tag","schnell","zum","Bahnhof"],correct:"Er geht jeden Tag schnell zum Bahnhof."},
+  // Futur I
+  {words:["Ich","werde","morgen","Deutsch","lernen"],correct:"Ich werde morgen Deutsch lernen."},
+  {words:["Wir","werden","nächstes","Jahr","nach","Berlin","fahren"],correct:"Wir werden nächstes Jahr nach Berlin fahren."},
+  // Modal + question
+  {words:["Darf","ich","hier","sitzen","?"],correct:"Darf ich hier sitzen?"},
+  {words:["Wir","wollen","am","Samstag","ins","Kino","gehen"],correct:"Wir wollen am Samstag ins Kino gehen."},
+];
+
+const grammarQuizData = [
+  {q:"Welcher Satz benutzt Futur I richtig?",options:["Ich werde morgen lernen.","Ich werde morgen gelernt.","Ich werden morgen lernen.","Morgen ich werde lernen."],correct:0},
+  {q:"\"Ich fahre mit ___ Bus.\" - Welcher Artikel?",options:["dem","den","der","das"],correct:0},
+  {q:"\"Das Geschenk ist für ___ Lehrer.\" - Welcher Artikel?",options:["den","dem","der","des"],correct:0},
+  {q:"Welches Verb benutzt \"sein\" im Perfekt?",options:["gehen","kaufen","machen","trinken"],correct:0},
+  {q:"\"Ich bleibe zu Hause, weil ich krank ___.\"",options:["bin","ist","sein","bist"],correct:0},
+  {q:"\"ein gut___ Freund\" - Welche Endung? (Nominativ Maskulin)",options:["-er","-e","-es","-en"],correct:0},
+  {q:"\"Ich muss morgen früh ___.\"",options:["aufstehen","aufstehe","stehe auf","stehen auf"],correct:0},
+  {q:"Welche Reihenfolge ist richtig? (TeKaMoLo)",options:["Ich fahre morgen mit dem Zug nach Berlin.","Ich fahre nach Berlin morgen mit dem Zug.","Ich fahre mit dem Zug nach Berlin morgen.","Nach Berlin fahre ich mit dem Zug morgen."],correct:0},
+  {q:"\"Ich komme ___ der Schweiz.\" - Welche Präposition?",options:["aus","von","nach","mit"],correct:0},
+  {q:"\"___ lernst du Deutsch?\" - Welches Fragewort? (= Why)",options:["Warum","Wann","Wo","Wie"],correct:0},
+  {q:"\"Sie wohnt ___ einem Jahr in Berlin.\" - Welche Präposition?",options:["seit","vor","nach","für"],correct:0},
+  {q:"\"das neu___ Auto\" - Welche Endung? (Nominativ, bestimmter Artikel)",options:["-e","-es","-er","-en"],correct:0},
+  {q:"\"Ich ___ gestern ins Kino gegangen.\" - haben oder sein?",options:["bin","habe","ist","hat"],correct:0},
+  {q:"\"Du ___ hier nicht rauchen.\" - Welches Modalverb? (= not allowed)",options:["darfst","kannst","musst","willst"],correct:0},
+  {q:"\"Wir werden nächstes Jahr nach Berlin ___.\"",options:["fahren","gefahren","fährt","fuhr"],correct:0},
 ];
 
 // ==========================================
@@ -564,9 +597,22 @@ const speakingTopics = [
 ];
 
 const speakingCardTopics = [
-  "Geburtstag?","Wohnort?","Beruf?","Hobby?","Familie?","Lieblingsessen?",
-  "Sprachen?","Haustiere?","Reisen?","Sport?","Musik?","Schule/Studium?",
-  "Freizeit?","Wohnung?","Morgenroutine?","Lieblingsfilm?"
+  {topic:"Geburtstag?", hints:["Wann hast du Geburtstag?","Wie feierst du deinen Geburtstag?","Was wünschst du dir zum Geburtstag?"]},
+  {topic:"Wohnort?", hints:["Wo wohnst du?","Wie lange wohnst du schon dort?","Wie ist dein Wohnort?"]},
+  {topic:"Beruf?", hints:["Was bist du von Beruf?","Wo arbeitest du?","Wie lange arbeitest du schon dort?"]},
+  {topic:"Hobby?", hints:["Was machst du in deiner Freizeit?","Wie oft machst du das?","Seit wann machst du das?"]},
+  {topic:"Familie?", hints:["Wie groß ist deine Familie?","Wo wohnt deine Familie?","Was machen deine Eltern beruflich?"]},
+  {topic:"Lieblingsessen?", hints:["Was isst du am liebsten?","Wer kocht bei dir zu Hause?","Welches Restaurant magst du?"]},
+  {topic:"Sprachen?", hints:["Welche Sprachen sprichst du?","Wo hast du Deutsch gelernt?","Warum lernst du Deutsch?"]},
+  {topic:"Haustiere?", hints:["Hast du ein Haustier?","Welches Tier möchtest du haben?","Wie heißt dein Haustier?"]},
+  {topic:"Reisen?", hints:["Wohin reist du gern?","Wann hast du die letzte Reise gemacht?","Mit wem reist du am liebsten?"]},
+  {topic:"Sport?", hints:["Welchen Sport machst du?","Wie oft machst du Sport?","Wo machst du Sport?"]},
+  {topic:"Musik?", hints:["Welche Musik hörst du gern?","Spielst du ein Instrument?","Wer ist dein Lieblingssänger?"]},
+  {topic:"Schule/Studium?", hints:["Was studierst du? / Wo gehst du zur Schule?","Welche Fächer magst du?","Wie kommst du zur Schule?"]},
+  {topic:"Freizeit?", hints:["Was machst du am Wochenende?","Mit wem verbringst du deine Freizeit?","Wie viel Freizeit hast du?"]},
+  {topic:"Wohnung?", hints:["Wie ist deine Wohnung?","Wie viele Zimmer hat sie?","Was gefällt dir an deiner Wohnung?"]},
+  {topic:"Morgenroutine?", hints:["Wann stehst du auf?","Was machst du morgens zuerst?","Wie kommst du zur Arbeit/Schule?"]},
+  {topic:"Lieblingsfilm?", hints:["Was ist dein Lieblingsfilm?","Warum gefällt dir der Film?","Wie oft gehst du ins Kino?"]}
 ];
 
 const planningScenarios = [
@@ -626,6 +672,9 @@ document.addEventListener('DOMContentLoaded', () => {
   loadQuiz();
   startMatchGame();
   loadWordlist();
+  // Hook up vocab filters to refresh all vocab views
+  document.getElementById('vocab-category').addEventListener('change', refreshVocabViews);
+  document.getElementById('vocab-unlearned').addEventListener('change', refreshVocabViews);
   generateSpeakingCards();
   loadVerbOverview();
   newFunFact();
@@ -634,6 +683,8 @@ document.addEventListener('DOMContentLoaded', () => {
   loadPhrases('greetings');
   loadWritingTask('informal');
   newSentencePuzzle();
+  setupGrammarTabs();
+  newGrammarQuiz();
   updateStreak();
   setInterval(updateCountdown, 60000);
 
@@ -685,6 +736,17 @@ function setupVerbTabs() {
       document.querySelectorAll('.verb-content').forEach(c => c.classList.remove('active'));
       tab.classList.add('active');
       document.getElementById(tab.dataset.verbtab).classList.add('active');
+    });
+  });
+}
+
+function setupGrammarTabs() {
+  document.querySelectorAll('.grammar-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.grammar-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.grammar-content').forEach(c => c.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.grammartab).classList.add('active');
     });
   });
 }
@@ -789,6 +851,13 @@ function getFilteredVocab() {
   return filtered;
 }
 
+function refreshVocabViews() {
+  loadFlashcards();
+  loadQuiz();
+  startMatchGame();
+  filterWordlist();
+}
+
 function loadFlashcards() {
   flashcardDeck = shuffle([...getFilteredVocab()]);
   currentFlashcardIndex = 0;
@@ -812,18 +881,48 @@ function flipCard() {
 
 function rateCard(score) {
   if (flashcardDeck.length === 0) return;
-  const card = flashcardDeck[currentFlashcardIndex % flashcardDeck.length];
+  const idx = currentFlashcardIndex % flashcardDeck.length;
+  const card = flashcardDeck[idx];
   vocabProgress[card.de] = score;
   saveProgress();
-  currentFlashcardIndex++;
-  if (currentFlashcardIndex >= flashcardDeck.length) {
-    currentFlashcardIndex = 0;
-    flashcardDeck = shuffle(flashcardDeck.filter(c => (vocabProgress[c.de] || 0) < 5));
+
+  if (score >= 5) {
+    // Mastered: remove from deck
+    flashcardDeck.splice(idx, 1);
     if (flashcardDeck.length === 0) {
       document.getElementById('fc-word').textContent = 'Alle geschafft! 🎉';
+      document.getElementById('fc-translation').textContent = '';
+      document.getElementById('fc-example').textContent = '';
+      document.getElementById('fc-current').textContent = '0';
+      document.getElementById('fc-total').textContent = '0';
       return;
     }
+    if (currentFlashcardIndex >= flashcardDeck.length) {
+      currentFlashcardIndex = 0;
+    }
+  } else if (score <= 1) {
+    // Nochmal: move card to a random position later in the deck
+    flashcardDeck.splice(idx, 1);
+    const insertPos = Math.min(idx + 3 + Math.floor(Math.random() * 3), flashcardDeck.length);
+    flashcardDeck.splice(insertPos, 0, card);
+    if (currentFlashcardIndex >= flashcardDeck.length) {
+      currentFlashcardIndex = 0;
+    }
+  } else {
+    // Okay: move to next card normally
+    currentFlashcardIndex++;
+    if (currentFlashcardIndex >= flashcardDeck.length) {
+      currentFlashcardIndex = 0;
+      flashcardDeck = shuffle(flashcardDeck.filter(c => (vocabProgress[c.de] || 0) < 5));
+      if (flashcardDeck.length === 0) {
+        document.getElementById('fc-word').textContent = 'Alle geschafft! 🎉';
+        document.getElementById('fc-translation').textContent = '';
+        document.getElementById('fc-example').textContent = '';
+        return;
+      }
+    }
   }
+  document.getElementById('fc-total').textContent = flashcardDeck.length;
   showFlashcard();
 }
 
@@ -932,27 +1031,28 @@ function handleMatchClick(div) {
 // WORDLIST
 // ==========================================
 function loadWordlist() {
-  const list = document.getElementById('wordlist-table');
-  list.innerHTML = '';
-  vocabData.forEach(v => {
-    const entry = document.createElement('div');
-    entry.className = 'wordlist-entry';
-    entry.innerHTML = `<span class="de">${v.de}</span><span class="en">${v.en}</span>`;
-    list.appendChild(entry);
-  });
+  filterWordlist();
 }
 
 function filterWordlist() {
-  const query = document.getElementById('wordlist-search-input').value.toLowerCase();
+  const query = (document.getElementById('wordlist-search-input')?.value || '').toLowerCase();
+  const cat = document.getElementById('vocab-category').value;
+  const unlearnedOnly = document.getElementById('vocab-unlearned').checked;
   const list = document.getElementById('wordlist-table');
   list.innerHTML = '';
-  vocabData.filter(v => v.de.toLowerCase().includes(query) || v.en.toLowerCase().includes(query))
-    .forEach(v => {
-      const entry = document.createElement('div');
-      entry.className = 'wordlist-entry';
-      entry.innerHTML = `<span class="de">${v.de}</span><span class="en">${v.en}</span>`;
-      list.appendChild(entry);
-    });
+  vocabData.filter(v => {
+    const matchesSearch = !query || v.de.toLowerCase().includes(query) || v.en.toLowerCase().includes(query);
+    const matchesCat = cat === 'all' || v.cat === cat;
+    const matchesUnlearned = !unlearnedOnly || (vocabProgress[v.de] || 0) < 3;
+    return matchesSearch && matchesCat && matchesUnlearned;
+  }).forEach(v => {
+    const entry = document.createElement('div');
+    entry.className = 'wordlist-entry';
+    const progress = vocabProgress[v.de] || 0;
+    const statusIcon = progress >= 5 ? ' ✅' : progress >= 3 ? ' 🟡' : '';
+    entry.innerHTML = `<span class="de">${v.de}${statusIcon}</span><span class="en">${v.en}</span>`;
+    list.appendChild(entry);
+  });
 }
 
 // ==========================================
@@ -1150,15 +1250,27 @@ function generateSpeakingCards() {
   const cards = shuffle([...speakingCardTopics]).slice(0, 4);
   const container = document.getElementById('speaking-cards-1');
   container.innerHTML = '';
-  const hints = ["Wann...?","Wo...?","Was...?","Wie oft...?","Warum...?","Welche...?"];
-  cards.forEach(topic => {
+  cards.forEach(topicObj => {
+    const randomHint = topicObj.hints[Math.floor(Math.random()*topicObj.hints.length)];
     const card = document.createElement('div');
     card.className = 'speaking-card';
     card.innerHTML = `
       <h4>Fragen zur Person</h4>
-      <div class="card-topic">${topic}</div>
-      <div class="card-hint">${hints[Math.floor(Math.random()*hints.length)]}</div>
+      <div class="card-topic">${topicObj.topic}</div>
+      <div class="card-hint">${randomHint}</div>
     `;
+    card.addEventListener('click', () => {
+      if (card.classList.contains('expanded')) {
+        card.classList.remove('expanded');
+        card.querySelector('.card-all-hints')?.remove();
+      } else {
+        card.classList.add('expanded');
+        const hintsDiv = document.createElement('div');
+        hintsDiv.className = 'card-all-hints';
+        hintsDiv.innerHTML = topicObj.hints.map(h => `<div class="hint-item">${h}</div>`).join('');
+        card.appendChild(hintsDiv);
+      }
+    });
     container.appendChild(card);
   });
 }
@@ -1254,6 +1366,42 @@ function checkCompound() {
 function newMotivation() {
   document.getElementById('big-quote').textContent =
     motivationalQuotes[Math.floor(Math.random() * motivationalQuotes.length)];
+}
+
+// ==========================================
+// GRAMMAR QUIZ
+// ==========================================
+function newGrammarQuiz() {
+  const quiz = grammarQuizData[Math.floor(Math.random() * grammarQuizData.length)];
+  document.getElementById('grammar-quiz-prompt').textContent = quiz.q;
+  const optionsEl = document.getElementById('grammar-quiz-options');
+  optionsEl.innerHTML = '';
+  document.getElementById('grammar-quiz-feedback').textContent = '';
+
+  const shuffledIndices = shuffle([0,1,2,3]);
+  const correctAnswer = quiz.options[quiz.correct];
+
+  shuffledIndices.forEach(i => {
+    const div = document.createElement('div');
+    div.className = 'quiz-option';
+    div.textContent = quiz.options[i];
+    div.addEventListener('click', () => {
+      if (optionsEl.querySelector('.correct,.wrong')) return;
+      if (quiz.options[i] === correctAnswer) {
+        div.classList.add('correct');
+        document.getElementById('grammar-quiz-feedback').textContent = 'Richtig! ✅';
+        document.getElementById('grammar-quiz-feedback').style.color = 'var(--success)';
+      } else {
+        div.classList.add('wrong');
+        optionsEl.querySelectorAll('.quiz-option').forEach(o => {
+          if (o.textContent === correctAnswer) o.classList.add('correct');
+        });
+        document.getElementById('grammar-quiz-feedback').textContent = `Falsch! Richtig: ${correctAnswer}`;
+        document.getElementById('grammar-quiz-feedback').style.color = 'var(--danger)';
+      }
+    });
+    optionsEl.appendChild(div);
+  });
 }
 
 // ==========================================
