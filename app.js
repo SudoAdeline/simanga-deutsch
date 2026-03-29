@@ -638,6 +638,135 @@ const writingTasks = {
 };
 
 // ==========================================
+// LEVEL 2 EXERCISE DATA
+// ==========================================
+const level2Data = {
+  negation: [
+    {sentence:"Ich habe ___ Auto.", answer:"kein", options:["kein","nicht"], hint:"Auto = Nomen ohne Artikel → kein!"},
+    {sentence:"Das ist ___ richtig.", answer:"nicht", options:["kein","nicht"], hint:"richtig = Adjektiv → nicht!"},
+    {sentence:"Er hat ___ Geschwister.", answer:"keine", options:["keine","nicht"], hint:"Geschwister = Plural-Nomen → keine!"},
+    {sentence:"Ich verstehe das ___.", answer:"nicht", options:["kein","nicht"], hint:"verstehen = Verb → nicht!"},
+    {sentence:"Sie trinkt ___ Kaffee.", answer:"keinen", options:["keinen","nicht"], hint:"Kaffee = Maskulin Akkusativ ohne Artikel → keinen!"},
+    {sentence:"Wir haben ___ Zeit.", answer:"keine", options:["keine","nicht"], hint:"Zeit = Feminin-Nomen ohne Artikel → keine!"},
+    {sentence:"Das Essen schmeckt ___ gut.", answer:"nicht", options:["kein","nicht"], hint:"gut = Adjektiv → nicht!"},
+    {sentence:"Ich kenne ___ Lehrer hier.", answer:"keinen", options:["keinen","nicht"], hint:"Lehrer = Maskulin Akkusativ → keinen!"},
+    {sentence:"Er kommt heute ___.", answer:"nicht", options:["kein","nicht"], hint:"kommt = Verb wird negiert → nicht!"},
+    {sentence:"Hier gibt es ___ Supermarkt.", answer:"keinen", options:["keinen","nicht"], hint:"Supermarkt = Maskulin Akk. Nomen → keinen!"},
+    {sentence:"Das ist ___ mein Buch.", answer:"nicht", options:["kein","nicht"], hint:"mein = Possessiv mit bestimmtem Bezug → nicht!"},
+    {sentence:"Sie hat ___ Kinder.", answer:"keine", options:["keine","nicht"], hint:"Kinder = Plural-Nomen → keine!"},
+  ],
+  conjunction: [
+    {sentence:"Ich glaube, ___ er morgen kommt.", answer:"dass", options:["dass","wie","weil"], hint:"Meinung/Glaube weitergeben → dass"},
+    {sentence:"Ich bleibe zu Hause, ___ ich krank bin.", answer:"weil", options:["dass","wie","weil"], hint:"Grund angeben → weil"},
+    {sentence:"Weißt du, ___ spät es ist?", answer:"wie", options:["dass","wie","weil"], hint:"Frage nach Art/Weise → wie"},
+    {sentence:"Er sagt, ___ er keine Zeit hat.", answer:"dass", options:["dass","wie","weil"], hint:"Aussage weitergeben → dass"},
+    {sentence:"Ich weiß nicht, ___ das funktioniert.", answer:"wie", options:["dass","wie","weil"], hint:"Frage nach dem 'How' → wie"},
+    {sentence:"___ es regnet, bleibe ich zu Hause.", answer:"Wenn", options:["Wenn","Dass","Weil"], hint:"Bedingung → wenn"},
+    {sentence:"Sie lernt Deutsch, ___ sie in Berlin arbeiten möchte.", answer:"weil", options:["dass","wie","weil"], hint:"Grund/Ursache → weil"},
+    {sentence:"Ich finde, ___ Deutsch eine schöne Sprache ist.", answer:"dass", options:["dass","wie","weil"], hint:"Meinung → dass"},
+    {sentence:"Er ist so groß ___ sein Vater.", answer:"wie", options:["dass","wie","weil"], hint:"Vergleich (so...wie) → wie"},
+    {sentence:"Ich bin froh, ___ du da bist.", answer:"dass", options:["dass","wie","weil"], hint:"Gefühl + Nebensatz → dass"},
+  ],
+  pronoun: [
+    {sentence:"Kannst du ___ helfen? (ich)", answer:"mir", options:["mich","mir","ich"], hint:"helfen braucht Dativ → mir!"},
+    {sentence:"Ich sehe ___ nicht. (du)", answer:"dich", options:["dich","dir","du"], hint:"sehen braucht Akkusativ → dich!"},
+    {sentence:"Gehört das Buch ___? (er)", answer:"ihm", options:["ihn","ihm","er"], hint:"gehören braucht Dativ → ihm!"},
+    {sentence:"Ich rufe ___ morgen an. (du)", answer:"dich", options:["dich","dir","du"], hint:"anrufen braucht Akkusativ → dich!"},
+    {sentence:"Das Essen schmeckt ___ gut. (wir)", answer:"uns", options:["wir","uns","unser"], hint:"schmecken braucht Dativ → uns!"},
+    {sentence:"Kann ich ___ etwas fragen? (Sie)", answer:"Sie", options:["Sie","Ihnen","Ihr"], hint:"fragen braucht Akkusativ → Sie!"},
+    {sentence:"Ich danke ___ sehr! (Sie formal)", answer:"Ihnen", options:["Sie","Ihnen","Ihr"], hint:"danken braucht Dativ → Ihnen!"},
+    {sentence:"Er gibt ___ das Buch. (sie, she)", answer:"ihr", options:["sie","ihr","ihre"], hint:"geben + Dativ (wem?) → ihr!"},
+    {sentence:"Wir besuchen ___ am Sonntag. (sie, them)", answer:"sie", options:["sie","ihnen","ihr"], hint:"besuchen braucht Akkusativ → sie!"},
+    {sentence:"Antworte ___ bitte! (ich)", answer:"mir", options:["mich","mir","ich"], hint:"antworten braucht Dativ → mir!"},
+    {sentence:"Siehst du ___? (wir)", answer:"uns", options:["wir","uns","unser"], hint:"sehen braucht Akkusativ → uns!"},
+    {sentence:"Ich schreibe ___ eine E-Mail. (er)", answer:"ihm", options:["ihn","ihm","er"], hint:"schreiben + Dativ (wem?) → ihm!"},
+  ],
+  possessive: [
+    {sentence:"Ist das ___ Auto? (du → Sie)", informal:"dein", answer:"Ihr", hint:"du → Sie: dein → Ihr"},
+    {sentence:"Ich sehe ___ Schwester. (du → Sie)", informal:"deine", answer:"Ihre", hint:"du → Sie: deine → Ihre"},
+    {sentence:"Kommt ___ Mann auch? (du → Sie)", informal:"dein", answer:"Ihr", hint:"du → Sie: dein → Ihr"},
+    {sentence:"Wo ist ___ Tasche? (du → Sie)", informal:"deine", answer:"Ihre", hint:"du → Sie: deine → Ihre"},
+    {sentence:"Das ist ___ Bruder. (er)", answer:"sein", options:["sein","ihr","mein"], hint:"er → sein"},
+    {sentence:"Ich mag ___ Hund. (sie, she)", answer:"ihren", options:["seinen","ihren","Ihren"], hint:"sie (she) + Akk. Mask. → ihren"},
+    {sentence:"___ Kinder sind in der Schule. (wir)", answer:"Unsere", options:["Unsere","Eure","Ihre"], hint:"wir → unsere (Plural)"},
+    {sentence:"Wo wohnen ___ Eltern? (Sie formal)", answer:"Ihre", options:["deine","Ihre","eure"], hint:"Sie (formal) → Ihre"},
+    {sentence:"Er liebt ___ Familie. (er)", answer:"seine", options:["seine","ihre","meine"], hint:"er → seine (Fem.)"},
+    {sentence:"Gibst du mir ___ Nummer? (du → Sie)", informal:"deine", answer:"Ihre", hint:"du → Sie: deine → Ihre"},
+  ],
+  question: [
+    {sentence:"___ heißen Sie?", answer:"Wie", options:["Wie","Was","Wo"], hint:"Name/Art → Wie"},
+    {sentence:"___ kommen Sie?", answer:"Woher", options:["Woher","Wo","Wohin"], hint:"Herkunft → Woher"},
+    {sentence:"___ kostet das Brot?", answer:"Wie viel", options:["Wie viel","Wie viele","Was"], hint:"Preis (uncountable) → Wie viel"},
+    {sentence:"___ Sprachen sprichst du?", answer:"Wie viele", options:["Wie viel","Wie viele","Welche"], hint:"Anzahl (countable) → Wie viele"},
+    {sentence:"___ gehört das Buch?", answer:"Wem", options:["Wem","Wen","Wer"], hint:"Dativ-Frage → Wem"},
+    {sentence:"___ Film möchtest du sehen?", answer:"Welchen", options:["Welchen","Was","Wie"], hint:"Auswahl (Akk. Mask.) → Welchen"},
+    {sentence:"___ ist dein Lieblingsessen?", answer:"Was", options:["Was","Wie","Welches"], hint:"Sache/Ding → Was"},
+    {sentence:"___ fährst du im Urlaub?", answer:"Wohin", options:["Wo","Wohin","Woher"], hint:"Richtung/Ziel → Wohin"},
+    {sentence:"___ lernst du Deutsch?", answer:"Warum", options:["Warum","Wie","Wann"], hint:"Grund → Warum"},
+    {sentence:"___ Uhr ist es?", answer:"Wie viel", options:["Wie viel","Wie viele","Wann"], hint:"Uhrzeit → Wie viel Uhr"},
+    {sentence:"___ hast du heute angerufen?", answer:"Wen", options:["Wen","Wem","Wer"], hint:"Akkusativ-Frage → Wen"},
+    {sentence:"___ kommt der nächste Bus?", answer:"Wann", options:["Wann","Wie","Wo"], hint:"Zeitpunkt → Wann"},
+  ],
+  seinhaben: [
+    {sentence:"Ich ___ müde. (sein, Präsens)", answer:"bin", hint:"ich + sein = bin"},
+    {sentence:"Er ___ einen Hund. (haben, Präsens)", answer:"hat", hint:"er + haben = hat"},
+    {sentence:"Wir ___ gestern im Kino. (sein, Prät.)", answer:"waren", hint:"wir + sein (Prät.) = waren"},
+    {sentence:"Du ___ keine Zeit. (haben, Präsens)", answer:"hast", hint:"du + haben = hast"},
+    {sentence:"Sie ___ Ärztin. (sein, Präsens)", answer:"ist", hint:"sie (she) + sein = ist"},
+    {sentence:"Ihr ___ Glück gehabt! (haben, Präsens)", answer:"habt", hint:"ihr + haben = habt"},
+    {sentence:"Ich ___ gestern krank. (sein, Prät.)", answer:"war", hint:"ich + sein (Prät.) = war"},
+    {sentence:"Er ___ letzte Woche keine Zeit. (haben, Prät.)", answer:"hatte", hint:"er + haben (Prät.) = hatte"},
+    {sentence:"___ du schon in Berlin? (sein, Präsens)", answer:"Bist", hint:"du + sein = bist"},
+    {sentence:"Wir ___ zwei Katzen. (haben, Präsens)", answer:"haben", hint:"wir + haben = haben"},
+    {sentence:"___ ihr gestern zu Hause? (sein, Prät.)", answer:"Wart", hint:"ihr + sein (Prät.) = wart"},
+    {sentence:"Sie (formal) ___ sehr freundlich. (sein, Präsens)", answer:"sind", hint:"Sie (formal) + sein = sind"},
+    {sentence:"Ich ___ früher einen Garten. (haben, Prät.)", answer:"hatte", hint:"ich + haben (Prät.) = hatte"},
+    {sentence:"Du ___ gestern nicht da. (sein, Prät.)", answer:"warst", hint:"du + sein (Prät.) = warst"},
+  ],
+  time: [
+    {sentence:"___ Montag gehe ich ins Kino. (on Monday)", answer:"Am", options:["Am","Im","Um"], hint:"Tag → am"},
+    {sentence:"Ich stehe ___ 7 Uhr auf. (at 7 o'clock)", answer:"um", options:["um","am","im"], hint:"Uhrzeit → um"},
+    {sentence:"___ Januar ist es kalt. (in January)", answer:"Im", options:["Im","Am","Um"], hint:"Monat → im"},
+    {sentence:"Wir treffen uns ___ Abend. (in the evening)", answer:"am", options:["am","im","um"], hint:"Tageszeit → am"},
+    {sentence:"___ Wochenende fahren wir weg. (on the weekend)", answer:"Am", options:["Am","Im","Um"], hint:"Wochenende → am"},
+    {sentence:"Er kommt ___ Freitag. (on Friday)", answer:"am", options:["am","im","um"], hint:"Wochentag → am"},
+    {sentence:"Der Kurs beginnt ___ September. (in September)", answer:"im", options:["im","am","um"], hint:"Monat → im"},
+    {sentence:"Das Meeting ist ___ 14:30. (at 2:30pm)", answer:"um", options:["um","am","im"], hint:"Uhrzeit → um"},
+  ],
+  pronunciation: [
+    {word:"Sp___l", answer:"ie", display:"Sp_el (game)", options:["ie","ei"], hint:"Spiel [ʃpiːl] = long 'ee' sound → ie"},
+    {word:"kl___n", answer:"ei", display:"kl_n (small)", options:["ie","ei"], hint:"klein [klaɪn] = 'eye' sound → ei"},
+    {word:"l___ben", answer:"ie", display:"l_ben (to love)", options:["ie","ei"], hint:"lieben [liːbən] = long 'ee' sound → ie"},
+    {word:"schr___ben", answer:"ei", display:"schr_ben (to write)", options:["ie","ei"], hint:"schreiben [ʃʀaɪbən] = 'eye' sound → ei"},
+    {word:"v___l", answer:"ie", display:"v_l (much)", options:["ie","ei"], hint:"viel [fiːl] = long 'ee' sound → ie"},
+    {word:"w___l", answer:"ei", display:"w_l (because)", options:["ie","ei"], hint:"weil [vaɪl] = 'eye' sound → ei"},
+    {word:"B___r", answer:"ie", display:"B_r (beer)", options:["ie","ei"], hint:"Bier [biːɐ] = long 'ee' sound → ie"},
+    {word:"R___s", answer:"ei", display:"R_s (rice)", options:["ie","ei"], hint:"Reis [ʀaɪs] = 'eye' sound → ei"},
+    {word:"D___nstag", answer:"ie", display:"D_nstag (Tuesday)", options:["ie","ei"], hint:"Dienstag [diːnstaːk] = long 'ee' → ie"},
+    {word:"Fr___tag", answer:"ei", display:"Fr_tag (Friday)", options:["ie","ei"], hint:"Freitag [fʀaɪtaːk] = 'eye' → ei"},
+    {word:"h___ßen", answer:"ei", display:"h_ßen (to be called)", options:["ie","ei"], hint:"heißen [haɪsən] = 'eye' → ei"},
+    {word:"fl___gen", answer:"ie", display:"fl_gen (to fly)", options:["ie","ei"], hint:"fliegen [fliːgən] = long 'ee' → ie"},
+    {word:"arb___ten", answer:"ei", display:"arb_ten (to work)", options:["ie","ei"], hint:"arbeiten [aʁbaɪtən] = 'eye' → ei"},
+    {word:"w___der", answer:"ie", display:"w_der (again)", options:["ie","ei"], hint:"wieder [viːdɐ] = long 'ee' → ie"},
+  ],
+  errorCorrection: [
+    {wrong:"Ich habe nicht Geld.", correct:"Ich habe kein Geld.", rule:"Nomen ohne Artikel → kein, nicht nicht!"},
+    {wrong:"Er sagt, weil er kommt.", correct:"Er sagt, dass er kommt.", rule:"Aussage weitergeben → dass, nicht weil!"},
+    {wrong:"Ich helfe dich.", correct:"Ich helfe dir.", rule:"helfen braucht Dativ → dir, nicht dich!"},
+    {wrong:"Am 8 Uhr stehe ich auf.", correct:"Um 8 Uhr stehe ich auf.", rule:"Uhrzeit → um, nicht am!"},
+    {wrong:"Ich werde morgen gelernt.", correct:"Ich werde morgen lernen.", rule:"Futur I = werden + Infinitiv (nicht Partizip)!"},
+    {wrong:"Weil ich bin krank, bleibe ich zu Hause.", correct:"Weil ich krank bin, bleibe ich zu Hause.", rule:"Nach weil geht das Verb ans ENDE!"},
+    {wrong:"Kannst du mich helfen?", correct:"Kannst du mir helfen?", rule:"helfen = Dativ-Verb → mir!"},
+    {wrong:"Wie viele kostet das?", correct:"Wie viel kostet das?", rule:"Preis = uncountable → Wie viel (nicht viele)!"},
+    {wrong:"Sie hat nicht Kinder.", correct:"Sie hat keine Kinder.", rule:"Plural-Nomen negieren → keine!"},
+    {wrong:"Im Montag gehe ich ins Kino.", correct:"Am Montag gehe ich ins Kino.", rule:"Wochentag → am (nicht im)!"},
+  ]
+};
+
+// User-added vocabulary (persisted in localStorage)
+let userVocab = JSON.parse(localStorage.getItem('simanga_user_vocab') || '[]');
+
+// ==========================================
 // STATE
 // ==========================================
 let currentFlashcardIndex = 0;
@@ -685,6 +814,7 @@ document.addEventListener('DOMContentLoaded', () => {
   newSentencePuzzle();
   setupGrammarTabs();
   newGrammarQuiz();
+  initAllLevel2();
   updateStreak();
   setInterval(updateCountdown, 60000);
 
@@ -1366,6 +1496,286 @@ function checkCompound() {
 function newMotivation() {
   document.getElementById('big-quote').textContent =
     motivationalQuotes[Math.floor(Math.random() * motivationalQuotes.length)];
+}
+
+// ==========================================
+// LEVEL 2 GRAMMAR TRAINER
+// ==========================================
+function setupGTTabs() {
+  document.querySelectorAll('.gt-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.gt-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.gt-content').forEach(c => c.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.gttab).classList.add('active');
+    });
+  });
+}
+
+function loadLevel2Exercise(type) {
+  if (type === 'seinhalten') type = 'seinhaben'; // fix typo alias
+  const container = document.getElementById(type + '-exercise');
+  if (!container) return;
+  container.innerHTML = '';
+  const feedbackEl = document.getElementById(type + '-feedback');
+  if (feedbackEl) feedbackEl.innerHTML = '';
+
+  if (type === 'negation') {
+    const items = shuffle([...level2Data.negation]).slice(0, 5);
+    items.forEach((item, i) => {
+      const div = document.createElement('div');
+      div.className = 'l2-exercise-item';
+      div.dataset.answer = item.answer;
+      div.dataset.hint = item.hint;
+      const parts = item.sentence.split('___');
+      div.innerHTML = `
+        <span class="l2-sentence">${parts[0]}<select class="l2-select" data-idx="${i}">
+          <option value="">---</option>
+          ${shuffle(item.options).map(o => `<option value="${o}">${o}</option>`).join('')}
+        </select>${parts[1]}</span>
+      `;
+      container.appendChild(div);
+    });
+  }
+  else if (type === 'conjunction') {
+    const items = shuffle([...level2Data.conjunction]).slice(0, 5);
+    items.forEach((item, i) => {
+      const div = document.createElement('div');
+      div.className = 'l2-exercise-item';
+      div.dataset.answer = item.answer;
+      div.dataset.hint = item.hint;
+      const parts = item.sentence.split('___');
+      div.innerHTML = `
+        <span class="l2-sentence">${parts[0]}<select class="l2-select" data-idx="${i}">
+          <option value="">---</option>
+          ${shuffle(item.options).map(o => `<option value="${o}">${o}</option>`).join('')}
+        </select>${parts[1]}</span>
+      `;
+      container.appendChild(div);
+    });
+  }
+  else if (type === 'pronoun') {
+    const items = shuffle([...level2Data.pronoun]).slice(0, 5);
+    items.forEach((item, i) => {
+      const div = document.createElement('div');
+      div.className = 'l2-exercise-item';
+      div.dataset.answer = item.answer;
+      div.dataset.hint = item.hint;
+      const parts = item.sentence.split('___');
+      div.innerHTML = `
+        <span class="l2-sentence">${parts[0]}<select class="l2-select" data-idx="${i}">
+          <option value="">---</option>
+          ${shuffle(item.options).map(o => `<option value="${o}">${o}</option>`).join('')}
+        </select>${parts[1]}</span>
+      `;
+      container.appendChild(div);
+    });
+  }
+  else if (type === 'possessive') {
+    const items = shuffle([...level2Data.possessive]).slice(0, 5);
+    items.forEach((item, i) => {
+      const div = document.createElement('div');
+      div.className = 'l2-exercise-item';
+      div.dataset.answer = item.answer;
+      div.dataset.hint = item.hint;
+      if (item.options) {
+        const parts = item.sentence.split('___');
+        div.innerHTML = `
+          <span class="l2-sentence">${parts[0]}<select class="l2-select" data-idx="${i}">
+            <option value="">---</option>
+            ${shuffle(item.options).map(o => `<option value="${o}">${o}</option>`).join('')}
+          </select>${parts[1]}</span>
+        `;
+      } else {
+        div.innerHTML = `
+          <span class="l2-sentence">${item.sentence.replace('___', `<input type="text" class="l2-input" data-idx="${i}" placeholder="${item.informal} → ?" size="8">`)}</span>
+          <span class="l2-informal-hint">Informell: ${item.informal}</span>
+        `;
+      }
+      container.appendChild(div);
+    });
+  }
+  else if (type === 'question') {
+    const items = shuffle([...level2Data.question]).slice(0, 6);
+    items.forEach((item, i) => {
+      const div = document.createElement('div');
+      div.className = 'l2-exercise-item';
+      div.dataset.answer = item.answer;
+      div.dataset.hint = item.hint;
+      const parts = item.sentence.split('___');
+      div.innerHTML = `
+        <span class="l2-sentence">${parts[0]}<select class="l2-select" data-idx="${i}">
+          <option value="">---</option>
+          ${shuffle(item.options).map(o => `<option value="${o}">${o}</option>`).join('')}
+        </select>${parts[1]}</span>
+      `;
+      container.appendChild(div);
+    });
+  }
+  else if (type === 'seinhaben') {
+    const items = shuffle([...level2Data.seinhaben]).slice(0, 6);
+    items.forEach((item, i) => {
+      const div = document.createElement('div');
+      div.className = 'l2-exercise-item';
+      div.dataset.answer = item.answer;
+      div.dataset.hint = item.hint;
+      div.innerHTML = `
+        <span class="l2-sentence">${item.sentence.replace('___', `<input type="text" class="l2-input" data-idx="${i}" placeholder="..." size="10">`)}</span>
+      `;
+      container.appendChild(div);
+    });
+  }
+  else if (type === 'time') {
+    const items = shuffle([...level2Data.time]).slice(0, 5);
+    items.forEach((item, i) => {
+      const div = document.createElement('div');
+      div.className = 'l2-exercise-item';
+      div.dataset.answer = item.answer;
+      div.dataset.hint = item.hint;
+      const parts = item.sentence.split('___');
+      div.innerHTML = `
+        <span class="l2-sentence">${parts[0]}<select class="l2-select" data-idx="${i}">
+          <option value="">---</option>
+          ${shuffle(item.options).map(o => `<option value="${o}">${o}</option>`).join('')}
+        </select>${parts[1]}</span>
+      `;
+      container.appendChild(div);
+    });
+  }
+  else if (type === 'pronunciation') {
+    const items = shuffle([...level2Data.pronunciation]).slice(0, 6);
+    items.forEach((item, i) => {
+      const div = document.createElement('div');
+      div.className = 'l2-exercise-item';
+      div.dataset.answer = item.answer;
+      div.dataset.hint = item.hint;
+      div.innerHTML = `
+        <span class="l2-sentence l2-pronunciation">${item.display.replace('_', `<select class="l2-select" data-idx="${i}">
+          <option value="">?</option>
+          ${item.options.map(o => `<option value="${o}">${o}</option>`).join('')}
+        </select>`)}</span>
+      `;
+      container.appendChild(div);
+    });
+
+    // Add error correction bonus
+    const errors = shuffle([...level2Data.errorCorrection]).slice(0, 2);
+    const errorDiv = document.createElement('div');
+    errorDiv.style.marginTop = '1.5rem';
+    errorDiv.innerHTML = `<h4 style="margin-bottom:0.7rem">Fehlerkorrektur - Finde den Fehler!</h4>`;
+    errors.forEach((err, i) => {
+      const item = document.createElement('div');
+      item.className = 'l2-exercise-item l2-error-item';
+      item.dataset.answer = err.correct;
+      item.dataset.hint = err.rule;
+      item.innerHTML = `
+        <span class="l2-sentence" style="color:var(--danger)">❌ ${err.wrong}</span>
+        <input type="text" class="l2-input l2-error-input" data-idx="err${i}" placeholder="Korrektur..." style="width:100%;margin-top:0.4rem">
+      `;
+      errorDiv.appendChild(item);
+    });
+    container.appendChild(errorDiv);
+  }
+}
+
+function checkLevel2Exercise(type) {
+  if (type === 'seinhalten') type = 'seinhaben';
+  const container = document.getElementById(type + '-exercise');
+  if (!container) return;
+  const items = container.querySelectorAll('.l2-exercise-item');
+  let correct = 0;
+  let total = 0;
+  const hints = [];
+
+  items.forEach(item => {
+    const answer = item.dataset.answer;
+    if (!answer) return;
+    const select = item.querySelector('.l2-select');
+    const input = item.querySelector('.l2-input');
+    const userAnswer = select ? select.value : (input ? input.value.trim() : '');
+    total++;
+
+    item.classList.remove('l2-correct', 'l2-wrong');
+
+    // Handle error correction items differently
+    if (item.classList.contains('l2-error-item')) {
+      const errInput = item.querySelector('.l2-error-input');
+      if (errInput && errInput.value.trim().toLowerCase() === answer.toLowerCase()) {
+        item.classList.add('l2-correct');
+        correct++;
+      } else {
+        item.classList.add('l2-wrong');
+        hints.push(item.dataset.hint);
+      }
+      return;
+    }
+
+    if (userAnswer.toLowerCase() === answer.toLowerCase()) {
+      item.classList.add('l2-correct');
+      correct++;
+    } else {
+      item.classList.add('l2-wrong');
+      hints.push(item.dataset.hint);
+    }
+  });
+
+  const feedbackEl = document.getElementById(type + '-feedback');
+  if (!feedbackEl) return;
+  let html = `<strong>${correct}/${total} richtig!</strong> ${correct === total ? '🎉 Super!' : ''}`;
+  if (hints.length > 0) {
+    html += `<div class="l2-hints"><h4>💡 Tipps:</h4><ul>${hints.map(h => `<li>${h}</li>`).join('')}</ul></div>`;
+  }
+  feedbackEl.innerHTML = html;
+  feedbackEl.style.color = correct === total ? 'var(--success)' : 'var(--dark)';
+}
+
+function addUserVocab() {
+  const de = document.getElementById('uv-german').value.trim();
+  const en = document.getElementById('uv-english').value.trim();
+  const ex = document.getElementById('uv-example').value.trim();
+  if (!de || !en) return;
+  userVocab.push({de, en, ex: ex || ''});
+  localStorage.setItem('simanga_user_vocab', JSON.stringify(userVocab));
+  document.getElementById('uv-german').value = '';
+  document.getElementById('uv-english').value = '';
+  document.getElementById('uv-example').value = '';
+  renderUserVocab();
+}
+
+function deleteUserVocab(index) {
+  userVocab.splice(index, 1);
+  localStorage.setItem('simanga_user_vocab', JSON.stringify(userVocab));
+  renderUserVocab();
+}
+
+function renderUserVocab() {
+  const list = document.getElementById('user-vocab-list');
+  if (!list) return;
+  if (userVocab.length === 0) {
+    list.innerHTML = '<p style="color:var(--gray-400);font-size:0.85rem;padding:1rem">Noch keine eigenen Wörter. Füge oben welche hinzu!</p>';
+    return;
+  }
+  list.innerHTML = userVocab.map((v, i) => `
+    <div class="uv-item">
+      <span class="uv-de">${v.de}</span>
+      <span class="uv-en">${v.en}</span>
+      ${v.ex ? `<span class="uv-ex">${v.ex}</span>` : ''}
+      <button class="uv-delete" onclick="deleteUserVocab(${i})">✕</button>
+    </div>
+  `).join('');
+}
+
+function initAllLevel2() {
+  setupGTTabs();
+  loadLevel2Exercise('negation');
+  loadLevel2Exercise('conjunction');
+  loadLevel2Exercise('pronoun');
+  loadLevel2Exercise('possessive');
+  loadLevel2Exercise('question');
+  loadLevel2Exercise('seinhaben');
+  loadLevel2Exercise('time');
+  loadLevel2Exercise('pronunciation');
+  renderUserVocab();
 }
 
 // ==========================================
