@@ -1786,11 +1786,11 @@ body {
   border-color: var(--primary);
 }
 
-.grammar-content {
+#grammar .grammar-content {
   display: none;
 }
 
-.grammar-content.active {
+#grammar .grammar-content.active {
   display: block;
 }
 

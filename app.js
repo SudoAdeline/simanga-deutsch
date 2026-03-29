@@ -871,12 +871,18 @@ function setupVerbTabs() {
 }
 
 function setupGrammarTabs() {
-  document.querySelectorAll('.grammar-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      document.querySelectorAll('.grammar-tab').forEach(t => t.classList.remove('active'));
-      document.querySelectorAll('.grammar-content').forEach(c => c.classList.remove('active'));
+  const container = document.getElementById('grammar');
+  if (!container) return;
+  const tabs = container.querySelectorAll('.grammar-tab');
+  const contents = container.querySelectorAll('.grammar-content');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', (e) => {
+      e.stopPropagation();
+      tabs.forEach(t => t.classList.remove('active'));
+      contents.forEach(c => c.classList.remove('active'));
       tab.classList.add('active');
-      document.getElementById(tab.dataset.grammartab).classList.add('active');
+      const target = document.getElementById(tab.dataset.grammartab);
+      if (target) target.classList.add('active');
     });
   });
 }
@@ -1513,7 +1519,7 @@ function setupGTTabs() {
 }
 
 function loadLevel2Exercise(type) {
-  if (type === 'seinhalten') type = 'seinhaben'; // fix typo alias
+  if (type === 'seinhalten') type = 'seinhaben';
   const container = document.getElementById(type + '-exercise');
   if (!container) return;
   container.innerHTML = '';
