@@ -698,10 +698,10 @@
       </div>
 
       <div class="grammar-tabs">
-        <button class="grammar-tab active" data-grammartab="futur">Futur I</button>
-        <button class="grammar-tab" data-grammartab="modal">Modalverben</button>
-        <button class="grammar-tab" data-grammartab="cases">Fälle</button>
-        <button class="grammar-tab" data-grammartab="adjektive">Adjektivendungen</button>
+        <button class="grammar-tab active" onclick="switchGrammarTab('futur', this)">Futur I</button>
+        <button class="grammar-tab" onclick="switchGrammarTab('modal', this)">Modalverben</button>
+        <button class="grammar-tab" onclick="switchGrammarTab('cases', this)">Fälle</button>
+        <button class="grammar-tab" onclick="switchGrammarTab('adjektive', this)">Adjektivendungen</button>
       </div>
 
       <!-- FUTUR I -->
@@ -1023,15 +1023,15 @@
     </div>
 
     <div class="gt-tabs">
-      <button class="gt-tab active" data-gttab="gt-negation">Kein/Nicht</button>
-      <button class="gt-tab" data-gttab="gt-conjunctions">dass/wie/weil</button>
-      <button class="gt-tab" data-gttab="gt-pronouns">Pronomen</button>
-      <button class="gt-tab" data-gttab="gt-possessives">Possessiv</button>
-      <button class="gt-tab" data-gttab="gt-questions">Fragewörter</button>
-      <button class="gt-tab" data-gttab="gt-seinhaben">sein/haben</button>
-      <button class="gt-tab" data-gttab="gt-time">Zeit & Tage</button>
-      <button class="gt-tab" data-gttab="gt-pronunciation">Aussprache</button>
-      <button class="gt-tab" data-gttab="gt-my-vocab">Meine Wörter</button>
+      <button class="gt-tab active" onclick="switchGTTab('gt-negation', this)">Kein/Nicht</button>
+      <button class="gt-tab" onclick="switchGTTab('gt-conjunctions', this)">dass/wie/weil</button>
+      <button class="gt-tab" onclick="switchGTTab('gt-pronouns', this)">Pronomen</button>
+      <button class="gt-tab" onclick="switchGTTab('gt-possessives', this)">Possessiv</button>
+      <button class="gt-tab" onclick="switchGTTab('gt-questions', this)">Fragewörter</button>
+      <button class="gt-tab" onclick="switchGTTab('gt-seinhaben', this)">sein/haben</button>
+      <button class="gt-tab" onclick="switchGTTab('gt-time', this)">Zeit & Tage</button>
+      <button class="gt-tab" onclick="switchGTTab('gt-pronunciation', this)">Aussprache</button>
+      <button class="gt-tab" onclick="switchGTTab('gt-my-vocab', this)">Meine Wörter</button>
     </div>
 
     <!-- NEGATION: kein vs nicht -->

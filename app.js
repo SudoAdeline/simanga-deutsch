@@ -812,7 +812,6 @@ document.addEventListener('DOMContentLoaded', () => {
   loadPhrases('greetings');
   loadWritingTask('informal');
   newSentencePuzzle();
-  setupGrammarTabs();
   newGrammarQuiz();
   initAllLevel2();
   updateStreak();
@@ -870,21 +869,11 @@ function setupVerbTabs() {
   });
 }
 
-function setupGrammarTabs() {
-  const container = document.getElementById('grammar');
-  if (!container) return;
-  const tabs = container.querySelectorAll('.grammar-tab');
-  const contents = container.querySelectorAll('.grammar-content');
-  tabs.forEach(tab => {
-    tab.addEventListener('click', (e) => {
-      e.stopPropagation();
-      tabs.forEach(t => t.classList.remove('active'));
-      contents.forEach(c => c.classList.remove('active'));
-      tab.classList.add('active');
-      const target = document.getElementById(tab.dataset.grammartab);
-      if (target) target.classList.add('active');
-    });
-  });
+function switchGrammarTab(tabId, btn) {
+  document.querySelectorAll('#grammar .grammar-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('#grammar .grammar-content').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(tabId).classList.add('active');
 }
 
 function setupPhraseTabs() {
@@ -1507,15 +1496,11 @@ function newMotivation() {
 // ==========================================
 // LEVEL 2 GRAMMAR TRAINER
 // ==========================================
-function setupGTTabs() {
-  document.querySelectorAll('.gt-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      document.querySelectorAll('.gt-tab').forEach(t => t.classList.remove('active'));
-      document.querySelectorAll('.gt-content').forEach(c => c.classList.remove('active'));
-      tab.classList.add('active');
-      document.getElementById(tab.dataset.gttab).classList.add('active');
-    });
-  });
+function switchGTTab(tabId, btn) {
+  document.querySelectorAll('.gt-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.gt-content').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(tabId).classList.add('active');
 }
 
 function loadLevel2Exercise(type) {
@@ -1772,7 +1757,6 @@ function renderUserVocab() {
 }
 
 function initAllLevel2() {
-  setupGTTabs();
   loadLevel2Exercise('negation');
   loadLevel2Exercise('conjunction');
   loadLevel2Exercise('pronoun');
