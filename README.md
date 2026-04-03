@@ -16,7 +16,7 @@ A comprehensive, interactive web app for preparing for the **Goethe-Zertifikat A
 ### Prüfungsvorbereitung (Exam Prep)
 - Practice for all 4 exam sections in real exam format
 - **Lesen**: Newspaper texts, info boards, emails, ad matching
-- **Hören**: Radio texts, interview questions
+- **Hören**: Embedded audio/video players with 30 comprehension questions across 2 training sets
 - **Schreiben**: SMS and formal email tasks with word counters
 - **Sprechen**: Interview topics and prompt cards
 
@@ -34,11 +34,13 @@ A comprehensive, interactive web app for preparing for the **Goethe-Zertifikat A
 
 ### Grammatik (Grammar)
 - **Grammar Hit List**: Futur I, Modalverben, Fälle, Adjektivendungen
-- **Level 2 Exercises** (74+ items):
+- **Level 2 Exercises** (100+ items):
   - Negation (kein vs. nicht)
   - Conjunctions (dass, weil, wie, wenn)
   - Pronouns (Nominativ, Akkusativ, Dativ)
   - Possessives (mein/dein/sein + formal Sie)
+  - Reflexive pronouns + complex sentence structures (Perfekt im Nebensatz, Modalverb + Reflexiv)
+  - Modal verbs (sentence structure with Infinitiv am Ende)
   - Question words + Wieviel
   - sein/haben conjugation drill
   - Time expressions (am, im, um)
@@ -46,15 +48,25 @@ A comprehensive, interactive web app for preparing for the **Goethe-Zertifikat A
   - Error correction
 - **15+ quiz questions** covering grammar rules and word order (TeKaMoLo)
 
+### Hören (Listening Comprehension)
+- **Embedded audio/video players** — play Training 1 (MP4) and Training 2 (MP3) directly in the app
+- **30 comprehension questions** across 2 full training sets:
+  - Teil 1: Short radio announcements (a/b/c multiple choice)
+  - Teil 3: Short conversations (a/b/c multiple choice)
+  - Teil 4: Interview (Ja/Nein)
+- Collapsible transcripts for every section
+- Strategy guide with exam tips
+
 ### Phrasen & Alltag (Phrases & Everyday)
 - **89 phrases** across 8 situations: greetings, shopping, restaurant, directions, doctor, phone, opinions, small talk
 - Formal vs. informal distinctions
 - Context notes for each phrase
 
 ### Schreiben Üben (Writing Practice)
-- 3 informal message tasks (SMS/WhatsApp, 20–30 words)
-- 3 formal email tasks (30–40 words)
-- Built-in word counter and example answers
+- 6 informal message tasks (SMS/WhatsApp, 20–30 words)
+- 6 formal email tasks (30–40 words)
+- "Neue Aufgabe" button to generate fresh scenarios
+- Built-in word counter and writing tips
 
 ### Sprechen Üben (Speaking Practice)
 - 8 speaking topics with guided prompts
@@ -77,11 +89,12 @@ A comprehensive, interactive web app for preparing for the **Goethe-Zertifikat A
 | Vocabulary Words | 204 |
 | Verbs | 35+ |
 | Phrases | 89 |
-| Grammar Exercises | 74+ |
+| Grammar Exercises | 100+ |
 | Grammar Quiz Questions | 15+ |
+| Listening Questions | 30 |
 | Sentence Puzzles | 20+ |
 | Speaking Topics & Cards | 24 |
-| Writing Tasks | 6 |
+| Writing Tasks | 12 |
 
 ---
 

@@ -519,21 +519,74 @@ body {
   margin-bottom: 0.4rem;
 }
 
-/* AUDIO SECTION */
-.audio-section {
+/* AUDIO / HÖREN SECTION */
+.audio-player-box {
+  background: var(--gray-50);
+  border: 2px solid var(--primary);
+  border-radius: 12px;
+  padding: 1.2rem;
   margin-bottom: 1.5rem;
 }
 
-.audio-file-ref {
-  background: var(--gray-100);
-  padding: 0.7rem 1rem;
-  border-radius: 8px;
-  font-family: monospace;
-  font-size: 0.85rem;
+.audio-player-box h4 {
+  margin-bottom: 0.3rem;
+  color: var(--primary);
+}
+
+.hoeren-tabs {
   display: flex;
-  align-items: center;
   gap: 0.5rem;
-  margin: 0.5rem 0;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.hoeren-tab {
+  padding: 0.6rem 1.2rem;
+  border: 2px solid var(--gray-200);
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.hoeren-tab.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.hoeren-tab:hover:not(.active) {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.hoeren-content {
+  display: none;
+}
+
+.hoeren-content.active {
+  display: block;
+}
+
+.hoeren-teil {
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.hoeren-teil h4 {
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+}
+
+.hoeren-teil p {
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  margin-bottom: 1rem;
 }
 
 /* WRITING */

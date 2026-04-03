@@ -629,11 +629,17 @@ const writingTasks = {
     {prompt:"Sie sind unterwegs und schreiben eine SMS an Ihre Freundin.",points:["Entschuldigen Sie sich, dass Sie zu spät kommen.","Schreiben Sie, warum.","Nennen Sie einen neuen Ort und eine neue Uhrzeit."],words:"20-30"},
     {prompt:"Ihr Freund hat Sie zum Abendessen eingeladen. Schreiben Sie eine WhatsApp-Nachricht.",points:["Sagen Sie, dass Sie gern kommen.","Fragen Sie, was Sie mitbringen können.","Fragen Sie nach der Adresse."],words:"20-30"},
     {prompt:"Sie sind krank und können nicht zur Arbeit kommen. Schreiben Sie an einen Kollegen.",points:["Sagen Sie, dass Sie krank sind.","Bitten Sie um Information über das Meeting heute.","Sagen Sie, wann Sie wieder kommen."],words:"20-30"},
+    {prompt:"Ein Freund hat am Samstag eine Party. Sie können leider nicht kommen. Schreiben Sie eine WhatsApp-Nachricht.",points:["Bedanken Sie sich für die Einladung.","Sagen Sie, dass Sie nicht kommen können, und erklären Sie warum.","Schlagen Sie ein anderes Treffen vor."],words:"20-30"},
+    {prompt:"Sie haben ein Paket für Ihre Nachbarin angenommen. Schreiben Sie ihr eine SMS.",points:["Sagen Sie, dass ein Paket für sie da ist.","Fragen Sie, wann sie es abholen möchte.","Bieten Sie an, es vor die Tür zu stellen."],words:"20-30"},
+    {prompt:"Sie möchten mit einer Freundin am Wochenende ins Kino gehen. Schreiben Sie ihr eine Nachricht.",points:["Fragen Sie, ob sie Zeit hat.","Schlagen Sie einen Film und eine Uhrzeit vor.","Fragen Sie, ob sie noch jemanden mitbringen möchte."],words:"20-30"},
   ],
   formal: [
     {prompt:"Ihr Chef, Herr Lehmann, hat Sie zu seiner Geburtstagsfeier eingeladen.",points:["Bedanken Sie sich und sagen Sie, dass Sie kommen.","Informieren Sie, dass Sie jemanden mitbringen.","Fragen Sie nach dem Weg."],words:"30-40"},
     {prompt:"Sie möchten einen Deutschkurs an der Volkshochschule besuchen.",points:["Fragen Sie nach den Kurszeiten.","Fragen Sie nach dem Preis.","Sagen Sie, welches Niveau Sie haben."],words:"30-40"},
     {prompt:"Sie haben eine Wohnungsanzeige gelesen und sind interessiert.",points:["Stellen Sie sich kurz vor.","Sagen Sie, warum Sie die Wohnung suchen.","Fragen Sie nach einem Besichtigungstermin."],words:"30-40"},
+    {prompt:"Sie möchten Ihren Urlaub verschieben. Schreiben Sie eine E-Mail an Ihre Chefin, Frau Müller.",points:["Erklären Sie, warum Sie den Urlaub verschieben möchten.","Nennen Sie den neuen Wunschtermin.","Bitten Sie um eine Bestätigung."],words:"30-40"},
+    {prompt:"Sie haben ein Produkt online bestellt, aber es ist kaputt angekommen. Schreiben Sie an den Kundenservice.",points:["Beschreiben Sie das Problem.","Sagen Sie, was Sie sich als Lösung wünschen (Umtausch/Geld zurück).","Fragen Sie, wie Sie das Produkt zurückschicken können."],words:"30-40"},
+    {prompt:"Sie möchten Ihr Kind für einen Sportverein anmelden. Schreiben Sie eine E-Mail an den Verein.",points:["Stellen Sie sich und Ihr Kind kurz vor.","Fragen Sie nach den Trainingszeiten und Kosten.","Fragen Sie, ob ein Probetraining möglich ist."],words:"30-40"},
   ],
 };
 
@@ -692,6 +698,38 @@ const level2Data = {
     {sentence:"Wo wohnen ___ Eltern? (Sie formal)", answer:"Ihre", options:["deine","Ihre","eure"], hint:"Sie (formal) → Ihre"},
     {sentence:"Er liebt ___ Familie. (er)", answer:"seine", options:["seine","ihre","meine"], hint:"er → seine (Fem.)"},
     {sentence:"Gibst du mir ___ Nummer? (du → Sie)", informal:"deine", answer:"Ihre", hint:"du → Sie: deine → Ihre"},
+  ],
+  reflexive: [
+    {sentence:"Vielen Dank, dass Sie ___ eingeladen haben.", answer:"mich", options:["mich","mir","sich"], hint:"einladen + wen? → Akkusativ: mich. Im Nebensatz: Partizip + haben am Ende!"},
+    {sentence:"Ich bin froh, dass er ___ entschuldigt hat.", answer:"sich", options:["sich","mich","ihn"], hint:"sich entschuldigen = reflexiv (er → sich). Perfekt im Nebensatz: Partizip + hat am Ende!"},
+    {sentence:"Sie hat gesagt, dass sie ___ auf die Party freut.", answer:"sich", options:["sich","mich","ihr"], hint:"sich freuen auf = reflexiv (sie → sich). Nebensatz: Verb am Ende!"},
+    {sentence:"Können Sie ___ bitte hier setzen?", answer:"sich", options:["sich","mich","Ihnen"], hint:"sich setzen = reflexiv. Sie (formal) → sich. Modalverb + Reflexiv + Infinitiv am Ende!"},
+    {sentence:"Er hat erzählt, dass er ___ für den Kurs angemeldet hat.", answer:"sich", options:["sich","ihn","ihm"], hint:"sich anmelden = reflexiv. Perfekt im Nebensatz: sich + Partizip + hat am Ende!"},
+    {sentence:"Ich möchte ___ bei Ihnen vorstellen.", answer:"mich", options:["mich","mir","sich"], hint:"sich vorstellen = reflexiv (ich → mich). Modalverb + Reflexiv + Infinitiv!"},
+    {sentence:"Wissen Sie, ob er ___ schon gewaschen hat?", answer:"sich", options:["sich","ihn","ihm"], hint:"sich waschen = reflexiv. ob-Nebensatz: Verb am Ende!"},
+    {sentence:"Es tut mir leid, dass ich ___ verspätet habe.", answer:"mich", options:["mich","mir","sich"], hint:"sich verspäten = reflexiv (ich → mich). Perfekt im Nebensatz: Partizip + habe am Ende!"},
+    {sentence:"Weil sie ___ nicht wohl fühlt, bleibt sie zu Hause.", answer:"sich", options:["sich","ihr","sie"], hint:"sich fühlen = reflexiv. weil-Nebensatz: Verb am Ende!"},
+    {sentence:"Ich bin sicher, dass wir ___ bald wiedersehen.", answer:"uns", options:["uns","sich","euch"], hint:"sich wiedersehen = reflexiv (wir → uns). Nebensatz: Verb am Ende!"},
+    {sentence:"Darf ich ___ erkundigen, wann der Kurs beginnt?", answer:"mich", options:["mich","mir","sich"], hint:"sich erkundigen = reflexiv (ich → mich). Modalverb + Reflexiv + Infinitiv!"},
+    {sentence:"Danke, dass Sie ___ so schnell gemeldet haben.", answer:"sich", options:["sich","mich","Ihnen"], hint:"sich melden = reflexiv (Sie → sich). Perfekt im Nebensatz: Partizip + haben am Ende!"},
+    {sentence:"Wenn du ___ beeilst, schaffen wir den Zug.", answer:"dich", options:["dich","dir","sich"], hint:"sich beeilen = reflexiv (du → dich). wenn-Nebensatz: Verb am Ende!"},
+    {sentence:"Er hat ___ vorgenommen, mehr Sport zu machen.", answer:"sich", options:["sich","ihn","ihm"], hint:"sich vornehmen = reflexiv (Dativ: sich). Perfekt: hat sich vorgenommen!"},
+  ],
+  modalverb: [
+    {sentence:"Ich ___ morgen früh aufstehen. (must)", answer:"muss", options:["muss","kann","darf"], hint:"müssen = must/have to. ich muss + Infinitiv am Ende!"},
+    {sentence:"___ du mir bitte helfen? (can)", answer:"Kannst", options:["Kannst","Musst","Sollst"], hint:"können = can. du kannst + Infinitiv am Ende!"},
+    {sentence:"Wir ___ heute Abend ins Kino gehen. (want)", answer:"wollen", options:["wollen","sollen","dürfen"], hint:"wollen = want. wir wollen + Infinitiv am Ende!"},
+    {sentence:"Er ___ hier nicht rauchen. (may not)", answer:"darf", options:["darf","kann","muss"], hint:"dürfen = may/be allowed to. er darf nicht + Infinitiv!"},
+    {sentence:"Sie ___ mehr Wasser trinken. (should)", answer:"sollen", options:["sollen","wollen","können"], hint:"sollen = should. Sie sollen + Infinitiv am Ende!"},
+    {sentence:"Ich ___ einen Kaffee bestellen. (would like)", answer:"möchte", options:["möchte","muss","will"], hint:"möchten = would like to. ich möchte + Infinitiv am Ende!"},
+    {sentence:"Die Kinder ___ nicht so laut schreien. (should)", answer:"sollen", options:["sollen","wollen","müssen"], hint:"sollen = should. Modalverb konjugiert + Infinitiv am Ende!"},
+    {sentence:"___ ich das Fenster aufmachen? (may)", answer:"Darf", options:["Darf","Muss","Will"], hint:"dürfen = may/permission. Trennbares Verb bleibt als Infinitiv zusammen: aufmachen!"},
+    {sentence:"Du ___ dich beeilen, der Zug fährt gleich! (must)", answer:"musst", options:["musst","darfst","sollst"], hint:"müssen = must. du musst + sich beeilen (Reflexiv + Infinitiv am Ende)!"},
+    {sentence:"Wir ___ uns morgen um 10 Uhr treffen. (can)", answer:"können", options:["können","müssen","sollen"], hint:"können = can. wir können + Reflexiv + Infinitiv am Ende!"},
+    {sentence:"Er ___ seine Hausaufgaben nicht machen. (want)", answer:"will", options:["will","soll","darf"], hint:"wollen = want. er will + nicht + Infinitiv am Ende!"},
+    {sentence:"___ ihr am Samstag zu uns kommen? (would like)", answer:"Möchtet", options:["Möchtet","Müsst","Könnt"], hint:"möchten = would like. ihr möchtet + Infinitiv am Ende!"},
+    {sentence:"Man ___ hier nicht parken. (may not)", answer:"darf", options:["darf","kann","soll"], hint:"dürfen = be allowed to. man darf nicht + Infinitiv am Ende!"},
+    {sentence:"Ich ___ Deutsch gut sprechen. (can)", answer:"kann", options:["kann","muss","will"], hint:"können = can/be able to. ich kann + Infinitiv am Ende!"},
   ],
   question: [
     {sentence:"___ heißen Sie?", answer:"Wie", options:["Wie","Was","Wo"], hint:"Name/Art → Wie"},
@@ -845,6 +883,13 @@ function setupExamTabs() {
       document.getElementById(tab.dataset.examtab).classList.add('active');
     });
   });
+}
+
+function switchHoerenTab(tabId, btn) {
+  document.querySelectorAll('.hoeren-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.hoeren-content').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(tabId).classList.add('active');
 }
 
 function setupVocabTabs() {
@@ -1428,9 +1473,15 @@ function setupWordCounters() {
   });
 }
 
-function loadWritingTask(type) {
+function loadWritingTask(type, btn) {
   document.querySelectorAll('.writing-task-btn').forEach(b => b.classList.remove('active'));
-  event.target.classList.add('active');
+  if (btn) {
+    btn.classList.add('active');
+  } else if (event && event.target) {
+    event.target.classList.add('active');
+  }
+  // Keep track of current type for "Neue Aufgabe"
+  window._currentWritingType = type;
 
   const tasks = writingTasks[type];
   const task = tasks[Math.floor(Math.random() * tasks.length)];
@@ -1449,6 +1500,7 @@ function loadWritingTask(type) {
       </div>
       <textarea class="writing-area" placeholder="Schreibe hier..." rows="6" oninput="countWords(this)"></textarea>
       <div class="word-counter">Wörter: <span class="wc-dynamic">0</span> / ${task.words}</div>
+      <button class="check-btn secondary" onclick="loadWritingTask(window._currentWritingType)" style="margin-top:0.8rem">Neue Aufgabe</button>
       ${type === 'formal' ? `<div class="tip-box"><h4>💡 Formelle E-Mail</h4><p>Anrede: "Sehr geehrter Herr/Frau..." | Schluss: "Mit freundlichen Grüßen" | Immer "Sie" benutzen!</p></div>` : `<div class="tip-box"><h4>💡 Informelle Nachricht</h4><p>Anrede: "Hallo/Hey/Liebe(r)..." | Schluss: "Tschüss/Bis bald/LG" | Du-Form!</p></div>`}
     </div>
   `;
@@ -1583,6 +1635,40 @@ function loadLevel2Exercise(type) {
           <span class="l2-informal-hint">Informell: ${item.informal}</span>
         `;
       }
+      container.appendChild(div);
+    });
+  }
+  else if (type === 'reflexive') {
+    const items = shuffle([...level2Data.reflexive]).slice(0, 6);
+    items.forEach((item, i) => {
+      const div = document.createElement('div');
+      div.className = 'l2-exercise-item';
+      div.dataset.answer = item.answer;
+      div.dataset.hint = item.hint;
+      const parts = item.sentence.split('___');
+      div.innerHTML = `
+        <span class="l2-sentence">${parts[0]}<select class="l2-select" data-idx="${i}">
+          <option value="">---</option>
+          ${shuffle(item.options).map(o => `<option value="${o}">${o}</option>`).join('')}
+        </select>${parts[1]}</span>
+      `;
+      container.appendChild(div);
+    });
+  }
+  else if (type === 'modalverb') {
+    const items = shuffle([...level2Data.modalverb]).slice(0, 6);
+    items.forEach((item, i) => {
+      const div = document.createElement('div');
+      div.className = 'l2-exercise-item';
+      div.dataset.answer = item.answer;
+      div.dataset.hint = item.hint;
+      const parts = item.sentence.split('___');
+      div.innerHTML = `
+        <span class="l2-sentence">${parts[0]}<select class="l2-select" data-idx="${i}">
+          <option value="">---</option>
+          ${shuffle(item.options).map(o => `<option value="${o}">${o}</option>`).join('')}
+        </select>${parts[1]}</span>
+      `;
       container.appendChild(div);
     });
   }

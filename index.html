@@ -290,78 +290,370 @@
         <div class="exercise-header">
           <h3>Hören - Übungsmaterial</h3>
         </div>
-        <div class="audio-section">
-          <h4>Training 1 - Modellsatz (Video)</h4>
-          <p>Nutze die Audiodateien aus deinem Trainingsordner:</p>
-          <div class="audio-file-ref">
-            <span>📁</span> A2/Training1/pruefungstraining_1_hoeren_a2_erwachsene.mp4
+
+        <div class="strategy-box">
+          <h4>🎯 Strategie für Hören</h4>
+          <ul>
+            <li><strong>Vor dem Hören:</strong> Lies die Fragen und Antwortmöglichkeiten - so weißt du, worauf du achten musst</li>
+            <li><strong>Beim 1. Hören:</strong> Versuche die Hauptinformation zu verstehen</li>
+            <li><strong>Beim 2. Hören:</strong> Überprüfe deine Antwort und achte auf Details</li>
+            <li><strong>Schlüsselwörter:</strong> Achte auf Zahlen, Uhrzeiten, Orte und Negationen (nicht, kein)</li>
+            <li><strong>Achtung:</strong> Manchmal wird eine falsche Antwort zuerst genannt und dann korrigiert!</li>
+          </ul>
+        </div>
+
+        <!-- AUDIO PLAYER TABS -->
+        <div class="hoeren-tabs">
+          <button class="hoeren-tab active" onclick="switchHoerenTab('hoeren-modellsatz', this)">Training 1 - Modellsatz</button>
+          <button class="hoeren-tab" onclick="switchHoerenTab('hoeren-uebungssatz', this)">Training 2 - Übungssatz</button>
+        </div>
+
+        <!-- ==================== MODELLSATZ ==================== -->
+        <div id="hoeren-modellsatz" class="hoeren-content active">
+
+          <div class="audio-player-box">
+            <h4>Training 1 - Modellsatz</h4>
+            <p style="font-size:0.85rem;color:var(--gray-500);margin-bottom:0.8rem">Drücke Play und beantworte die Fragen unten. Du kannst pausieren und zurückspulen.</p>
+            <video controls style="width:100%;border-radius:8px;max-height:200px">
+              <source src="A2/Training1/pruefungstraining_1_hoeren_a2_erwachsene.mp4" type="video/mp4">
+              Dein Browser unterstützt kein Video.
+            </video>
           </div>
-          <h4 style="margin-top:1rem">Training 2 - Übungssatz (Audio)</h4>
-          <div class="audio-file-ref">
-            <span>📁</span> A2/Training2/pruefungstraining_2_hoeren_a2_erwachsene.mp3
+
+          <!-- TEIL 1 - Modellsatz -->
+          <div class="hoeren-teil">
+            <h4>Hören Teil 1 - Kurze Texte (5 Aufgaben)</h4>
+            <p>Du hörst 5 kurze Texte (Durchsagen, Anrufbeantworter). Zu jedem Text eine Frage mit 3 Antworten. Du hörst jeden Text <strong>zweimal</strong>.</p>
+
+            <div class="questions" id="ms-t1-questions">
+              <div class="question" data-correct="b">
+                <p><strong>1.</strong> Wo kann man noch parken?</p>
+                <label><input type="radio" name="ms-t1q1" value="a"> a) Am Bahnhof</label>
+                <label><input type="radio" name="ms-t1q1" value="b"> b) Am Einkaufszentrum</label>
+                <label><input type="radio" name="ms-t1q1" value="c"> c) Bei der Olympia-Halle</label>
+              </div>
+              <div class="question" data-correct="b">
+                <p><strong>2.</strong> Was soll Sabine nicht vergessen?</p>
+                <label><input type="radio" name="ms-t1q2" value="a"> a) Das Geschenk</label>
+                <label><input type="radio" name="ms-t1q2" value="b"> b) Den Anzug</label>
+                <label><input type="radio" name="ms-t1q2" value="c"> c) Die Blumen</label>
+              </div>
+              <div class="question" data-correct="c">
+                <p><strong>3.</strong> Wo findet das Treffen statt?</p>
+                <label><input type="radio" name="ms-t1q3" value="a"> a) Am Bahnhof</label>
+                <label><input type="radio" name="ms-t1q3" value="b"> b) Im Büro</label>
+                <label><input type="radio" name="ms-t1q3" value="c"> c) Im Hotel Leopold</label>
+              </div>
+              <div class="question" data-correct="b">
+                <p><strong>4.</strong> Wie wird das Wetter am Sonntag?</p>
+                <label><input type="radio" name="ms-t1q4" value="a"> a) Im Norden trocken</label>
+                <label><input type="radio" name="ms-t1q4" value="b"> b) Im Norden und Süden nass</label>
+                <label><input type="radio" name="ms-t1q4" value="c"> c) Im Süden trocken</label>
+              </div>
+              <div class="question" data-correct="a">
+                <p><strong>5.</strong> Was sollen die Hörerinnen und Hörer tun?</p>
+                <label><input type="radio" name="ms-t1q5" value="a"> a) Den Namen des Sängers sagen</label>
+                <label><input type="radio" name="ms-t1q5" value="b"> b) Eine Konzertkarte kaufen</label>
+                <label><input type="radio" name="ms-t1q5" value="c"> c) Ein neues Lied singen</label>
+              </div>
+            </div>
+            <button class="check-btn" onclick="checkExamAnswers('ms-t1-questions')">Antworten prüfen</button>
+            <div class="result-display" id="ms-t1-result"></div>
+
+            <div class="example-answer">
+              <h4>📋 Transkript Teil 1</h4>
+              <div class="example-text hidden" id="ms-t1-transcript">
+                <p><strong>Aufgabe 1:</strong> Eine Information für die Besucher des Basketballspiels heute in der Olympia-Halle: Die Parkplätze in der Nähe sind schon besetzt. Im Parkhaus am Einkaufszentrum gibt es noch freie Plätze. Besucher von außerhalb sollten nicht mit dem Auto kommen. Nehmen Sie die Bahn!</p>
+                <p><strong>Aufgabe 2:</strong> Hallo Sabine. Denk bitte an meinen dunklen Anzug. Du wolltest ihn doch aus der Reinigung abholen. Sonst weiß ich nicht, was ich bei Helenas Hochzeit morgen anziehen soll. Das Geschenk hab' ich heute in der Mittagspause schon gekauft. Die Blumen holen wir ja erst morgen früh.</p>
+                <p><strong>Aufgabe 3:</strong> Guten Tag Frau Meyer. Ingrid Sollms hier. Der Termin heute findet nicht in meinem Büro statt. Da ist ein Fehler in der Einladung. Ich habe im Hotel Leopold einen Raum reserviert. Sie wissen ja, am Bahnhofsplatz. Bitte kommen Sie um 10.00 Uhr direkt dorthin.</p>
+                <p><strong>Aufgabe 4:</strong> Nun zum Wetter. Am Wochenende ist es im Norden windig und bewölkt. Es regnet bei maximal 17 Grad. Im Süden am Samstag sonnig und warm bis 25 Grad. Am Sonntag kommt das kalte Regenwetter dann auch nach Süddeutschland.</p>
+                <p><strong>Aufgabe 5:</strong> Und jetzt unser Frühstücksradio-Gewinnspiel. Genau um 7.00 Uhr spielen wir ein neues Lied. Wenn Sie wissen, wie der Sänger heißt, rufen Sie uns an. Es gibt tolle Preise zu gewinnen.</p>
+              </div>
+              <button class="show-example-btn" onclick="toggleExample('ms-t1-transcript', this)">Transkript zeigen</button>
+            </div>
+          </div>
+
+          <!-- TEIL 3 - Modellsatz -->
+          <div class="hoeren-teil">
+            <h4>Hören Teil 3 - Kurze Gespräche (5 Aufgaben)</h4>
+            <p>Du hörst 5 kurze Gespräche. Du hörst jeden Text <strong>einmal</strong>. Wähle die richtige Lösung a, b oder c.</p>
+
+            <div class="questions" id="ms-t3-questions">
+              <div class="question" data-correct="c">
+                <p><strong>11.</strong> Was hat das Mädchen gestern Abend gegessen?</p>
+                <label><input type="radio" name="ms-t3q1" value="a"> a) Einen Hamburger</label>
+                <label><input type="radio" name="ms-t3q1" value="b"> b) Fisch</label>
+                <label><input type="radio" name="ms-t3q1" value="c"> c) Hähnchen</label>
+              </div>
+              <div class="question" data-correct="c">
+                <p><strong>12.</strong> Für welches Kleidungsstück interessiert sich die Frau?</p>
+                <label><input type="radio" name="ms-t3q2" value="a"> a) Die Jacke mit weißen Buchstaben</label>
+                <label><input type="radio" name="ms-t3q2" value="b"> b) Die Jeansjacke</label>
+                <label><input type="radio" name="ms-t3q2" value="c"> c) Keines - nichts gefällt ihr</label>
+              </div>
+              <div class="question" data-correct="b">
+                <p><strong>13.</strong> Was fehlt für die Anmeldung?</p>
+                <label><input type="radio" name="ms-t3q3" value="a"> a) Das Formular</label>
+                <label><input type="radio" name="ms-t3q3" value="b"> b) Ein Foto</label>
+                <label><input type="radio" name="ms-t3q3" value="c"> c) Die Unterschrift</label>
+              </div>
+              <div class="question" data-correct="c">
+                <p><strong>14.</strong> Was ist kaputt?</p>
+                <label><input type="radio" name="ms-t3q4" value="a"> a) Der Aufzug</label>
+                <label><input type="radio" name="ms-t3q4" value="b"> b) Die Lampe</label>
+                <label><input type="radio" name="ms-t3q4" value="c"> c) Die Heizung</label>
+              </div>
+              <div class="question" data-correct="b">
+                <p><strong>15.</strong> Wohin soll der Mann gehen?</p>
+                <label><input type="radio" name="ms-t3q5" value="a"> a) Zur Information</label>
+                <label><input type="radio" name="ms-t3q5" value="b"> b) Direkt in den Sportraum</label>
+                <label><input type="radio" name="ms-t3q5" value="c"> c) Zum Arzt</label>
+              </div>
+            </div>
+            <button class="check-btn" onclick="checkExamAnswers('ms-t3-questions')">Antworten prüfen</button>
+            <div class="result-display" id="ms-t3-result"></div>
+
+            <div class="example-answer">
+              <h4>📋 Transkript Teil 3</h4>
+              <div class="example-text hidden" id="ms-t3-transcript">
+                <p><strong>Aufgabe 11:</strong> "Was hast du gestern Abend Tolles gegessen?" – "Ich wollte nur einen Hamburger haben, aber Lena und Sarah wollten lieber Fisch essen gehen. Im Fischrestaurant gab es auch Hähnchen, also habe ich das genommen."</p>
+                <p><strong>Aufgabe 12:</strong> "Die Jacke mit den weißen Buchstaben gefällt mir." – "Tut mir leid, die haben wir nur noch in S." – "Der Mantel ist hübsch, aber zu warm. Den brauch' ich nicht."</p>
+                <p><strong>Aufgabe 13:</strong> "Ich rufe an wegen Ihrer Anmeldung." – "Das ausgefüllte Formular habe ich Ihnen gestern in den Briefkasten gesteckt." – "Für den Ausweis brauchen wir noch ein Foto von Ihnen."</p>
+                <p><strong>Aufgabe 14:</strong> "Der Mechaniker hat den Aufzug gestern repariert. Und die Lampe am Eingang geht auch wieder." – "Aber jetzt wird die Heizung in meiner Wohnung nicht mehr warm."</p>
+                <p><strong>Aufgabe 15:</strong> "Sie müssen nicht an der Information warten. Gehen Sie direkt in den Sportraum. Und bitte vergessen Sie das Rezept vom Arzt und Ihre Sportkleidung nicht."</p>
+              </div>
+              <button class="show-example-btn" onclick="toggleExample('ms-t3-transcript', this)">Transkript zeigen</button>
+            </div>
+          </div>
+
+          <!-- TEIL 4 - Modellsatz (Interview) -->
+          <div class="hoeren-teil">
+            <h4>Hören Teil 4 - Interview: Sarah (Ja/Nein)</h4>
+            <p>Du hörst ein Interview. Du hörst den Text <strong>zweimal</strong>. Wähle Ja oder Nein.</p>
+
+            <div class="example-answer">
+              <h4>📋 Transkript zum Mitlesen</h4>
+              <div class="example-text hidden" id="ms-t4-transcript">
+                <div class="reading-text transcript">
+                  <p><strong>Interviewer:</strong> Sarah, Sie kommen aus Ghana, in Afrika. Wann sind Sie nach Deutschland gekommen?</p>
+                  <p><strong>Sarah:</strong> Das war kurz nach meinem fünften Geburtstag. Da sind wir dann mit der ganzen Familie umgezogen.</p>
+                  <p><strong>Interviewer:</strong> Und wie fanden Sie das neue Leben in Deutschland?</p>
+                  <p><strong>Sarah:</strong> Ja, es hat mir sofort gefallen, ich habe ganz schnell Freunde gefunden – beim Fußballspielen auf der Straße. Meine beiden großen Brüder haben mich immer mitgenommen. Zuerst haben sie mir Tipps gegeben, aber nach ein paar Monaten war ich besser als sie!</p>
+                  <p><strong>Interviewer:</strong> Und dann? Wie ging es dann weiter?</p>
+                  <p><strong>Sarah:</strong> Als ich in der Schule war, hat mein Sportlehrer mir gesagt, bei welchem Fußballverein ich mich anmelden soll. Und dort spiele ich immer noch.</p>
+                  <p><strong>Interviewer:</strong> Jetzt schon seit 14 Jahren! Und seit zwei Wochen sind Sie sogar in der deutschen Frauennationalmannschaft.</p>
+                  <p><strong>Sarah:</strong> Danke. Ja, und ich hoffe, dass ich bald auch einmal in einem internationalen Spiel mitspielen darf.</p>
+                  <p><strong>Interviewer:</strong> Was machen Sie denn, wenn Sie nicht Fußball spielen?</p>
+                  <p><strong>Sarah:</strong> Im Moment habe ich keine Zeit für anderes. Aber später, wenn ich nicht mehr so gut bin, möchte ich studieren. Natürlich Sport!</p>
+                </div>
+              </div>
+              <button class="show-example-btn" onclick="toggleExample('ms-t4-transcript', this)">Transkript zeigen</button>
+            </div>
+
+            <div class="questions" id="hoeren-t4-questions">
+              <div class="question" data-correct="nein">
+                <p><strong>16.</strong> Sarah hatte am Anfang in Deutschland Probleme.</p>
+                <label><input type="radio" name="ht4q1" value="ja"> Ja</label>
+                <label><input type="radio" name="ht4q1" value="nein"> Nein</label>
+              </div>
+              <div class="question" data-correct="nein">
+                <p><strong>17.</strong> Ihre Geschwister haben ihr das Fußballspielen gezeigt.</p>
+                <label><input type="radio" name="ht4q2" value="ja"> Ja</label>
+                <label><input type="radio" name="ht4q2" value="nein"> Nein</label>
+              </div>
+              <div class="question" data-correct="ja">
+                <p><strong>18.</strong> Ihr Lehrer hat ihr einen Verein empfohlen.</p>
+                <label><input type="radio" name="ht4q3" value="ja"> Ja</label>
+                <label><input type="radio" name="ht4q3" value="nein"> Nein</label>
+              </div>
+              <div class="question" data-correct="nein">
+                <p><strong>19.</strong> Sarah hat schon bei vielen internationalen Spielen mitgespielt.</p>
+                <label><input type="radio" name="ht4q4" value="ja"> Ja</label>
+                <label><input type="radio" name="ht4q4" value="nein"> Nein</label>
+              </div>
+              <div class="question" data-correct="nein">
+                <p><strong>20.</strong> Sie studiert jetzt Sport an der Universität.</p>
+                <label><input type="radio" name="ht4q5" value="ja"> Ja</label>
+                <label><input type="radio" name="ht4q5" value="nein"> Nein</label>
+              </div>
+            </div>
+            <button class="check-btn" onclick="checkExamAnswers('hoeren-t4-questions')">Antworten prüfen</button>
+            <div class="result-display" id="hoeren-t4-result"></div>
           </div>
         </div>
 
-        <div class="hoeren-practice">
-          <h4>Hören Teil 1 - Was musst du können?</h4>
-          <p>Du hörst 5 kurze Texte (Radiodurchsagen, Anrufbeantworter, Ansagen). Zu jedem Text gibt es eine Frage mit 3 Antwortmöglichkeiten. Du hörst jeden Text <strong>zweimal</strong>.</p>
+        <!-- ==================== ÜBUNGSSATZ ==================== -->
+        <div id="hoeren-uebungssatz" class="hoeren-content">
 
-          <div class="strategy-box">
-            <h4>🎯 Strategie für Hören</h4>
-            <ul>
-              <li><strong>Vor dem Hören:</strong> Lies die Fragen und Antwortmöglichkeiten - so weißt du, worauf du achten musst</li>
-              <li><strong>Beim 1. Hören:</strong> Versuche die Hauptinformation zu verstehen</li>
-              <li><strong>Beim 2. Hören:</strong> Überprüfe deine Antwort und achte auf Details</li>
-              <li><strong>Schlüsselwörter:</strong> Achte auf Zahlen, Uhrzeiten, Orte und Negationen (nicht, kein)</li>
-              <li><strong>Achtung:</strong> Manchmal wird eine falsche Antwort zuerst genannt und dann korrigiert!</li>
-            </ul>
+          <div class="audio-player-box">
+            <h4>Training 2 - Übungssatz</h4>
+            <p style="font-size:0.85rem;color:var(--gray-500);margin-bottom:0.8rem">Drücke Play und beantworte die Fragen unten. Du kannst pausieren und zurückspulen.</p>
+            <audio controls style="width:100%">
+              <source src="A2/Training2/pruefungstraining_2_hoeren_a2_erwachsene.mp3" type="audio/mpeg">
+              Dein Browser unterstützt kein Audio.
+            </audio>
           </div>
 
-          <h4>Hören Teil 4 - Interview (Ja/Nein)</h4>
-          <p>Hier ist der Transkript vom Modellsatz zum Mitlesen und Üben:</p>
-          <div class="reading-text transcript">
-            <p><strong>Interviewer:</strong> Sarah, Sie kommen aus Ghana, in Afrika. Wann sind Sie nach Deutschland gekommen?</p>
-            <p><strong>Sarah:</strong> Das war kurz nach meinem fünften Geburtstag. Da sind wir dann mit der ganzen Familie umgezogen.</p>
-            <p><strong>Interviewer:</strong> Und wie fanden Sie das neue Leben in Deutschland?</p>
-            <p><strong>Sarah:</strong> Ja, es hat mir sofort gefallen, ich habe ganz schnell Freunde gefunden – beim Fußballspielen auf der Straße. Meine beiden großen Brüder haben mich immer mitgenommen. Zuerst haben sie mir Tipps gegeben, aber nach ein paar Monaten war ich besser als sie!</p>
-            <p><strong>Interviewer:</strong> Und dann? Wie ging es dann weiter?</p>
-            <p><strong>Sarah:</strong> Als ich in der Schule war, hat mein Sportlehrer mir gesagt, bei welchem Fußballverein ich mich anmelden soll. Und dort spiele ich immer noch.</p>
-            <p><strong>Interviewer:</strong> Jetzt schon seit 14 Jahren! Und seit zwei Wochen sind Sie sogar in der deutschen Frauennationalmannschaft.</p>
-            <p><strong>Sarah:</strong> Danke. Ja, und ich hoffe, dass ich bald auch einmal in einem internationalen Spiel mitspielen darf.</p>
-            <p><strong>Interviewer:</strong> Was machen Sie denn, wenn Sie nicht Fußball spielen?</p>
-            <p><strong>Sarah:</strong> Im Moment habe ich keine Zeit für anderes. Aber später, wenn ich nicht mehr so gut bin, möchte ich studieren. Natürlich Sport!</p>
+          <!-- TEIL 1 - Übungssatz -->
+          <div class="hoeren-teil">
+            <h4>Hören Teil 1 - Kurze Texte (5 Aufgaben)</h4>
+            <p>Du hörst 5 kurze Texte. Du hörst jeden Text <strong>zweimal</strong>. Wähle die richtige Lösung a, b oder c.</p>
+
+            <div class="questions" id="us-t1-questions">
+              <div class="question" data-correct="b">
+                <p><strong>1.</strong> Wo findet das Konzert statt?</p>
+                <label><input type="radio" name="us-t1q1" value="a"> a) Auf dem Marktplatz</label>
+                <label><input type="radio" name="us-t1q1" value="b"> b) In einer Halle</label>
+                <label><input type="radio" name="us-t1q1" value="c"> c) Im Festzelt</label>
+              </div>
+              <div class="question" data-correct="c">
+                <p><strong>2.</strong> Was soll Frauke machen?</p>
+                <label><input type="radio" name="us-t1q2" value="a"> a) Einen Kuchen backen</label>
+                <label><input type="radio" name="us-t1q2" value="b"> b) Ein Geschenk kaufen</label>
+                <label><input type="radio" name="us-t1q2" value="c"> c) Getränke organisieren</label>
+              </div>
+              <div class="question" data-correct="b">
+                <p><strong>3.</strong> Warum möchte der Mann das Treffen am Samstag verschieben? Weil ...</p>
+                <label><input type="radio" name="us-t1q3" value="a"> a) er mit Freunden ausgehen möchte</label>
+                <label><input type="radio" name="us-t1q3" value="b"> b) seine Frau verabredet ist</label>
+                <label><input type="radio" name="us-t1q3" value="c"> c) seine Eltern zu Besuch kommen</label>
+              </div>
+              <div class="question" data-correct="c">
+                <p><strong>4.</strong> Wie wird das Wetter im Süden? Es wird ...</p>
+                <label><input type="radio" name="us-t1q4" value="a"> a) kühl und trocken</label>
+                <label><input type="radio" name="us-t1q4" value="b"> b) warm und es gibt Gewitter</label>
+                <label><input type="radio" name="us-t1q4" value="c"> c) warm und es regnet</label>
+              </div>
+              <div class="question" data-correct="a">
+                <p><strong>5.</strong> Was sollen Fahrgäste tun, wenn sie nach Frankfurt wollen?</p>
+                <label><input type="radio" name="us-t1q5" value="a"> a) Den ICE nehmen</label>
+                <label><input type="radio" name="us-t1q5" value="b"> b) Im Zug warten</label>
+                <label><input type="radio" name="us-t1q5" value="c"> c) Mit der S-Bahn fahren</label>
+              </div>
+            </div>
+            <button class="check-btn" onclick="checkExamAnswers('us-t1-questions')">Antworten prüfen</button>
+            <div class="result-display" id="us-t1-result"></div>
+
+            <div class="example-answer">
+              <h4>📋 Transkript Teil 1</h4>
+              <div class="example-text hidden" id="us-t1-transcript">
+                <p><strong>Aufgabe 1:</strong> Wegen des Regens kann das Konzert heute Abend nicht draußen auf dem Marktplatz stattfinden. Es wird stattfinden – in der großen Halle am Bahnhof, Beginn 18:30 Uhr.</p>
+                <p><strong>Aufgabe 2:</strong> Hallo Frauke. Jana feiert am Freitag ihren Geburtstag im Büro. Ich backe einen Kuchen. Paul kümmert sich um das Geschenk. Kannst du dich um Saft, Wasser und Kaffee kümmern?</p>
+                <p><strong>Aufgabe 3:</strong> Hi Paul, Clemens hier. Am Samstagabend geht meine Frau mit Freunden aus und ich hab versprochen, auf die Kinder aufzupassen. Sonntag kommen meine Eltern zu Besuch, aber ab 19 Uhr hab ich Zeit.</p>
+                <p><strong>Aufgabe 4:</strong> Der Sommer bleibt und es wird morgen im Süden bis 30 Grad. Am späten Nachmittag soll es dort etwas regnen. Im Westen wird es warm, aber es soll starke Gewitter geben.</p>
+                <p><strong>Aufgabe 5:</strong> Dieser Zug kann wegen eines technischen Problems nicht weiterfahren. Fahrgäste nach Frankfurt fahren bitte mit dem ICE 562 um 14:15 Uhr von Gleis 1. Fahrgäste nach Stuttgart nehmen bitte die S-Bahn.</p>
+              </div>
+              <button class="show-example-btn" onclick="toggleExample('us-t1-transcript', this)">Transkript zeigen</button>
+            </div>
           </div>
 
-          <div class="questions" id="hoeren-t4-questions">
-            <div class="question" data-correct="ja">
-              <p><strong>16.</strong> Sarah hatte am Anfang in Deutschland Probleme.</p>
-              <label><input type="radio" name="ht4q1" value="ja"> Ja</label>
-              <label><input type="radio" name="ht4q1" value="nein"> Nein</label>
+          <!-- TEIL 3 - Übungssatz -->
+          <div class="hoeren-teil">
+            <h4>Hören Teil 3 - Kurze Gespräche (5 Aufgaben)</h4>
+            <p>Du hörst 5 kurze Gespräche. Du hörst jeden Text <strong>einmal</strong>. Wähle die richtige Lösung a, b oder c.</p>
+
+            <div class="questions" id="us-t3-questions">
+              <div class="question" data-correct="b">
+                <p><strong>11.</strong> Was kauft der Mann?</p>
+                <label><input type="radio" name="us-t3q1" value="a"> a) Ein Sofa</label>
+                <label><input type="radio" name="us-t3q1" value="b"> b) Einen Wohnzimmertisch</label>
+                <label><input type="radio" name="us-t3q1" value="c"> c) Vier Stühle</label>
+              </div>
+              <div class="question" data-correct="c">
+                <p><strong>12.</strong> Welcher Vorschlag für den Firmenausflug gefällt beiden?</p>
+                <label><input type="radio" name="us-t3q2" value="a"> a) Eine Stadtführung</label>
+                <label><input type="radio" name="us-t3q2" value="b"> b) Eine Kunstausstellung</label>
+                <label><input type="radio" name="us-t3q2" value="c"> c) Eine Wanderung am See</label>
+              </div>
+              <div class="question" data-correct="c">
+                <p><strong>13.</strong> Wie fährt die Frau zur Arbeit?</p>
+                <label><input type="radio" name="us-t3q3" value="a"> a) Mit dem Zug</label>
+                <label><input type="radio" name="us-t3q3" value="b"> b) Mit dem Auto</label>
+                <label><input type="radio" name="us-t3q3" value="c"> c) Sie fährt beim Nachbarn mit</label>
+              </div>
+              <div class="question" data-correct="c">
+                <p><strong>14.</strong> Was ist kaputt?</p>
+                <label><input type="radio" name="us-t3q4" value="a"> a) Die Dusche</label>
+                <label><input type="radio" name="us-t3q4" value="b"> b) Die Waschmaschine</label>
+                <label><input type="radio" name="us-t3q4" value="c"> c) Die Toilette</label>
+              </div>
+              <div class="question" data-correct="c">
+                <p><strong>15.</strong> Warum kann der Mann nicht zur Arbeit kommen?</p>
+                <label><input type="radio" name="us-t3q5" value="a"> a) Er ist krank</label>
+                <label><input type="radio" name="us-t3q5" value="b"> b) Seine Frau fliegt nach London</label>
+                <label><input type="radio" name="us-t3q5" value="c"> c) Seine Tochter ist krank</label>
+              </div>
             </div>
-            <div class="question" data-correct="nein">
-              <p><strong>17.</strong> Ihre Geschwister haben ihr das Fußballspielen gezeigt.</p>
-              <label><input type="radio" name="ht4q2" value="ja"> Ja</label>
-              <label><input type="radio" name="ht4q2" value="nein"> Nein</label>
-            </div>
-            <div class="question" data-correct="ja">
-              <p><strong>18.</strong> Ihr Lehrer hat ihr einen Verein empfohlen.</p>
-              <label><input type="radio" name="ht4q3" value="ja"> Ja</label>
-              <label><input type="radio" name="ht4q3" value="nein"> Nein</label>
-            </div>
-            <div class="question" data-correct="nein">
-              <p><strong>19.</strong> Sarah hat schon bei vielen internationalen Spielen mitgespielt.</p>
-              <label><input type="radio" name="ht4q4" value="ja"> Ja</label>
-              <label><input type="radio" name="ht4q4" value="nein"> Nein</label>
-            </div>
-            <div class="question" data-correct="nein">
-              <p><strong>20.</strong> Sie studiert jetzt Sport an der Universität.</p>
-              <label><input type="radio" name="ht4q5" value="ja"> Ja</label>
-              <label><input type="radio" name="ht4q5" value="nein"> Nein</label>
+            <button class="check-btn" onclick="checkExamAnswers('us-t3-questions')">Antworten prüfen</button>
+            <div class="result-display" id="us-t3-result"></div>
+
+            <div class="example-answer">
+              <h4>📋 Transkript Teil 3</h4>
+              <div class="example-text hidden" id="us-t3-transcript">
+                <p><strong>Aufgabe 11:</strong> "Ich möchte das Sofa kaufen." – "Tut mir leid, es ist zu groß für mein Auto. Aber der Wohnzimmertisch interessiert mich." – "Die vier Stühle nehmen Sie die auch?" – "Da habe ich eigene."</p>
+                <p><strong>Aufgabe 12:</strong> "Im Stadtmuseum gibt es eine gute neue Kunstausstellung." – "Kunst, finde ich nicht so interessant." – "Und wenn wir zum See fahren und dort eine Wanderung machen?" – "Ja, find ich gut."</p>
+                <p><strong>Aufgabe 13:</strong> "Ich muss zur Arbeit und hab den Zug verpasst." – "Warum nehmen Sie nicht Ihr Auto?" – "Das ist in der Werkstatt." – "Dann fahren Sie bei mir mit."</p>
+                <p><strong>Aufgabe 14:</strong> "Der Aufzug ist repariert. Die Lampe geht auch wieder." – "Aber jetzt wird die Heizung nicht warm. Können Sie vorbeikommen?" – Nein, das Wasser kommt unter der Toilette.</p>
+                <p><strong>Aufgabe 15:</strong> "Ich kann heute nicht zur Arbeit kommen." – "Sind Sie krank?" – "Meine Tochter hat eine Grippe und ich muss mit ihr zum Arzt." – "Kann das nicht Ihre Frau machen?" – "Meine Frau muss nach London."</p>
+              </div>
+              <button class="show-example-btn" onclick="toggleExample('us-t3-transcript', this)">Transkript zeigen</button>
             </div>
           </div>
-          <button class="check-btn" onclick="checkExamAnswers('hoeren-t4-questions')">Antworten prüfen</button>
-          <div class="result-display" id="hoeren-t4-result"></div>
+
+          <!-- TEIL 4 - Übungssatz (Interview) -->
+          <div class="hoeren-teil">
+            <h4>Hören Teil 4 - Interview: Familienhotel (Ja/Nein)</h4>
+            <p>Du hörst ein Interview. Du hörst den Text <strong>zweimal</strong>. Wähle Ja oder Nein.</p>
+
+            <div class="example-answer">
+              <h4>📋 Transkript zum Mitlesen</h4>
+              <div class="example-text hidden" id="us-t4-transcript">
+                <div class="reading-text transcript">
+                  <p><strong>Moderator:</strong> Frau Plessing, Sie und Ihr Mann haben seit einem Jahr das erste Familienhotel in der Stadt. Wie kamen Sie auf diese Idee?</p>
+                  <p><strong>Frau Plessing:</strong> Unsere vier Kinder sind alle erwachsen und leben nicht mehr bei uns zu Hause. Ja, leider. Unser Leben war dann plötzlich sehr ruhig.</p>
+                  <p><strong>Moderator:</strong> Ah, Sie wollten wieder Kontakt mit Kindern?</p>
+                  <p><strong>Frau Plessing:</strong> Ja, auch, und wir kennen die Arbeit im Hotel: Mein Mann hat viele Jahre in einem Hotel an der Rezeption gearbeitet und ich habe im Hotelrestaurant gekocht. Wir dachten, mit unseren Erfahrungen können wir auch selbst ein kleines Hotel führen.</p>
+                  <p><strong>Moderator:</strong> Verstehe.</p>
+                  <p><strong>Frau Plessing:</strong> Ja, und außerdem haben wir auf unseren Reisen gesehen, was in einem normalen Hotel nicht so gut ist, wenn man mit einer großen Familie unterwegs ist.</p>
+                  <p><strong>Moderator:</strong> Aha. Und hatten Sie schon viele Gäste?</p>
+                  <p><strong>Frau Plessing:</strong> Hier im Haus gibt es drei Wohnungen mit Küche für Familien, die gern alles selbst machen. Die waren von Anfang an fast immer vermietet. Außerdem haben wir drei große Zimmer, die kann man mit Frühstück buchen oder auch mit Mittag- und Abendessen. In den Sommerferien war das Hotel voll. Jetzt gerade haben wir nicht viele Reservierungen.</p>
+                </div>
+              </div>
+              <button class="show-example-btn" onclick="toggleExample('us-t4-transcript', this)">Transkript zeigen</button>
+            </div>
+
+            <div class="questions" id="us-t4-questions">
+              <div class="question" data-correct="ja">
+                <p><strong>16.</strong> Frau Plessing findet es schade, dass ihre Kinder nicht mehr zu Hause wohnen.</p>
+                <label><input type="radio" name="us-t4q1" value="ja"> Ja</label>
+                <label><input type="radio" name="us-t4q1" value="nein"> Nein</label>
+              </div>
+              <div class="question" data-correct="ja">
+                <p><strong>17.</strong> Herr und Frau Plessing wissen, was Familien im Urlaub brauchen.</p>
+                <label><input type="radio" name="us-t4q2" value="ja"> Ja</label>
+                <label><input type="radio" name="us-t4q2" value="nein"> Nein</label>
+              </div>
+              <div class="question" data-correct="nein">
+                <p><strong>18.</strong> Herr Plessing hat früher als Koch gearbeitet.</p>
+                <label><input type="radio" name="us-t4q3" value="ja"> Ja</label>
+                <label><input type="radio" name="us-t4q3" value="nein"> Nein</label>
+              </div>
+              <div class="question" data-correct="ja">
+                <p><strong>19.</strong> Die Ferienwohnungen im Hotel sind besonders beliebt.</p>
+                <label><input type="radio" name="us-t4q4" value="ja"> Ja</label>
+                <label><input type="radio" name="us-t4q4" value="nein"> Nein</label>
+              </div>
+              <div class="question" data-correct="nein">
+                <p><strong>20.</strong> Im Hotel gibt es immer viele Gäste.</p>
+                <label><input type="radio" name="us-t4q5" value="ja"> Ja</label>
+                <label><input type="radio" name="us-t4q5" value="nein"> Nein</label>
+              </div>
+            </div>
+            <button class="check-btn" onclick="checkExamAnswers('us-t4-questions')">Antworten prüfen</button>
+            <div class="result-display" id="us-t4-result"></div>
+          </div>
         </div>
+
       </div>
     </div>
 
@@ -1027,7 +1319,9 @@
       <button class="gt-tab" onclick="switchGTTab('gt-conjunctions', this)">dass/wie/weil</button>
       <button class="gt-tab" onclick="switchGTTab('gt-pronouns', this)">Pronomen</button>
       <button class="gt-tab" onclick="switchGTTab('gt-possessives', this)">Possessiv</button>
+      <button class="gt-tab" onclick="switchGTTab('gt-reflexive', this)">Reflexiv</button>
       <button class="gt-tab" onclick="switchGTTab('gt-questions', this)">Fragewörter</button>
+      <button class="gt-tab" onclick="switchGTTab('gt-modalverb', this)">Modalverben</button>
       <button class="gt-tab" onclick="switchGTTab('gt-seinhaben', this)">sein/haben</button>
       <button class="gt-tab" onclick="switchGTTab('gt-time', this)">Zeit & Tage</button>
       <button class="gt-tab" onclick="switchGTTab('gt-pronunciation', this)">Aussprache</button>
@@ -1198,6 +1492,82 @@
       </div>
     </div>
 
+    <!-- REFLEXIVE PRONOUNS + COMPLEX SENTENCES -->
+    <div id="gt-reflexive" class="gt-content">
+      <div class="tense-card">
+        <h3>Reflexivpronomen & komplexe Satzstrukturen</h3>
+        <div class="tense-formation">
+          <h4>Reflexivpronomen (sich)</h4>
+          <table class="tense-table">
+            <tr><td></td><td><strong>Akkusativ</strong></td><td><strong>Dativ</strong></td></tr>
+            <tr><td><strong>ich</strong></td><td>mich</td><td>mir</td></tr>
+            <tr><td><strong>du</strong></td><td>dich</td><td>dir</td></tr>
+            <tr><td><strong>er/sie/es</strong></td><td>sich</td><td>sich</td></tr>
+            <tr><td><strong>wir</strong></td><td>uns</td><td>uns</td></tr>
+            <tr><td><strong>ihr</strong></td><td>euch</td><td>euch</td></tr>
+            <tr><td><strong>sie/Sie</strong></td><td>sich</td><td>sich</td></tr>
+          </table>
+          <p class="tense-note">💡 <strong>Reflexive Verben:</strong> sich freuen, sich entschuldigen, sich treffen, sich waschen, sich anmelden, sich vorstellen, sich setzen, sich fühlen</p>
+
+          <h4 style="margin-top:1.5rem">Satzstruktur-Regeln für komplexe Sätze</h4>
+          <div class="cheat-grid">
+            <div class="cheat-box cheat-purple">
+              <h4>Regel 1: Nebensatz (dass/weil/wenn)</h4>
+              <p>Das konjugierte Verb geht ans <strong>ENDE</strong> des Nebensatzes.</p>
+              <ul>
+                <li>Ich hoffe, <strong>dass</strong> Sie sich gut <strong>fühlen</strong>.</li>
+                <li>Er sagt, <strong>dass</strong> er sich verspätet <strong>hat</strong>.</li>
+              </ul>
+            </div>
+            <div class="cheat-box cheat-green">
+              <h4>Regel 2: Perfekt + Reflexiv</h4>
+              <p>haben/sein + Reflexivpronomen + Partizip II</p>
+              <ul>
+                <li>Ich <strong>habe mich</strong> gefreut.</li>
+                <li>Er <strong>hat sich</strong> entschuldigt.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="cheat-grid" style="margin-top:1rem">
+            <div class="cheat-box cheat-red">
+              <h4>Regel 3: Perfekt im Nebensatz</h4>
+              <p>Im Nebensatz: Reflexiv + Partizip + <strong>haben/sein am ENDE</strong></p>
+              <ul>
+                <li>Danke, dass Sie <strong>mich eingeladen haben</strong>.</li>
+                <li>Ich bin froh, dass er <strong>sich entschuldigt hat</strong>.</li>
+              </ul>
+            </div>
+            <div class="cheat-box cheat-blue">
+              <h4>Regel 4: Modalverb + Reflexiv</h4>
+              <p>Modalverb (konjugiert) + Reflexivpronomen + Infinitiv am Ende</p>
+              <ul>
+                <li>Ich <strong>möchte mich</strong> anmelden.</li>
+                <li>Können Sie <strong>sich</strong> bitte <strong>setzen</strong>?</li>
+              </ul>
+            </div>
+          </div>
+
+          <h4 style="margin-top:1.5rem">Beispiel: So baut man komplexe Sätze</h4>
+          <div class="cheat-box cheat-purple" style="margin-top:0.5rem">
+            <p><strong>"Vielen Dank, dass Sie mich eingeladen haben."</strong></p>
+            <ul>
+              <li><strong>dass</strong> = Nebensatz-Konjunktion (Verb ans Ende!)</li>
+              <li><strong>Sie</strong> = formelles Subjekt</li>
+              <li><strong>mich</strong> = Akkusativ-Objekt (einladen + wen?)</li>
+              <li><strong>eingeladen haben</strong> = Perfekt (Partizip + haben am Ende im Nebensatz)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="exercise-box">
+        <h3>Übung: Komplexe Sätze mit Reflexivpronomen</h3>
+        <div id="reflexive-exercise"></div>
+        <button class="check-btn" onclick="checkLevel2Exercise('reflexive')">Prüfen</button>
+        <button class="check-btn secondary" onclick="loadLevel2Exercise('reflexive')">Neue Übung</button>
+        <div class="exercise-feedback" id="reflexive-feedback"></div>
+      </div>
+    </div>
+
     <!-- QUESTION WORDS -->
     <div id="gt-questions" class="gt-content">
       <div class="tense-card">
@@ -1244,6 +1614,60 @@
     </div>
 
     <!-- SEIN / HABEN DRILL -->
+    <!-- MODAL VERBS -->
+    <div id="gt-modalverb" class="gt-content">
+      <div class="tense-card">
+        <h3>Modalverben: Satzstruktur</h3>
+        <div class="tense-formation">
+          <div class="cheat-box cheat-purple" style="margin-bottom:1rem">
+            <h4>Regel: Modalverb (konjugiert) + ... + Infinitiv am ENDE</h4>
+            <p>Das Modalverb wird konjugiert und steht an <strong>Position 2</strong>. Der Infinitiv (Grundform) wandert ans <strong>Satzende</strong>.</p>
+            <ul>
+              <li>Ich <strong>kann</strong> gut Deutsch <strong>sprechen</strong>.</li>
+              <li>Er <strong>muss</strong> morgen früh <strong>aufstehen</strong>.</li>
+              <li><strong>Darf</strong> ich hier <strong>rauchen</strong>?</li>
+            </ul>
+          </div>
+          <table class="tense-table">
+            <tr><td></td><td><strong>können</strong><br>(can)</td><td><strong>müssen</strong><br>(must)</td><td><strong>wollen</strong><br>(want)</td><td><strong>dürfen</strong><br>(may)</td><td><strong>sollen</strong><br>(should)</td><td><strong>möchten</strong><br>(would like)</td></tr>
+            <tr><td><strong>ich</strong></td><td>kann</td><td>muss</td><td>will</td><td>darf</td><td>soll</td><td>möchte</td></tr>
+            <tr><td><strong>du</strong></td><td>kannst</td><td>musst</td><td>willst</td><td>darfst</td><td>sollst</td><td>möchtest</td></tr>
+            <tr><td><strong>er/sie/es</strong></td><td>kann</td><td>muss</td><td>will</td><td>darf</td><td>soll</td><td>möchte</td></tr>
+            <tr><td><strong>wir</strong></td><td>können</td><td>müssen</td><td>wollen</td><td>dürfen</td><td>sollen</td><td>möchten</td></tr>
+            <tr><td><strong>ihr</strong></td><td>könnt</td><td>müsst</td><td>wollt</td><td>dürft</td><td>sollt</td><td>möchtet</td></tr>
+            <tr><td><strong>sie/Sie</strong></td><td>können</td><td>müssen</td><td>wollen</td><td>dürfen</td><td>sollen</td><td>möchten</td></tr>
+          </table>
+          <div class="cheat-grid" style="margin-top:1rem">
+            <div class="cheat-box cheat-green">
+              <h4>Trennbare Verben + Modal</h4>
+              <p>Trennbare Verben bleiben als Infinitiv <strong>zusammen</strong> am Ende.</p>
+              <ul>
+                <li>Ich muss morgen früh <strong>aufstehen</strong>. (nicht: auf...stehen)</li>
+                <li>Kannst du mich <strong>anrufen</strong>?</li>
+              </ul>
+            </div>
+            <div class="cheat-box cheat-red">
+              <h4>Negation mit Modal</h4>
+              <p><strong>nicht</strong> steht vor dem Infinitiv am Ende.</p>
+              <ul>
+                <li>Ich kann heute <strong>nicht kommen</strong>.</li>
+                <li>Du darfst hier <strong>nicht parken</strong>.</li>
+              </ul>
+            </div>
+          </div>
+          <p class="tense-note" style="margin-top:1rem">💡 <strong>Merke:</strong> Modalverb = Position 2 (konjugiert), Infinitiv = letztes Wort im Satz!</p>
+        </div>
+      </div>
+      <div class="exercise-box">
+        <h3>Übung: Sätze mit Modalverben</h3>
+        <p style="font-size:0.85rem;color:var(--gray-500);margin-bottom:1rem">Wähle das richtige Modalverb und den passenden Infinitiv!</p>
+        <div id="modalverb-exercise"></div>
+        <button class="check-btn" onclick="checkLevel2Exercise('modalverb')">Prüfen</button>
+        <button class="check-btn secondary" onclick="loadLevel2Exercise('modalverb')">Neue Übung</button>
+        <div class="exercise-feedback" id="modalverb-feedback"></div>
+      </div>
+    </div>
+
     <div id="gt-seinhaben" class="gt-content">
       <div class="tense-card">
         <h3>sein & haben - Schnelltraining</h3>
@@ -1448,8 +1872,8 @@
 
     <div class="writing-exercises" id="writing-exercises">
       <div class="writing-task-selector">
-        <button class="writing-task-btn active" onclick="loadWritingTask('informal')">Informell (SMS/WhatsApp)</button>
-        <button class="writing-task-btn" onclick="loadWritingTask('formal')">Formell (E-Mail)</button>
+        <button class="writing-task-btn active" onclick="loadWritingTask('informal', this)">Informell (SMS/WhatsApp)</button>
+        <button class="writing-task-btn" onclick="loadWritingTask('formal', this)">Formell (E-Mail)</button>
       </div>
 
       <div id="writing-task-display">
