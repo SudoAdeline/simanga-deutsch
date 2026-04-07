@@ -875,14 +875,14 @@ function setupNavigation() {
 }
 
 function setupExamTabs() {
-  document.querySelectorAll('.exam-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      document.querySelectorAll('.exam-tab').forEach(t => t.classList.remove('active'));
-      document.querySelectorAll('.exam-content').forEach(c => c.classList.remove('active'));
-      tab.classList.add('active');
-      document.getElementById(tab.dataset.examtab).classList.add('active');
-    });
-  });
+  // Exam tabs now use inline onclick handlers (switchExamTab)
+}
+
+function switchExamTab(tabId, btn) {
+  document.querySelectorAll('.exam-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.exam-content').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(tabId).classList.add('active');
 }
 
 function switchHoerenTab(tabId, btn) {
