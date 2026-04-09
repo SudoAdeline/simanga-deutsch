@@ -266,6 +266,112 @@ body {
   color: #92400e;
 }
 
+/* DAILY PRACTICE REMINDER */
+.daily-reminder {
+  background: linear-gradient(135deg, #eff6ff, #f0fdf4);
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 2px solid var(--primary-light);
+  margin-bottom: 1.5rem;
+}
+
+.reminder-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.reminder-wave {
+  font-size: 1.5rem;
+  animation: wave 1.5s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(20deg); }
+  75% { transform: rotate(-10deg); }
+}
+
+.reminder-header h3 {
+  font-size: 1.1rem;
+  color: var(--primary-dark);
+  margin: 0;
+}
+
+.reminder-subtitle {
+  font-size: 0.85rem;
+  color: var(--gray-500);
+  margin-bottom: 1rem;
+}
+
+.reminder-tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.reminder-task {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid var(--gray-100);
+}
+
+.reminder-task:hover {
+  transform: translateX(4px);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+  border-color: var(--primary-light);
+}
+
+.reminder-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.reminder-task-info {
+  flex: 1;
+}
+
+.reminder-task-info strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--gray-800);
+  margin-bottom: 0.2rem;
+}
+
+.reminder-task-info p {
+  font-size: 0.8rem;
+  color: var(--gray-600);
+  margin: 0;
+}
+
+.reminder-task-info em {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.reminder-progress {
+  font-size: 0.75rem;
+  color: var(--success);
+  font-weight: 500;
+}
+
+.reminder-arrow {
+  color: var(--primary);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.reminder-check {
+  font-size: 1.2rem;
+}
+
 /* STUDY PLAN */
 .study-plan {
   background: white;
@@ -1265,11 +1371,25 @@ body {
   align-items: center;
 }
 
-.verb-overview-row:first-child {
+.verb-overview-header {
   background: var(--primary);
   color: white;
   font-weight: 700;
   font-size: 0.8rem;
+}
+
+.verb-overview-cat-header {
+  background: linear-gradient(135deg, var(--primary-light), var(--primary));
+  color: white;
+  padding: 0.6rem 1rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  border-radius: 8px 8px 0 0;
+}
+
+.verb-overview-cat-header:first-child {
+  margin-top: 0;
 }
 
 .verb-overview-row:nth-child(even) {

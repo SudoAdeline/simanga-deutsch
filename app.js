@@ -229,153 +229,237 @@ const vocabData = [
   {de:"die Bibliothek, -en",en:"library",cat:"schule",ex:"Sie lernt in der Bibliothek."},
   {de:"der Computer, -",en:"computer",cat:"schule",ex:"Mein Computer ist schon alt."},
   {de:"das Internet (Sg.)",en:"internet",cat:"schule",ex:"Ich suche im Internet."},
+
+  // HÖREN TEIL 1 - ORTE & ANKÜNDIGUNGEN (Q1-type: Where does something take place?)
+  {de:"der Marktplatz, -plätze",en:"market square",cat:"hoeren",ex:"Das Fest findet auf dem Marktplatz statt."},
+  {de:"die Halle, -n",en:"hall / arena",cat:"hoeren",ex:"Das Konzert ist in einer Halle."},
+  {de:"das Festzelt, -e",en:"festival tent",cat:"hoeren",ex:"Die Feier ist im Festzelt."},
+  {de:"stattfinden",en:"to take place",cat:"hoeren",ex:"Wo findet das Konzert statt?"},
+  {de:"die Durchsage, -n",en:"announcement",cat:"hoeren",ex:"Achtung, eine Durchsage!"},
+  {de:"die Veranstaltung, -en",en:"event",cat:"hoeren",ex:"Die Veranstaltung beginnt um 19 Uhr."},
+  {de:"der Eingang, Eingänge",en:"entrance",cat:"hoeren",ex:"Der Eingang ist auf der rechten Seite."},
+  {de:"der Ausgang, Ausgänge",en:"exit",cat:"hoeren",ex:"Der Ausgang ist dort hinten."},
+  {de:"das Erdgeschoss",en:"ground floor",cat:"hoeren",ex:"Die Information ist im Erdgeschoss."},
+  {de:"der Parkplatz, -plätze",en:"parking lot",cat:"hoeren",ex:"Der Parkplatz ist voll."},
+
+  // HÖREN TEIL 1 - MITBRINGEN & VORBEREITEN (Q2-type: What should someone bring/do?)
+  {de:"backen",en:"to bake",cat:"hoeren",ex:"Ich backe einen Kuchen für die Party."},
+  {de:"das Geschenk, -e",en:"gift / present",cat:"hoeren",ex:"Soll ich ein Geschenk kaufen?"},
+  {de:"die Getränke (Pl.)",en:"drinks / beverages",cat:"hoeren",ex:"Kannst du die Getränke organisieren?"},
+  {de:"organisieren",en:"to organize",cat:"hoeren",ex:"Wer organisiert das Essen?"},
+  {de:"mitbringen",en:"to bring along",cat:"hoeren",ex:"Was soll ich mitbringen?"},
+  {de:"vorbereiten",en:"to prepare",cat:"hoeren",ex:"Ich muss alles für die Party vorbereiten."},
+  {de:"besorgen",en:"to get / obtain",cat:"hoeren",ex:"Kannst du noch Getränke besorgen?"},
+  {de:"die Einladung, -en",en:"invitation",cat:"hoeren",ex:"Danke für die Einladung!"},
+
+  // HÖREN TEIL 1 - TREFFEN & VERABREDUNGEN (Q3-type: meetings, rescheduling)
+  {de:"das Treffen, -",en:"meeting / get-together",cat:"hoeren",ex:"Wir verschieben das Treffen auf Sonntag."},
+  {de:"verschieben",en:"to postpone / reschedule",cat:"hoeren",ex:"Können wir den Termin verschieben?"},
+  {de:"verabredet sein",en:"to have plans / a date",cat:"hoeren",ex:"Meine Frau ist am Samstag verabredet."},
+  {de:"absagen",en:"to cancel",cat:"hoeren",ex:"Ich muss leider absagen."},
+  {de:"sich treffen",en:"to meet up",cat:"hoeren",ex:"Wann treffen wir uns?"},
+  {de:"vorschlagen",en:"to suggest",cat:"hoeren",ex:"Ich schlage Samstag vor."},
+  {de:"der Besuch, -e",en:"visit / visitor",cat:"hoeren",ex:"Meine Eltern kommen zu Besuch."},
+  {de:"ausgehen",en:"to go out",cat:"hoeren",ex:"Er möchte mit Freunden ausgehen."},
+
+  // HÖREN TEIL 1 - WETTER & HIMMELSRICHTUNGEN (Q4-type: weather forecast)
+  {de:"der Norden",en:"north",cat:"hoeren",ex:"Im Norden wird es kalt."},
+  {de:"der Süden",en:"south",cat:"hoeren",ex:"Im Süden wird es warm."},
+  {de:"der Osten",en:"east",cat:"hoeren",ex:"Im Osten regnet es."},
+  {de:"der Westen",en:"west",cat:"hoeren",ex:"Im Westen scheint die Sonne."},
+  {de:"kühl",en:"cool (temperature)",cat:"hoeren",ex:"Morgen wird es kühl und trocken."},
+  {de:"trocken",en:"dry",cat:"hoeren",ex:"Das Wetter bleibt trocken."},
+  {de:"das Gewitter, -",en:"thunderstorm",cat:"hoeren",ex:"Am Nachmittag gibt es Gewitter."},
+  {de:"regnen",en:"to rain",cat:"hoeren",ex:"Es regnet den ganzen Tag."},
+  {de:"scheinen",en:"to shine",cat:"hoeren",ex:"Die Sonne scheint heute."},
+  {de:"die Temperatur, -en",en:"temperature",cat:"hoeren",ex:"Die Temperaturen liegen bei 20 Grad."},
+  {de:"der Grad",en:"degree",cat:"hoeren",ex:"Heute haben wir 25 Grad."},
+  {de:"die Wolke, -n",en:"cloud",cat:"hoeren",ex:"Es gibt viele Wolken am Himmel."},
+
+  // HÖREN TEIL 1 - VERKEHR & REISEANWEISUNGEN (Q5-type: transport instructions)
+  {de:"der Fahrgast, -gäste",en:"passenger",cat:"hoeren",ex:"Alle Fahrgäste bitte einsteigen!"},
+  {de:"der ICE",en:"ICE (high-speed train)",cat:"hoeren",ex:"Nehmen Sie den ICE nach Frankfurt."},
+  {de:"die S-Bahn, -en",en:"suburban train",cat:"hoeren",ex:"Fahren Sie mit der S-Bahn."},
+  {de:"umsteigen",en:"to change (trains)",cat:"hoeren",ex:"Sie müssen in München umsteigen."},
+  {de:"einsteigen",en:"to board / get in",cat:"hoeren",ex:"Bitte einsteigen, die Türen schließen!"},
+  {de:"aussteigen",en:"to get off / exit",cat:"hoeren",ex:"An der nächsten Haltestelle aussteigen."},
+  {de:"das Gleis, -e",en:"platform / track",cat:"hoeren",ex:"Der Zug fährt auf Gleis 5."},
+  {de:"die Verspätung, -en",en:"delay",cat:"hoeren",ex:"Der Zug hat 10 Minuten Verspätung."},
+  {de:"die Verbindung, -en",en:"connection",cat:"hoeren",ex:"Es gibt eine gute Verbindung nach Berlin."},
+  {de:"warten",en:"to wait",cat:"hoeren",ex:"Bitte warten Sie im Zug."},
 ];
 
 // ==========================================
 // VERBS DATA
 // ==========================================
+const verbCategories = {
+  alltag: "Alltag & Grundlagen",
+  bewegung: "Bewegung & Reisen",
+  essen: "Essen & Trinken",
+  kommunikation: "Kommunikation",
+  arbeit: "Arbeit & Lernen",
+  freizeit: "Freizeit & Hobbys",
+  modal: "Modalverben",
+  haushalt: "Haushalt & Einkaufen"
+};
+
 const verbsData = [
-  {inf:"machen",en:"to do/make",type:"regular",
+  // ALLTAG & GRUNDLAGEN
+  {inf:"machen",en:"to do/make",type:"regular",cat:"alltag",
     praesens:["mache","machst","macht","machen","macht","machen"],
     perfekt:{aux:"haben",pp:"gemacht"},
     praeteritum:["machte","machtest","machte","machten","machtet","machten"]},
-  {inf:"gehen",en:"to go",type:"irregular",
-    praesens:["gehe","gehst","geht","gehen","geht","gehen"],
-    perfekt:{aux:"sein",pp:"gegangen"},
-    praeteritum:["ging","gingst","ging","gingen","gingt","gingen"]},
-  {inf:"kommen",en:"to come",type:"irregular",
-    praesens:["komme","kommst","kommt","kommen","kommt","kommen"],
-    perfekt:{aux:"sein",pp:"gekommen"},
-    praeteritum:["kam","kamst","kam","kamen","kamt","kamen"]},
-  {inf:"haben",en:"to have",type:"irregular",
+  {inf:"haben",en:"to have",type:"irregular",cat:"alltag",
     praesens:["habe","hast","hat","haben","habt","haben"],
     perfekt:{aux:"haben",pp:"gehabt"},
     praeteritum:["hatte","hattest","hatte","hatten","hattet","hatten"]},
-  {inf:"sein",en:"to be",type:"irregular",
+  {inf:"sein",en:"to be",type:"irregular",cat:"alltag",
     praesens:["bin","bist","ist","sind","seid","sind"],
     perfekt:{aux:"sein",pp:"gewesen"},
     praeteritum:["war","warst","war","waren","wart","waren"]},
-  {inf:"werden",en:"to become",type:"irregular",
+  {inf:"werden",en:"to become",type:"irregular",cat:"alltag",
     praesens:["werde","wirst","wird","werden","werdet","werden"],
     perfekt:{aux:"sein",pp:"geworden"},
     praeteritum:["wurde","wurdest","wurde","wurden","wurdet","wurden"]},
-  {inf:"können",en:"can / to be able to",type:"modal",
-    praesens:["kann","kannst","kann","können","könnt","können"],
-    perfekt:{aux:"haben",pp:"gekonnt"},
-    praeteritum:["konnte","konntest","konnte","konnten","konntet","konnten"]},
-  {inf:"müssen",en:"must / to have to",type:"modal",
-    praesens:["muss","musst","muss","müssen","müsst","müssen"],
-    perfekt:{aux:"haben",pp:"gemusst"},
-    praeteritum:["musste","musstest","musste","mussten","musstet","mussten"]},
-  {inf:"wollen",en:"to want",type:"modal",
-    praesens:["will","willst","will","wollen","wollt","wollen"],
-    perfekt:{aux:"haben",pp:"gewollt"},
-    praeteritum:["wollte","wolltest","wollte","wollten","wolltet","wollten"]},
-  {inf:"dürfen",en:"may / to be allowed to",type:"modal",
-    praesens:["darf","darfst","darf","dürfen","dürft","dürfen"],
-    perfekt:{aux:"haben",pp:"gedurft"},
-    praeteritum:["durfte","durftest","durfte","durften","durftet","durften"]},
-  {inf:"sollen",en:"should / to be supposed to",type:"modal",
-    praesens:["soll","sollst","soll","sollen","sollt","sollen"],
-    perfekt:{aux:"haben",pp:"gesollt"},
-    praeteritum:["sollte","solltest","sollte","sollten","solltet","sollten"]},
-  {inf:"fahren",en:"to drive/go (vehicle)",type:"irregular",
-    praesens:["fahre","fährst","fährt","fahren","fahrt","fahren"],
-    perfekt:{aux:"sein",pp:"gefahren"},
-    praeteritum:["fuhr","fuhrst","fuhr","fuhren","fuhrt","fuhren"]},
-  {inf:"essen",en:"to eat",type:"irregular",
-    praesens:["esse","isst","isst","essen","esst","essen"],
-    perfekt:{aux:"haben",pp:"gegessen"},
-    praeteritum:["aß","aßt","aß","aßen","aßt","aßen"]},
-  {inf:"trinken",en:"to drink",type:"irregular",
-    praesens:["trinke","trinkst","trinkt","trinken","trinkt","trinken"],
-    perfekt:{aux:"haben",pp:"getrunken"},
-    praeteritum:["trank","trankst","trank","tranken","trankt","tranken"]},
-  {inf:"schreiben",en:"to write",type:"irregular",
-    praesens:["schreibe","schreibst","schreibt","schreiben","schreibt","schreiben"],
-    perfekt:{aux:"haben",pp:"geschrieben"},
-    praeteritum:["schrieb","schriebst","schrieb","schrieben","schriebt","schrieben"]},
-  {inf:"lesen",en:"to read",type:"irregular",
-    praesens:["lese","liest","liest","lesen","lest","lesen"],
-    perfekt:{aux:"haben",pp:"gelesen"},
-    praeteritum:["las","last","las","lasen","last","lasen"]},
-  {inf:"sprechen",en:"to speak",type:"irregular",
-    praesens:["spreche","sprichst","spricht","sprechen","sprecht","sprechen"],
-    perfekt:{aux:"haben",pp:"gesprochen"},
-    praeteritum:["sprach","sprachst","sprach","sprachen","spracht","sprachen"]},
-  {inf:"schlafen",en:"to sleep",type:"irregular",
-    praesens:["schlafe","schläfst","schläft","schlafen","schlaft","schlafen"],
-    perfekt:{aux:"haben",pp:"geschlafen"},
-    praeteritum:["schlief","schliefst","schlief","schliefen","schlieft","schliefen"]},
-  {inf:"finden",en:"to find",type:"irregular",
+  {inf:"finden",en:"to find",type:"irregular",cat:"alltag",
     praesens:["finde","findest","findet","finden","findet","finden"],
     perfekt:{aux:"haben",pp:"gefunden"},
     praeteritum:["fand","fandest","fand","fanden","fandet","fanden"]},
-  {inf:"geben",en:"to give",type:"irregular",
+  {inf:"geben",en:"to give",type:"irregular",cat:"alltag",
     praesens:["gebe","gibst","gibt","geben","gebt","geben"],
     perfekt:{aux:"haben",pp:"gegeben"},
     praeteritum:["gab","gabst","gab","gaben","gabt","gaben"]},
-  {inf:"nehmen",en:"to take",type:"irregular",
+  {inf:"nehmen",en:"to take",type:"irregular",cat:"alltag",
     praesens:["nehme","nimmst","nimmt","nehmen","nehmt","nehmen"],
     perfekt:{aux:"haben",pp:"genommen"},
     praeteritum:["nahm","nahmst","nahm","nahmen","nahmt","nahmen"]},
-  {inf:"kaufen",en:"to buy",type:"regular",
-    praesens:["kaufe","kaufst","kauft","kaufen","kauft","kaufen"],
-    perfekt:{aux:"haben",pp:"gekauft"},
-    praeteritum:["kaufte","kauftest","kaufte","kauften","kauftet","kauften"]},
-  {inf:"arbeiten",en:"to work",type:"regular",
-    praesens:["arbeite","arbeitest","arbeitet","arbeiten","arbeitet","arbeiten"],
-    perfekt:{aux:"haben",pp:"gearbeitet"},
-    praeteritum:["arbeitete","arbeitetest","arbeitete","arbeiteten","arbeitetet","arbeiteten"]},
-  {inf:"wohnen",en:"to live (reside)",type:"regular",
-    praesens:["wohne","wohnst","wohnt","wohnen","wohnt","wohnen"],
-    perfekt:{aux:"haben",pp:"gewohnt"},
-    praeteritum:["wohnte","wohntest","wohnte","wohnten","wohntet","wohnten"]},
-  {inf:"spielen",en:"to play",type:"regular",
-    praesens:["spiele","spielst","spielt","spielen","spielt","spielen"],
-    perfekt:{aux:"haben",pp:"gespielt"},
-    praeteritum:["spielte","spieltest","spielte","spielten","spieltet","spielten"]},
-  {inf:"hören",en:"to hear / listen",type:"regular",
-    praesens:["höre","hörst","hört","hören","hört","hören"],
-    perfekt:{aux:"haben",pp:"gehört"},
-    praeteritum:["hörte","hörtest","hörte","hörten","hörtet","hörten"]},
-  {inf:"sehen",en:"to see",type:"irregular",
-    praesens:["sehe","siehst","sieht","sehen","seht","sehen"],
-    perfekt:{aux:"haben",pp:"gesehen"},
-    praeteritum:["sah","sahst","sah","sahen","saht","sahen"]},
-  {inf:"wissen",en:"to know (fact)",type:"irregular",
+  {inf:"wissen",en:"to know (fact)",type:"irregular",cat:"alltag",
     praesens:["weiß","weißt","weiß","wissen","wisst","wissen"],
     perfekt:{aux:"haben",pp:"gewusst"},
     praeteritum:["wusste","wusstest","wusste","wussten","wusstet","wussten"]},
-  {inf:"kennen",en:"to know (person/place)",type:"irregular",
+  {inf:"kennen",en:"to know (person/place)",type:"irregular",cat:"alltag",
     praesens:["kenne","kennst","kennt","kennen","kennt","kennen"],
     perfekt:{aux:"haben",pp:"gekannt"},
     praeteritum:["kannte","kanntest","kannte","kannten","kanntet","kannten"]},
-  {inf:"helfen",en:"to help",type:"irregular",
-    praesens:["helfe","hilfst","hilft","helfen","helft","helfen"],
-    perfekt:{aux:"haben",pp:"geholfen"},
-    praeteritum:["half","halfst","half","halfen","halft","halfen"]},
-  {inf:"bringen",en:"to bring",type:"irregular",
-    praesens:["bringe","bringst","bringt","bringen","bringt","bringen"],
-    perfekt:{aux:"haben",pp:"gebracht"},
-    praeteritum:["brachte","brachtest","brachte","brachten","brachtet","brachten"]},
-  {inf:"anrufen",en:"to call (phone)",type:"separable",
-    praesens:["rufe an","rufst an","ruft an","rufen an","ruft an","rufen an"],
-    perfekt:{aux:"haben",pp:"angerufen"},
-    praeteritum:["rief an","riefst an","rief an","riefen an","rieft an","riefen an"]},
-  {inf:"einkaufen",en:"to shop",type:"separable",
-    praesens:["kaufe ein","kaufst ein","kauft ein","kaufen ein","kauft ein","kaufen ein"],
-    perfekt:{aux:"haben",pp:"eingekauft"},
-    praeteritum:["kaufte ein","kauftest ein","kaufte ein","kauften ein","kauftet ein","kauften ein"]},
-  {inf:"anfangen",en:"to begin/start",type:"separable",
-    praesens:["fange an","fängst an","fängt an","fangen an","fangt an","fangen an"],
-    perfekt:{aux:"haben",pp:"angefangen"},
-    praeteritum:["fing an","fingst an","fing an","fingen an","fingt an","fingen an"]},
-  {inf:"aufstehen",en:"to get up",type:"separable",
+  {inf:"schlafen",en:"to sleep",type:"irregular",cat:"alltag",
+    praesens:["schlafe","schläfst","schläft","schlafen","schlaft","schlafen"],
+    perfekt:{aux:"haben",pp:"geschlafen"},
+    praeteritum:["schlief","schliefst","schlief","schliefen","schlieft","schliefen"]},
+  {inf:"aufstehen",en:"to get up",type:"separable",cat:"alltag",
     praesens:["stehe auf","stehst auf","steht auf","stehen auf","steht auf","stehen auf"],
     perfekt:{aux:"sein",pp:"aufgestanden"},
     praeteritum:["stand auf","standest auf","stand auf","standen auf","standet auf","standen auf"]},
-  {inf:"mögen",en:"to like",type:"modal",
+  {inf:"anfangen",en:"to begin/start",type:"separable",cat:"alltag",
+    praesens:["fange an","fängst an","fängt an","fangen an","fangt an","fangen an"],
+    perfekt:{aux:"haben",pp:"angefangen"},
+    praeteritum:["fing an","fingst an","fing an","fingen an","fingt an","fingen an"]},
+
+  // BEWEGUNG & REISEN
+  {inf:"gehen",en:"to go",type:"irregular",cat:"bewegung",
+    praesens:["gehe","gehst","geht","gehen","geht","gehen"],
+    perfekt:{aux:"sein",pp:"gegangen"},
+    praeteritum:["ging","gingst","ging","gingen","gingt","gingen"]},
+  {inf:"kommen",en:"to come",type:"irregular",cat:"bewegung",
+    praesens:["komme","kommst","kommt","kommen","kommt","kommen"],
+    perfekt:{aux:"sein",pp:"gekommen"},
+    praeteritum:["kam","kamst","kam","kamen","kamt","kamen"]},
+  {inf:"fahren",en:"to drive/go (vehicle)",type:"irregular",cat:"bewegung",
+    praesens:["fahre","fährst","fährt","fahren","fahrt","fahren"],
+    perfekt:{aux:"sein",pp:"gefahren"},
+    praeteritum:["fuhr","fuhrst","fuhr","fuhren","fuhrt","fuhren"]},
+  {inf:"bringen",en:"to bring",type:"irregular",cat:"bewegung",
+    praesens:["bringe","bringst","bringt","bringen","bringt","bringen"],
+    perfekt:{aux:"haben",pp:"gebracht"},
+    praeteritum:["brachte","brachtest","brachte","brachten","brachtet","brachten"]},
+
+  // ESSEN & TRINKEN
+  {inf:"essen",en:"to eat",type:"irregular",cat:"essen",
+    praesens:["esse","isst","isst","essen","esst","essen"],
+    perfekt:{aux:"haben",pp:"gegessen"},
+    praeteritum:["aß","aßt","aß","aßen","aßt","aßen"]},
+  {inf:"trinken",en:"to drink",type:"irregular",cat:"essen",
+    praesens:["trinke","trinkst","trinkt","trinken","trinkt","trinken"],
+    perfekt:{aux:"haben",pp:"getrunken"},
+    praeteritum:["trank","trankst","trank","tranken","trankt","tranken"]},
+
+  // KOMMUNIKATION
+  {inf:"schreiben",en:"to write",type:"irregular",cat:"kommunikation",
+    praesens:["schreibe","schreibst","schreibt","schreiben","schreibt","schreiben"],
+    perfekt:{aux:"haben",pp:"geschrieben"},
+    praeteritum:["schrieb","schriebst","schrieb","schrieben","schriebt","schrieben"]},
+  {inf:"lesen",en:"to read",type:"irregular",cat:"kommunikation",
+    praesens:["lese","liest","liest","lesen","lest","lesen"],
+    perfekt:{aux:"haben",pp:"gelesen"},
+    praeteritum:["las","last","las","lasen","last","lasen"]},
+  {inf:"sprechen",en:"to speak",type:"irregular",cat:"kommunikation",
+    praesens:["spreche","sprichst","spricht","sprechen","sprecht","sprechen"],
+    perfekt:{aux:"haben",pp:"gesprochen"},
+    praeteritum:["sprach","sprachst","sprach","sprachen","spracht","sprachen"]},
+  {inf:"anrufen",en:"to call (phone)",type:"separable",cat:"kommunikation",
+    praesens:["rufe an","rufst an","ruft an","rufen an","ruft an","rufen an"],
+    perfekt:{aux:"haben",pp:"angerufen"},
+    praeteritum:["rief an","riefst an","rief an","riefen an","rieft an","riefen an"]},
+  {inf:"helfen",en:"to help",type:"irregular",cat:"kommunikation",
+    praesens:["helfe","hilfst","hilft","helfen","helft","helfen"],
+    perfekt:{aux:"haben",pp:"geholfen"},
+    praeteritum:["half","halfst","half","halfen","halft","halfen"]},
+
+  // ARBEIT & LERNEN
+  {inf:"arbeiten",en:"to work",type:"regular",cat:"arbeit",
+    praesens:["arbeite","arbeitest","arbeitet","arbeiten","arbeitet","arbeiten"],
+    perfekt:{aux:"haben",pp:"gearbeitet"},
+    praeteritum:["arbeitete","arbeitetest","arbeitete","arbeiteten","arbeitetet","arbeiteten"]},
+  {inf:"wohnen",en:"to live (reside)",type:"regular",cat:"arbeit",
+    praesens:["wohne","wohnst","wohnt","wohnen","wohnt","wohnen"],
+    perfekt:{aux:"haben",pp:"gewohnt"},
+    praeteritum:["wohnte","wohntest","wohnte","wohnten","wohntet","wohnten"]},
+
+  // FREIZEIT & HOBBYS
+  {inf:"spielen",en:"to play",type:"regular",cat:"freizeit",
+    praesens:["spiele","spielst","spielt","spielen","spielt","spielen"],
+    perfekt:{aux:"haben",pp:"gespielt"},
+    praeteritum:["spielte","spieltest","spielte","spielten","spieltet","spielten"]},
+  {inf:"hören",en:"to hear / listen",type:"regular",cat:"freizeit",
+    praesens:["höre","hörst","hört","hören","hört","hören"],
+    perfekt:{aux:"haben",pp:"gehört"},
+    praeteritum:["hörte","hörtest","hörte","hörten","hörtet","hörten"]},
+  {inf:"sehen",en:"to see",type:"irregular",cat:"freizeit",
+    praesens:["sehe","siehst","sieht","sehen","seht","sehen"],
+    perfekt:{aux:"haben",pp:"gesehen"},
+    praeteritum:["sah","sahst","sah","sahen","saht","sahen"]},
+
+  // HAUSHALT & EINKAUFEN
+  {inf:"kaufen",en:"to buy",type:"regular",cat:"haushalt",
+    praesens:["kaufe","kaufst","kauft","kaufen","kauft","kaufen"],
+    perfekt:{aux:"haben",pp:"gekauft"},
+    praeteritum:["kaufte","kauftest","kaufte","kauften","kauftet","kauften"]},
+  {inf:"einkaufen",en:"to shop",type:"separable",cat:"haushalt",
+    praesens:["kaufe ein","kaufst ein","kauft ein","kaufen ein","kauft ein","kaufen ein"],
+    perfekt:{aux:"haben",pp:"eingekauft"},
+    praeteritum:["kaufte ein","kauftest ein","kaufte ein","kauften ein","kauftet ein","kauften ein"]},
+
+  // MODALVERBEN
+  {inf:"können",en:"can / to be able to",type:"modal",cat:"modal",
+    praesens:["kann","kannst","kann","können","könnt","können"],
+    perfekt:{aux:"haben",pp:"gekonnt"},
+    praeteritum:["konnte","konntest","konnte","konnten","konntet","konnten"]},
+  {inf:"müssen",en:"must / to have to",type:"modal",cat:"modal",
+    praesens:["muss","musst","muss","müssen","müsst","müssen"],
+    perfekt:{aux:"haben",pp:"gemusst"},
+    praeteritum:["musste","musstest","musste","mussten","musstet","mussten"]},
+  {inf:"wollen",en:"to want",type:"modal",cat:"modal",
+    praesens:["will","willst","will","wollen","wollt","wollen"],
+    perfekt:{aux:"haben",pp:"gewollt"},
+    praeteritum:["wollte","wolltest","wollte","wollten","wolltet","wollten"]},
+  {inf:"dürfen",en:"may / to be allowed to",type:"modal",cat:"modal",
+    praesens:["darf","darfst","darf","dürfen","dürft","dürfen"],
+    perfekt:{aux:"haben",pp:"gedurft"},
+    praeteritum:["durfte","durftest","durfte","durften","durftet","durften"]},
+  {inf:"sollen",en:"should / to be supposed to",type:"modal",cat:"modal",
+    praesens:["soll","sollst","soll","sollen","sollt","sollen"],
+    perfekt:{aux:"haben",pp:"gesollt"},
+    praeteritum:["sollte","solltest","sollte","sollten","solltet","sollten"]},
+  {inf:"mögen",en:"to like",type:"modal",cat:"modal",
     praesens:["mag","magst","mag","mögen","mögt","mögen"],
     perfekt:{aux:"haben",pp:"gemocht"},
     praeteritum:["mochte","mochtest","mochte","mochten","mochtet","mochten"]},
@@ -853,6 +937,7 @@ document.addEventListener('DOMContentLoaded', () => {
   newGrammarQuiz();
   initAllLevel2();
   updateStreak();
+  loadDailyReminder();
   setInterval(updateCountdown, 60000);
 
   // Motivational quote in sidebar
@@ -970,6 +1055,85 @@ function saveProgress() {
   localStorage.setItem('simanga_vocab', JSON.stringify(vocabProgress));
   localStorage.setItem('simanga_verbs', JSON.stringify(verbProgress));
   updateStats();
+}
+
+// ==========================================
+// DAILY PRACTICE REMINDER
+// ==========================================
+function loadDailyReminder() {
+  const container = document.getElementById('daily-reminder');
+  if (!container) return;
+
+  const verbCats = Object.keys(verbCategories);
+  const todayCat = verbCats[new Date().getDay() % verbCats.length];
+  const todayCatName = verbCategories[todayCat];
+
+  const vocabCats = ["familie","essen","wohnen","reisen","arbeit","freizeit","koerper","alltag","zeit","schule","hoeren"];
+  const vocabCatNames = {familie:"Familie & Personen",essen:"Essen & Trinken",wohnen:"Wohnen & Haus",reisen:"Reisen & Verkehr",arbeit:"Arbeit & Beruf",freizeit:"Freizeit & Hobby",koerper:"Körper & Gesundheit",alltag:"Alltag & Einkaufen",zeit:"Zeit & Wetter",schule:"Schule & Lernen",hoeren:"Hören Prüfung"};
+  const todayVocab = vocabCats[new Date().getDate() % vocabCats.length];
+  const todayVocabName = vocabCatNames[todayVocab];
+
+  const speakingTopicsList = [
+    "Stell dich vor: Name, Alter, woher du kommst, wo du wohnst",
+    "Erzähl von deiner Familie und deinen Freunden",
+    "Beschreibe deinen Tagesablauf auf Deutsch",
+    "Erzähl was du am Wochenende gern machst",
+    "Beschreibe deine Wohnung oder dein Zimmer",
+    "Erzähl von deinem Beruf oder was du studierst",
+    "Was sind deine Hobbys? Was machst du in der Freizeit?"
+  ];
+  const todaySpeaking = speakingTopicsList[new Date().getDay() % speakingTopicsList.length];
+
+  const greetings = [
+    "Hey Simanga! Ready to crush some German today?",
+    "Guten Tag, Simanga! Time to level up!",
+    "Hallo! Your future self will thank you for studying today!",
+    "Hey! 21 Tage left - every minute counts!",
+    "Rise and grind, Simanga! Deutsch wartet auf dich!",
+    "Another day, another step closer to that A2!",
+    "You've got this, Simanga! Let's make today count!"
+  ];
+  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+
+  const learned = Object.values(vocabProgress).filter(v => v >= 3).length;
+  const verbsMastered = Object.values(verbProgress).filter(v => v >= 3).length;
+
+  container.innerHTML = `
+    <div class="reminder-header">
+      <span class="reminder-wave">👋</span>
+      <h3>${greeting}</h3>
+    </div>
+    <p class="reminder-subtitle">Here's your daily practice checklist - just 20 minutes can make a big difference!</p>
+    <div class="reminder-tasks">
+      <div class="reminder-task" onclick="document.querySelector('[data-section=verbs]').click()">
+        <span class="reminder-icon">🔄</span>
+        <div class="reminder-task-info">
+          <strong>Verb Training (10 min)</strong>
+          <p>Today's focus: <em>${todayCatName}</em> - practice conjugating these verbs!</p>
+          <span class="reminder-progress">${verbsMastered} verbs mastered so far</span>
+        </div>
+        <span class="reminder-arrow">→</span>
+      </div>
+      <div class="reminder-task" onclick="document.querySelector('[data-section=vocab]').click()">
+        <span class="reminder-icon">📚</span>
+        <div class="reminder-task-info">
+          <strong>Wortschatz (5 min)</strong>
+          <p>Review flashcards for: <em>${todayVocabName}</em></p>
+          <span class="reminder-progress">${learned} words learned so far</span>
+        </div>
+        <span class="reminder-arrow">→</span>
+      </div>
+      <div class="reminder-task">
+        <span class="reminder-icon">🪞</span>
+        <div class="reminder-task-info">
+          <strong>Spiegel-Übung (5 min)</strong>
+          <p>Stand in front of the mirror and: <em>${todaySpeaking}</em></p>
+          <span class="reminder-progress">Speak out loud - confidence is key!</span>
+        </div>
+        <span class="reminder-check">✨</span>
+      </div>
+    </div>
+  `;
 }
 
 // ==========================================
@@ -1231,20 +1395,21 @@ function filterWordlist() {
 function loadVerbExercise() {
   const tense = document.getElementById('verb-tense').value;
   const type = document.getElementById('verb-type').value;
+  const category = document.getElementById('verb-category').value;
 
-  let filtered = type === 'all' ? verbsData :
-    type === 'separable' ? verbsData.filter(v => v.type === 'separable') :
-    type === 'modal' ? verbsData.filter(v => v.type === 'modal') :
-    type === 'regular' ? verbsData.filter(v => v.type === 'regular') :
-    verbsData.filter(v => v.type === 'irregular');
+  let filtered = verbsData;
+  if (category !== 'all') filtered = filtered.filter(v => v.cat === category);
+  if (type !== 'all') filtered = filtered.filter(v => v.type === type);
 
   if (filtered.length === 0) filtered = verbsData;
   const verb = filtered[Math.floor(Math.random() * filtered.length)];
 
   document.getElementById('conj-infinitive').textContent = verb.inf;
   document.getElementById('conj-meaning').textContent = verb.en;
-  document.getElementById('conj-type-badge').textContent = verb.type === 'regular' ? 'regelmäßig' :
+  const typeName = verb.type === 'regular' ? 'regelmäßig' :
     verb.type === 'separable' ? 'trennbar' : verb.type === 'modal' ? 'Modalverb' : 'unregelmäßig';
+  const catName = verbCategories[verb.cat] || verb.cat;
+  document.getElementById('conj-type-badge').textContent = `${typeName} · ${catName}`;
 
   const table = document.getElementById('conj-table');
   table.innerHTML = '';
@@ -1317,24 +1482,43 @@ function showConjugation() {
 function loadVerbOverview() {
   const table = document.getElementById('verb-overview-table');
   table.innerHTML = '';
+  const catFilter = document.getElementById('verb-overview-category').value;
 
-  const header = document.createElement('div');
-  header.className = 'verb-overview-row';
-  header.innerHTML = '<span>Infinitiv</span><span>Präsens (er)</span><span>Perfekt</span><span>Präteritum (er)</span><span>Englisch</span>';
-  table.appendChild(header);
+  const filtered = catFilter === 'all' ? verbsData : verbsData.filter(v => v.cat === catFilter);
 
-  verbsData.forEach(v => {
-    const row = document.createElement('div');
-    row.className = 'verb-overview-row';
-    const isIrr = v.type !== 'regular';
-    row.innerHTML = `
-      <span class="${isIrr?'irregular':''}">${v.inf}</span>
-      <span>${v.praesens[2]}</span>
-      <span>${v.perfekt.aux} ${v.perfekt.pp}</span>
-      <span>${v.praeteritum[2]}</span>
-      <span>${v.en}</span>
-    `;
-    table.appendChild(row);
+  // Group by category
+  const groups = {};
+  filtered.forEach(v => {
+    if (!groups[v.cat]) groups[v.cat] = [];
+    groups[v.cat].push(v);
+  });
+
+  Object.keys(groups).forEach(cat => {
+    const catHeader = document.createElement('div');
+    catHeader.className = 'verb-overview-cat-header';
+    catHeader.textContent = verbCategories[cat] || cat;
+    table.appendChild(catHeader);
+
+    const header = document.createElement('div');
+    header.className = 'verb-overview-row verb-overview-header';
+    header.innerHTML = '<span>Infinitiv</span><span>Präsens (er)</span><span>Perfekt</span><span>Präteritum (er)</span><span>Englisch</span>';
+    table.appendChild(header);
+
+    groups[cat].forEach(v => {
+      const row = document.createElement('div');
+      row.className = 'verb-overview-row';
+      const isIrr = v.type !== 'regular';
+      const progress = verbProgress[v.inf] || 0;
+      const statusIcon = progress >= 5 ? ' ✅' : progress >= 3 ? ' 🟡' : '';
+      row.innerHTML = `
+        <span class="${isIrr?'irregular':''}">${v.inf}${statusIcon}</span>
+        <span>${v.praesens[2]}</span>
+        <span>${v.perfekt.aux} ${v.perfekt.pp}</span>
+        <span>${v.praeteritum[2]}</span>
+        <span>${v.en}</span>
+      `;
+      table.appendChild(row);
+    });
   });
 }
 
