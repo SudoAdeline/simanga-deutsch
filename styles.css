@@ -1130,6 +1130,81 @@ body {
 }
 
 /* VERBS */
+.verb-search-box {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.verb-search-box input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 2px solid var(--gray-200);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+}
+
+.verb-search-box input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.verb-search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  max-height: 250px;
+  overflow-y: auto;
+  z-index: 100;
+  display: none;
+}
+
+.verb-search-results.active {
+  display: block;
+}
+
+.verb-search-item {
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.88rem;
+  border-bottom: 1px solid var(--gray-100);
+  transition: background 0.15s;
+}
+
+.verb-search-item:last-child {
+  border-bottom: none;
+}
+
+.verb-search-item:hover {
+  background: var(--primary-light);
+}
+
+.verb-search-item .verb-inf {
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+.verb-search-item .verb-en {
+  color: var(--gray-500);
+  font-size: 0.82rem;
+}
+
+.verb-search-item .verb-cat-badge {
+  font-size: 0.72rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 10px;
+  background: var(--gray-100);
+  color: var(--gray-600);
+}
+
 .verb-controls {
   display: flex;
   gap: 1rem;

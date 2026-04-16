@@ -888,6 +888,10 @@
 
     <!-- CONJUGATION TRAINER -->
     <div id="conjugate" class="verb-content active">
+      <div class="verb-search-box">
+        <input type="text" id="conj-verb-search" placeholder="Verb suchen (z.B. machen, to go)..." oninput="filterConjVerbs()">
+        <div class="verb-search-results" id="conj-search-results"></div>
+      </div>
       <div class="verb-controls">
         <label>Kategorie:
           <select id="verb-category" onchange="loadVerbExercise()">
@@ -1319,6 +1323,9 @@
     <!-- VERB OVERVIEW -->
     <div id="verb-overview" class="verb-content">
       <h3>Wichtige A2 Verben - Übersicht</h3>
+      <div class="verb-search-box">
+        <input type="text" id="overview-verb-search" placeholder="Verb suchen (z.B. fahren, to eat)..." oninput="filterOverviewVerbs()">
+      </div>
       <div class="verb-controls" style="margin-bottom:1rem">
         <label>Kategorie:
           <select id="verb-overview-category" onchange="loadVerbOverview()">

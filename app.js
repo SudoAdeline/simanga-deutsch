@@ -1523,6 +1523,143 @@ function loadVerbOverview() {
 }
 
 // ==========================================
+// VERB SEARCH
+// ==========================================
+function filterConjVerbs() {
+  const query = document.getElementById('conj-verb-search').value.toLowerCase().trim();
+  const resultsDiv = document.getElementById('conj-search-results');
+
+  if (!query) {
+    resultsDiv.classList.remove('active');
+    resultsDiv.innerHTML = '';
+    return;
+  }
+
+  const matches = verbsData.filter(v =>
+    v.inf.toLowerCase().includes(query) ||
+    v.en.toLowerCase().includes(query)
+  ).slice(0, 10);
+
+  if (matches.length === 0) {
+    resultsDiv.innerHTML = '<div class="verb-search-item" style="color:var(--gray-400);cursor:default">Kein Verb gefunden</div>';
+    resultsDiv.classList.add('active');
+    return;
+  }
+
+  resultsDiv.innerHTML = matches.map(v =>
+    `<div class="verb-search-item" onclick="selectConjVerb('${v.inf}')">
+      <span><span class="verb-inf">${v.inf}</span> <span class="verb-en">- ${v.en}</span></span>
+      <span class="verb-cat-badge">${verbCategories[v.cat] || v.cat}</span>
+    </div>`
+  ).join('');
+  resultsDiv.classList.add('active');
+}
+
+function selectConjVerb(inf) {
+  const verb = verbsData.find(v => v.inf === inf);
+  if (!verb) return;
+
+  document.getElementById('conj-verb-search').value = '';
+  document.getElementById('conj-search-results').classList.remove('active');
+
+  const tense = document.getElementById('verb-tense').value;
+
+  document.getElementById('conj-infinitive').textContent = verb.inf;
+  document.getElementById('conj-meaning').textContent = verb.en;
+  const typeName = verb.type === 'regular' ? 'regelmäßig' :
+    verb.type === 'separable' ? 'trennbar' : verb.type === 'modal' ? 'Modalverb' : 'unregelmäßig';
+  const catName = verbCategories[verb.cat] || verb.cat;
+  document.getElementById('conj-type-badge').textContent = `${typeName} · ${catName}`;
+
+  const table = document.getElementById('conj-table');
+  table.innerHTML = '';
+  table.dataset.verb = verb.inf;
+  table.dataset.tense = tense;
+
+  if (tense === 'perfekt') {
+    const row = document.createElement('div');
+    row.className = 'conj-row';
+    row.style.gridColumn = '1 / -1';
+    row.style.marginBottom = '0.5rem';
+    row.innerHTML = `<span style="font-size:0.85rem;color:var(--gray-500)">Hilfsverb: <strong>${verb.perfekt.aux}</strong> + Partizip II: <strong>${verb.perfekt.pp}</strong></span>`;
+    table.appendChild(row);
+  }
+
+  pronouns.forEach((p, i) => {
+    const row = document.createElement('div');
+    row.className = 'conj-row';
+
+    let correctAnswer;
+    if (tense === 'praesens') correctAnswer = verb.praesens[i];
+    else if (tense === 'perfekt') {
+      const auxForms = verb.perfekt.aux === 'haben' ?
+        ['habe','hast','hat','haben','habt','haben'] :
+        ['bin','bist','ist','sind','seid','sind'];
+      correctAnswer = auxForms[i] + ' ' + verb.perfekt.pp;
+    } else {
+      correctAnswer = verb.praeteritum[i];
+    }
+
+    row.innerHTML = `
+      <span class="conj-pronoun">${p}</span>
+      <input type="text" class="conj-input" data-correct="${correctAnswer}" placeholder="...">
+    `;
+    table.appendChild(row);
+  });
+}
+
+function filterOverviewVerbs() {
+  const query = document.getElementById('overview-verb-search').value.toLowerCase().trim();
+  const rows = document.querySelectorAll('#verb-overview-table .verb-overview-row:not(.verb-overview-header)');
+  const catHeaders = document.querySelectorAll('#verb-overview-table .verb-overview-cat-header');
+  const headers = document.querySelectorAll('#verb-overview-table .verb-overview-header');
+
+  if (!query) {
+    rows.forEach(r => r.style.display = '');
+    catHeaders.forEach(h => h.style.display = '');
+    headers.forEach(h => h.style.display = '');
+    return;
+  }
+
+  // Hide all category headers and table headers first
+  catHeaders.forEach(h => h.style.display = 'none');
+  headers.forEach(h => h.style.display = 'none');
+
+  const visibleCats = new Set();
+
+  rows.forEach(row => {
+    const text = row.textContent.toLowerCase();
+    if (text.includes(query)) {
+      row.style.display = '';
+      // Find which category this row belongs to by traversing siblings
+      let prev = row.previousElementSibling;
+      while (prev) {
+        if (prev.classList.contains('verb-overview-cat-header')) {
+          visibleCats.add(prev);
+          break;
+        }
+        if (prev.classList.contains('verb-overview-header')) {
+          visibleCats.add(prev);
+        }
+        prev = prev.previousElementSibling;
+      }
+    } else {
+      row.style.display = 'none';
+    }
+  });
+
+  // Show headers for categories that have visible verbs
+  visibleCats.forEach(el => el.style.display = '');
+}
+
+// Close search dropdown when clicking outside
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.verb-search-box')) {
+    document.querySelectorAll('.verb-search-results').forEach(d => d.classList.remove('active'));
+  }
+});
+
+// ==========================================
 // SENTENCE BUILDER
 // ==========================================
 function newSentencePuzzle() {
