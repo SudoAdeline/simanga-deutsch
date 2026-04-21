@@ -293,14 +293,13 @@ const vocabData = [
 // VERBS DATA
 // ==========================================
 const verbCategories = {
-  alltag: "Alltag & Grundlagen",
-  bewegung: "Bewegung & Reisen",
+  alltag: "Alltag & Einkaufen",
+  reisen: "Reisen & Verkehr",
   essen: "Essen & Trinken",
   kommunikation: "Kommunikation",
-  arbeit: "Arbeit & Lernen",
-  freizeit: "Freizeit & Hobbys",
-  modal: "Modalverben",
-  haushalt: "Haushalt & Einkaufen"
+  arbeit: "Arbeit & Beruf",
+  freizeit: "Freizeit & Hobby",
+  modal: "Modalverben"
 };
 
 const verbsData = [
@@ -355,19 +354,19 @@ const verbsData = [
     praeteritum:["fing an","fingst an","fing an","fingen an","fingt an","fingen an"]},
 
   // BEWEGUNG & REISEN
-  {inf:"gehen",en:"to go",type:"irregular",cat:"bewegung",
+  {inf:"gehen",en:"to go",type:"irregular",cat:"reisen",
     praesens:["gehe","gehst","geht","gehen","geht","gehen"],
     perfekt:{aux:"sein",pp:"gegangen"},
     praeteritum:["ging","gingst","ging","gingen","gingt","gingen"]},
-  {inf:"kommen",en:"to come",type:"irregular",cat:"bewegung",
+  {inf:"kommen",en:"to come",type:"irregular",cat:"reisen",
     praesens:["komme","kommst","kommt","kommen","kommt","kommen"],
     perfekt:{aux:"sein",pp:"gekommen"},
     praeteritum:["kam","kamst","kam","kamen","kamt","kamen"]},
-  {inf:"fahren",en:"to drive/go (vehicle)",type:"irregular",cat:"bewegung",
+  {inf:"fahren",en:"to drive/go (vehicle)",type:"irregular",cat:"reisen",
     praesens:["fahre","fährst","fährt","fahren","fahrt","fahren"],
     perfekt:{aux:"sein",pp:"gefahren"},
     praeteritum:["fuhr","fuhrst","fuhr","fuhren","fuhrt","fuhren"]},
-  {inf:"bringen",en:"to bring",type:"irregular",cat:"bewegung",
+  {inf:"bringen",en:"to bring",type:"irregular",cat:"reisen",
     praesens:["bringe","bringst","bringt","bringen","bringt","bringen"],
     perfekt:{aux:"haben",pp:"gebracht"},
     praeteritum:["brachte","brachtest","brachte","brachten","brachtet","brachten"]},
@@ -429,11 +428,11 @@ const verbsData = [
     praeteritum:["sah","sahst","sah","sahen","saht","sahen"]},
 
   // HAUSHALT & EINKAUFEN
-  {inf:"kaufen",en:"to buy",type:"regular",cat:"haushalt",
+  {inf:"kaufen",en:"to buy",type:"regular",cat:"alltag",
     praesens:["kaufe","kaufst","kauft","kaufen","kauft","kaufen"],
     perfekt:{aux:"haben",pp:"gekauft"},
     praeteritum:["kaufte","kauftest","kaufte","kauften","kauftet","kauften"]},
-  {inf:"einkaufen",en:"to shop",type:"separable",cat:"haushalt",
+  {inf:"einkaufen",en:"to shop",type:"separable",cat:"alltag",
     praesens:["kaufe ein","kaufst ein","kauft ein","kaufen ein","kauft ein","kaufen ein"],
     perfekt:{aux:"haben",pp:"eingekauft"},
     praeteritum:["kaufte ein","kauftest ein","kaufte ein","kauften ein","kauftet ein","kauften ein"]},
