@@ -870,6 +870,32 @@ const level2Data = {
     {word:"arb___ten", answer:"ei", display:"arb_ten (to work)", options:["ie","ei"], hint:"arbeiten [aʁbaɪtən] = 'eye' → ei"},
     {word:"w___der", answer:"ie", display:"w_der (again)", options:["ie","ei"], hint:"wieder [viːdɐ] = long 'ee' → ie"},
   ],
+  preposition: [
+    {sentence:"Ich gehe ___ Schule.", answer:"in die", options:["in die","in der","im"], hint:"gehen = Bewegung (wohin?) → Akkusativ: in die Schule!"},
+    {sentence:"Mein Bruder ist ___ Schule.", answer:"in der", options:["in die","in der","ins"], hint:"sein = Ort (wo?) → Dativ: in der Schule!"},
+    {sentence:"Wir fahren ___ Supermarkt.", answer:"zum", options:["zum","im","am"], hint:"fahren = Bewegung (wohin?) → zu + dem = zum Supermarkt!"},
+    {sentence:"Ich bin ___ Supermarkt.", answer:"im", options:["im","ins","in den"], hint:"sein = Ort (wo?) → in + dem = im Supermarkt!"},
+    {sentence:"Sie geht ___ Arzt.", answer:"zum", options:["zum","beim","am"], hint:"gehen = Bewegung (wohin?) → zu + dem = zum Arzt!"},
+    {sentence:"Er ist ___ Arzt.", answer:"beim", options:["beim","zum","am"], hint:"sein = Ort (wo?) → bei + dem = beim Arzt!"},
+    {sentence:"Die Kinder laufen ___ Park.", answer:"in den", options:["in den","im","in dem"], hint:"laufen = Bewegung (wohin?) → Akkusativ: in den Park!"},
+    {sentence:"Wir spielen ___ Park.", answer:"im", options:["im","in den","ins"], hint:"spielen = Ort (wo?) → Dativ: in + dem = im Park!"},
+    {sentence:"Ich lege das Buch ___ Tisch.", answer:"auf den", options:["auf den","auf dem","am"], hint:"legen = Bewegung (wohin?) → Akkusativ: auf den Tisch!"},
+    {sentence:"Das Buch liegt ___ Tisch.", answer:"auf dem", options:["auf dem","auf den","am"], hint:"liegen = Ort (wo?) → Dativ: auf dem Tisch!"},
+    {sentence:"Hänge das Bild ___ Wand!", answer:"an die", options:["an die","an der","auf die"], hint:"hängen (transitiv) = Bewegung (wohin?) → Akkusativ: an die Wand!"},
+    {sentence:"Das Bild hängt ___ Wand.", answer:"an der", options:["an der","an die","auf der"], hint:"hängen (intransitiv) = Ort (wo?) → Dativ: an der Wand!"},
+    {sentence:"Stell die Flasche ___ Kühlschrank!", answer:"in den", options:["in den","im","in dem"], hint:"stellen = Bewegung (wohin?) → Akkusativ: in den Kühlschrank!"},
+    {sentence:"Die Milch steht ___ Kühlschrank.", answer:"im", options:["im","in den","ins"], hint:"stehen = Ort (wo?) → Dativ: in + dem = im Kühlschrank!"},
+    {sentence:"Ich fahre ___ Türkei.", answer:"in die", options:["in die","in der","nach"], hint:"Türkei hat Artikel (die) → in die Türkei (wohin?)!"},
+    {sentence:"Er fliegt ___ Deutschland.", answer:"nach", options:["nach","in","ins"], hint:"Deutschland hat keinen Artikel → nach Deutschland!"},
+    {sentence:"Setz dich ___ Sofa!", answer:"auf das", options:["auf das","auf dem","im"], hint:"setzen = Bewegung (wohin?) → Akkusativ: auf das Sofa!"},
+    {sentence:"Die Katze sitzt ___ Sofa.", answer:"auf dem", options:["auf dem","auf das","im"], hint:"sitzen = Ort (wo?) → Dativ: auf dem Sofa!"},
+    {sentence:"Wir gehen ___ Kino.", answer:"ins", options:["ins","im","in dem"], hint:"gehen = Bewegung (wohin?) → in + das = ins Kino!"},
+    {sentence:"Der Film läuft ___ Kino.", answer:"im", options:["im","ins","in das"], hint:"laufen (Film) = Ort (wo?) → in + dem = im Kino!"},
+    {sentence:"Ich gehe ___ Post.", answer:"zur", options:["zur","bei der","an die"], hint:"gehen = Bewegung (wohin?) → zu + der = zur Post!"},
+    {sentence:"Sie wartet ___ Haltestelle.", answer:"an der", options:["an der","an die","auf der"], hint:"warten = Ort (wo?) → Dativ: an der Haltestelle!"},
+    {sentence:"Leg den Teppich ___ Boden!", answer:"auf den", options:["auf den","auf dem","am"], hint:"legen = Bewegung (wohin?) → Akkusativ: auf den Boden!"},
+    {sentence:"Der Teppich liegt ___ Boden.", answer:"auf dem", options:["auf dem","auf den","am"], hint:"liegen = Ort (wo?) → Dativ: auf dem Boden!"},
+  ],
   errorCorrection: [
     {wrong:"Ich habe nicht Geld.", correct:"Ich habe kein Geld.", rule:"Nomen ohne Artikel → kein, nicht nicht!"},
     {wrong:"Er sagt, weil er kommt.", correct:"Er sagt, dass er kommt.", rule:"Aussage weitergeben → dass, nicht weil!"},
@@ -2073,6 +2099,23 @@ function loadLevel2Exercise(type) {
     });
     container.appendChild(errorDiv);
   }
+  else if (type === 'preposition') {
+    const items = shuffle([...level2Data.preposition]).slice(0, 6);
+    items.forEach((item, i) => {
+      const div = document.createElement('div');
+      div.className = 'l2-exercise-item';
+      div.dataset.answer = item.answer;
+      div.dataset.hint = item.hint;
+      const parts = item.sentence.split('___');
+      div.innerHTML = `
+        <span class="l2-sentence">${parts[0]}<select class="l2-select" data-idx="${i}">
+          <option value="">---</option>
+          ${shuffle(item.options).map(o => `<option value="${o}">${o}</option>`).join('')}
+        </select>${parts[1]}</span>
+      `;
+      container.appendChild(div);
+    });
+  }
 }
 
 function checkLevel2Exercise(type) {
@@ -2171,6 +2214,7 @@ function initAllLevel2() {
   loadLevel2Exercise('seinhaben');
   loadLevel2Exercise('time');
   loadLevel2Exercise('pronunciation');
+  loadLevel2Exercise('preposition');
   renderUserVocab();
 }
 
